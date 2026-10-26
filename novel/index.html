@@ -129,6 +129,48 @@ section > p{ color:var(--ink-2) }
 .lessons b{ display:block }
 .lessons span{ font-size:.92rem; color:var(--ink-2) }
 .soon-box{ padding:28px 18px; text-align:center; color:var(--ink-3); border:1px dashed var(--rule-2); border-radius:var(--radius) }
+
+/* 읽은 책: 책장, 대표작의 '분석 보기', 책 분석 화면. 그리는 코드는 bookshelf.js, 데이터는 books.js예요. */
+.shelf{ display:grid; gap:12px; margin-top:28px }
+.shelf h2{ font-size:1.2rem; margin:0 }
+.shelf > .note{ margin-top:-6px }
+.shelf-seg{ display:flex; flex-wrap:wrap; gap:6px }
+.tg{ display:inline-flex; align-items:center; gap:6px; min-height:36px; padding:4px 12px; border-radius:999px; border:1px solid var(--rule-2); background:var(--sheet); font-size:.84rem; color:var(--ink-2); white-space:nowrap }
+.tg:hover{ border-color:var(--ink-3); color:var(--ink) }
+.tg[aria-pressed="true"]{ background:var(--ink); color:var(--paper); border-color:var(--ink) }
+.tg .cnt{ font-size:.72rem; opacity:.7; font-variant-numeric:tabular-nums }
+.shelf-list{ display:grid; gap:18px }
+.shelf-group{ display:grid; gap:10px }
+.shelf-h{ display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 10px; margin:0 !important; font-size:1rem }
+.shelf-h .jp{ font-size:.85rem; font-weight:400; color:var(--ink-3) }
+.shelf-go{ justify-self:start; font-size:.88rem; color:var(--accent); text-underline-offset:3px }
+.shelf-cards{ display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,15rem),1fr)); gap:10px }
+.shelf-card{ display:grid; align-content:start; gap:4px; padding:16px; border:1px solid var(--rule); border-radius:var(--radius); background:var(--sheet); text-decoration:none }
+.shelf-card:hover{ border-color:var(--ink-3) }
+.shelf-card .sc-top{ display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:6px }
+.shelf-card .sc-meta{ font-size:.76rem; color:var(--ink-3) }
+.shelf-card .jt{ font-family:var(--font-jp); font-weight:500; font-size:1.1rem; line-height:1.5 }
+.shelf-card .kt{ font-size:.86rem; color:var(--ink-3) }
+.pill{ font-size:.72rem; font-weight:500; line-height:1; padding:5px 9px; border-radius:999px; background:var(--sheet-2); color:var(--ink-2); border:1px solid var(--rule); white-space:nowrap }
+.pill.ready{ background:var(--accent-soft); color:var(--accent); border-color:transparent }
+.book.read{ border-color:var(--accent) }
+.book-go{ justify-self:start; margin-top:8px; display:inline-flex; align-items:center; min-height:32px; font-size:.86rem; font-weight:600; color:var(--accent); text-underline-offset:3px }
+body.reading main > :not(.book-view){ display:none !important }
+.book-page{ display:grid; gap:30px }
+.book-head h1{ font-family:var(--font-jp); font-weight:500; font-size:clamp(1.5rem,5.5vw,2.1rem) }
+.book-intro{ margin-top:12px; padding-top:12px; border-top:1px solid var(--rule); font-size:.93rem; color:var(--ink-2) }
+.stories{ list-style:none; padding:0; display:grid; counter-reset:st }
+.stories li{ counter-increment:st; display:grid; grid-template-columns:2rem minmax(0,1fr); column-gap:6px; padding:12px 0; border-bottom:1px solid var(--rule) }
+.stories li:first-child{ border-top:1px solid var(--rule) }
+.stories li::before{ content:counter(st,decimal-leading-zero); grid-row:span 4; font-weight:600; color:var(--accent); font-variant-numeric:tabular-nums }
+.stories .st-note{ font-size:.9rem; color:var(--ink-2) }
+.stories .st-first{ font-size:.78rem; color:var(--ink-3) }
+.book-page section > p + p{ margin-top:10px }
+.spoiler{ padding:14px 16px; border:1px dashed var(--rule-2); border-radius:var(--radius); background:var(--sheet-2) }
+.spoiler summary{ font-size:.9rem; font-weight:600; color:var(--ink-2); cursor:pointer; min-height:30px }
+.spoiler[open] summary{ margin-bottom:10px }
+.spoiler p{ color:var(--ink-2) }
+.spoiler p + p{ margin-top:10px }
 </style>
 <link rel="stylesheet" href="learning.css">
 
@@ -139,8 +181,8 @@ section > p{ color:var(--ink-2) }
   <p class="lede">자극이 되고 롤모델로 삼고 싶은 작가들을 한 명씩 정리해요. 어떻게 작가가 되었는지, 무엇을 썼는지, 무엇을 배울 수 있는지를 모아 둬요.</p>
 
   <section class="course" aria-labelledby="novel-course-title">
-    <h2 id="novel-course-title">읽고, 비교하고, 직접 써 보기</h2>
-    <ol><li><a href="#c-terms">공통 노트의 용어</a>로 본격·사회파·특수설정을 구별해요.</li><li><a href="#author-comparison">작가 비교</a>에서 지금 배우고 싶은 방법을 고르고, 작가의 핵심·대표작·집필 방식을 읽어요.</li><li>작가별 실습에서 짧은 글을 쓰고, 내 글에 적용한 점을 메모해요.</li></ol>
+    <h2 id="novel-course-title">읽고 비교하기</h2>
+    <ol><li><a href="#c-terms">공통 노트의 용어</a>로 본격·사회파·특수설정을 구별해요.</li><li><a href="#author-comparison">작가 비교</a>에서 지금 배우고 싶은 방법을 고르고, 작가의 핵심·대표작·집필 방식을 읽어요.</li></ol>
     <p>생애와 데뷔 과정은 각 작가의 ‘생애·심화’에서 이어 읽을 수 있어요.</p>
   </section>
 
@@ -447,7 +489,6 @@ section > p{ color:var(--ink-2) }
         <li><h3>인물을 충분히 그릴 분량과 조사를 마련하기</h3><p>『容疑者Xの献身』에서는 사건에 얽힌 인물을 길게 그리고 싶어 장편을 택했다고 해요. 탐정과 맞설 인물의 직업을 구상한 뒤에는 실제 수학자도 만나 보았다고 밝혔어요. 장치에 필요한 지식과 인물의 사고방식을 함께 조사한 사례예요.</p><p class="method-source">본인 발언 요약 · <a href="https://books.bunshun.jp/articles/-/1256" target="_blank" rel="noopener">문예춘추 · 2005-08-20 ↗</a></p></li>
         <li><h3>작가의 계획보다 인물의 선택을 끝까지 따져 보기</h3><p>『沈黙のパレード』를 쓸 무렵에는 인물의 행동과 마음마다 자신이라면 어떻게 할지 철저히 생각했다고 해요. 인물을 진지하게 생각하면 작가 편의대로 움직이지 않으므로, 그 행동이 나왔다면 무슨 일이 있었을지 스스로 수수께끼를 풀며 쓴 부분도 있다고 설명했어요.</p><p class="method-source">본인 발언 요약 · <a href="https://books.bunshun.jp/articles/-/4572?page=2" target="_blank" rel="noopener">문예춘추 · 2018-12-13 공개 ↗</a></p></li>
       </ol>
-      <div class="method-apply"><h3>내 글에 적용 · 이 노트의 연습</h3><p>익숙한 이야기 형식 하나를 고르고, 지금 내가 궁금한 사람의 마음을 한 문장으로 적어요. 예: “시간을 되돌릴 수 있지만, 돌아갈 때마다 다른 사람의 기억에서는 사라진다면?” 그 질문이 인물의 선택으로 드러나는 200~400자 장면을 써 보세요.</p><h4>쓴 뒤에 확인할 질문</h4><ul><li>설정을 설명하는 대신 인물이 선택하는 장면을 썼나요?</li><li>배경의 구체적인 모습이 인물의 마음이나 행동에 연결되나요?</li></ul><p class="source-note">작가가 직접 제시한 과제와 구분한 학습 제안이에요. 아래 실습 메모에 적용한 결과를 남겨 보세요.</p></div>
       <details class="method-audit"><summary>기존 설명을 대조한 결과</summary><p>기존의 “히가시노는 트릭보다 동기에 힘을 싣는다”는 문장은 작풍에 대한 평가예요. 본인의 보편적 집필 원칙으로 인용하지 않아요. 위 방법은 2002·2005·2018년 본인 인터뷰의 구체적인 작품 사례로 보강했어요. 일정한 플롯 작성·퇴고 순서는 이 자료로 확인되지 않아 덧붙이지 않았어요.</p><p class="source-note">집필 방법 대조: 2026-10-24. 작가·편집자·이 노트의 해석을 구분했어요.</p></details>
     </section>
 
@@ -513,7 +554,6 @@ section > p{ color:var(--ink-2) }
         <li><h3>범인을 좁히는 근거와 탐정의 참여 이유 만들기</h3><p>우연한 실언 하나로 범인을 특정하기보다 소거법을 선호한다고 해요. 탐정도 단순한 호기심보다 자신을 보호해야 하는 이유가 있어야 한다고 설명했어요. <a href="https://shosetsu-maru.com/interviews/authors/337" target="_blank" rel="noopener">2017년 인터뷰 ↗</a> 『魔眼の匣の殺人』에서는 독자가 떠올릴 반론까지 예상하며 조건을 여러 번 바꿨다고 해요.</p><p class="method-source">본인 발언 요약 · <a href="https://book.asahi.com/article/12351305" target="_blank" rel="noopener">『魔眼の匣の殺人』 설계 · 2019-05-23 ↗</a></p></li>
         <li><h3>작품의 속도에 맞춰 정보량 바꾸기</h3><p>『0秒前の彼女』에서는 계속 이동하는 주인공 때문에 정보를 정리하는 장면을 넣기 어려웠어요. 그래서 핵심 수수께끼가 흐려지지 않도록 정보를 줄이고, 적은 장치로 앞 장면의 의미가 달라지게 썼다고 해요. 인물의 고뇌를 깊게 다루는 것도 이번 작품의 과제였어요.</p><p class="method-source">본인 발언 요약 · <a href="https://realsound.jp/book/2026/10/post-2547729.html" target="_blank" rel="noopener">Real Sound · 2026-10-15 · PR 인터뷰 ↗</a></p></li>
       </ol>
-      <div class="method-apply"><h3>내 글에 적용 · 이 노트의 연습</h3><p>세 명의 용의자와 “한 번만 열리는 문” 같은 조건 하나를 정해요. 범인만 가능한 행동을 정한 뒤, 다른 두 사람이 불가능한 이유를 독자에게 보여 주세요. 초고에서는 지금 풀어야 할 질문과 상관없는 설명 한 문단을 덜어 보세요.</p><h4>쓴 뒤에 확인할 질문</h4><ul><li>단서를 보여 준 시점에 독자도 다른 용의자를 제외할 수 있나요?</li><li>분량 비율을 참고하되, 사건을 그 위치에 둔 이유를 내 이야기로 설명할 수 있나요?</li></ul><p class="source-note">작가가 직접 제시한 과제와 구분한 학습 제안이에요. 아래 실습 메모에 적용한 결과를 남겨 보세요.</p></div>
       <details class="method-audit"><summary>기존 설명을 대조한 결과</summary><p>기존의 “4분의 1까지 사건을 일으킨다”는 고정 비율과 “논리 다음에 인물”이라는 보편 순서는 단정하지 않도록 고쳤어요. <a href="https://shosetsu-maru.com/interviews/authors/337" target="_blank" rel="noopener">2017년 인터뷰 ↗</a>에서는 트릭 배치 순서를 조정했다고 했고, <a href="https://realsound.jp/book/2026/10/post-2547729.html" target="_blank" rel="noopener">2026년 인터뷰 ↗</a>에서는 정보량과 인물 묘사를 바꾸었다고 해요. 구조 분석은 참고 방법이며 모든 소설의 공식은 아니에요.</p><p class="source-note">집필 방법 대조: 2026-10-24. 작가·편집자·이 노트의 해석을 구분했어요.</p></details>
     </section>
 
@@ -588,15 +628,19 @@ section > p{ color:var(--ink-2) }
     <section class="writing-methods" aria-labelledby="shirai-methods-title">
       <p class="eyebrow">작가에게 직접 듣는 집필 방법</p>
       <h2 id="shirai-methods-title">작품을 쓰는 과정</h2>
-      <p class="method-intro">본인 인터뷰에서 확인한 방법을 주제별로 묶었어요. 특정 작품의 경험과 발언 당시의 생각이며, 모든 작품에 적용되는 고정 순서는 아니에요. 아래는 원문의 한국어 요약이에요.</p>
+      <p class="method-intro">2017년부터 2024년까지의 본인 인터뷰, 편집자와의 대담, 본인 에세이에서 확인한 방법을 작품이 만들어지는 순서대로 묶었어요. 각 카드는 본인 발언의 한국어 요약, 이 노트의 풀이, 작품을 읽을 때 볼 곳으로 나뉘어요. 특정 작품의 경험과 발언 당시의 생각이라 모든 작품에 똑같이 적용되는 고정 순서는 아니에요.</p>
+      <ol class="method-flow" aria-label="집필 단계"><li>착상</li><li>세계</li><li>재료</li><li>개연성</li><li>플롯</li><li>형식</li><li>퇴고</li><li>묶기</li></ol>
       <ol class="method-cards">
-        <li><h3>하고 싶은 추리에서 필요한 세계를 역산하기</h3><p>작품마다 먼저 하고 싶은 미스터리의 구상을 정하고 필요한 설정을 만든다고 해요. 『名探偵のいけにえ』에서는 다중 추리가 성립할 고립된 공동체를, 『死体の汁を啜れ』에서는 여러 시체 아이디어가 들어갈 도시를 마련했다고 설명했어요.</p><p class="method-source">본인 발언 요약 · <a href="https://j-nbooks.jp/article/244/" target="_blank" rel="noopener">실업지일본사 · 2025-05-02 공개 / 2024년 답변 ↗</a></p></li>
-        <li><h3>트릭을 실제 사건의 흐름 안에 맞추기</h3><p>실제 사건에서 트릭을 얻는 일은 거의 없다고 했어요. 오히려 집필 시간의 상당 부분을 동기, 흉기의 입수, 피해자의 동선, 증거 은폐가 맞물리도록 고민하는 데 쓴다고 해요. 실제 범죄에 관한 지식은 부족한 세부를 채울 때 도움이 된다고 설명했어요.</p><p class="method-source">본인 발언 요약 · <a href="https://j-nbooks.jp/article/244/" target="_blank" rel="noopener">착상과 조사에 관한 답변 · 2024년 ↗</a></p></li>
-        <li><h3>다중 해결은 각 해석의 전제까지 미리 설계하기</h3><p>『名探偵のいけにえ』에서는 주요 인물과 설정, 다중 해결까지 플롯에 들어 있었고 작은 인물은 쓰며 늘었다고 해요. 세계의 법칙이 바뀐 것이 아니라 사람들의 인식이 다르다는 점도 직접 구별했어요.</p><p class="method-source">본인 발언 요약 · <a href="https://note.com/giallo_kobunsha/n/n156e8aee9aa4" target="_blank" rel="noopener">고분샤 대담 · 2022-11-30 수록 / 2023-04-21 공개 ↗</a></p></li>
-        <li><h3>퇴고에서는 독자가 기억할 단서의 강약 조절하기</h3><p>정보가 많아 독자가 전부 기억하지 못하므로, 초고 뒤 편집자와 어떤 복선을 더 또렷하게 할지 많이 의논했다고 해요. 동기에 관한 추론은 사건의 논리와 성격이 달라 관련 요소를 더하고 빼며 균형을 맞췄다고 설명했어요.</p><p class="method-source">본인 발언 요약 · <a href="https://note.com/giallo_kobunsha/n/n156e8aee9aa4" target="_blank" rel="noopener">초고 이후의 수정 · 2023-04-21 공개 ↗</a></p></li>
+        <li><h3>착상 · 쓰고 싶은 추리를 먼저 정하기</h3><p>2017년에는 “먼저 써 보고 싶은 아이디어가 있고, 거기에 맞춰 설정을 짜는 순서”라고 말했어요. 2018년에도 어떤 소설로 만들지, 어떤 트릭과 논리를 쓰고 싶은지를 머릿속에서 키운 뒤 그걸 재미있게 만들 설정을 생각한다고 했어요. 2024년 답변에서도 작품마다 하고 싶은 미스터리의 구상을 먼저 정한다고 해요. 『名探偵のいけにえ』(『명탐정의 제물』)에서는 다중 추리가 성립할 고립된 공동체를, 『死体の汁を啜れ』(국내 미출간 · ‘시체의 즙을 마셔라’)에서는 여러 시체 아이디어가 들어갈 도시를 마련했다고 설명했어요.</p><p class="method-note"><b>풀이</b>10년 가까이 같은 순서를 말해 왔어요. 다만 2017년에는 설정에서 떠올린 장치도 있어서 “어느 쪽이 먼저라고 딱 잘라 말할 수는 없다”고도 했어요. 원칙이라기보다 가장 자주 쓰는 출발점으로 읽어요.</p><p class="method-read"><b>읽을 때 볼 곳</b>그 편에서 작가가 가장 먼저 떠올렸을 ‘추리 한 수’는 무엇일까요? 특수설정을 지워도 남는 논리가 있나요?</p><p class="method-source">본인 발언 요약 · <a href="https://kadobun.jp/feature/interview/36.html" target="_blank" rel="noopener">카도분 인터뷰 · 2017-09-13 ↗</a> · <a href="https://ton-press.blogspot.com/2018/04/2018_16.html" target="_blank" rel="noopener">도호쿠대학 신문 · 2018-04-16 ↗</a> · <a href="https://j-nbooks.jp/article/244/" target="_blank" rel="noopener">실업지일본사 · 2024년 답변 / 2025-05-02 공개 ↗</a></p></li>
+        <li><h3>세계 · 특수설정은 무대가 아니라 도구</h3><p>2017년에는 특수설정을 무대로 쓰는 게 아니라 미스터리 아이디어를 실현하는 수단으로 쓰는 것이 중요하다고 했어요. 고르는 기준은 자신이 독자로서 읽고 싶은 설정인지예요. 데뷔작 『人間の顔は食べづらい』(『인간의 얼굴은 먹기 힘들다』)의 식용 인간 설정은 해외의 푸아그라 생산 영상을 보다가 떠올렸다고 해요. 2022년 토크 이벤트에서는 쓰고 싶은 수수께끼 풀이의 기법이나 틀이 먼저 있고, 그걸 더 비틀기 위해 기발한 설정을 나중에 떠올린다고 말했다고 전해져요. 그로테스크한 것을 그리려고 쓰는 건 아니라고도 했대요.</p><p class="method-note"><b>풀이</b>잔혹하고 기괴한 세계는 목적이 아니라 결과예요. 추리를 한 번 더 비틀 규칙을 찾다 보니 세계가 이상해진다고 볼 수 있어요. 『名探偵のいけにえ』(『명탐정의 제물』)의 ‘특수조건’, 곧 세계의 법칙은 그대로이고 사람들의 인식만 다르다는 설정도 같은 생각에서 나온 변형이에요.</p><p class="method-read"><b>읽을 때 볼 곳</b>그 편의 설정이 추리에 실제로 쓰이나요, 분위기에만 쓰이나요? 설정의 규칙은 언제, 어떻게 독자에게 알려지나요?</p><p class="method-source">본인 발언 요약 · <a href="https://kadobun.jp/feature/interview/36.html" target="_blank" rel="noopener">카도분 인터뷰 · 2017-09-13 ↗</a> · <a href="https://note.com/giallo_kobunsha/n/n2832dd24ea1e" target="_blank" rel="noopener">고분샤 · 토크 이벤트 보고(2022-07-17 개최, 와카바야시 후미 글) ↗</a></p></li>
+        <li><h3>재료 · 실제 사건은 트릭이 아니라 무대와 세부로</h3><p>2018년에는 역사적 사실이나 현실의 사건을 바탕으로 작품을 만들지는 않지만, 사건이나 뉴스를 모아 두었다가 조합하기도 한다고 했어요. 2024년 답변에서는 실제 사건에서 트릭을 얻는 일은 거의 없고, 실제 범죄에 관한 지식은 부족한 세부를 채울 때 도움이 된다고 했어요. 『名探偵のいけにえ』(『명탐정의 제물』)는 실재 교단 ‘인민사원’을 모델로 삼았는데, 트릭과 잘 맞고 남미에 집단 마을을 만든 점이 본격 미스터리의 무대로 매력적이었다고 해요.</p><p class="method-note"><b>풀이</b>실제 사건은 ‘해답’이 아니라 ‘배경과 틀’로 들어와요. 트릭은 직접 만들고, 현실은 그 트릭이 놓일 땅과 세부를 빌려 줘요.</p><p class="method-read"><b>읽을 때 볼 곳</b>실제 역사나 사건을 떠올리게 하는 배경이 있나요? 있다면 그 현실은 트릭이 아니라 어디에 쓰였나요?</p><p class="method-source">본인 발언 요약 · <a href="https://ton-press.blogspot.com/2018/04/2018_16.html" target="_blank" rel="noopener">도호쿠대학 신문 · 2018-04-16 ↗</a> · <a href="https://j-nbooks.jp/article/244/" target="_blank" rel="noopener">실업지일본사 · 2024년 답변 ↗</a> · <a href="https://note.com/giallo_kobunsha/n/n156e8aee9aa4" target="_blank" rel="noopener">고분샤 대담 · 2023-04-21 공개 ↗</a></p></li>
+        <li><h3>개연성 · 트릭을 사건의 흐름 안에 맞추기</h3><p>2024년 답변에서 집필 시간의 상당 부분을 동기, 흉기의 입수, 피해자의 동선, 증거 은폐가 서로 맞물리도록 고민하는 데 쓴다고 했어요.</p><p class="method-note"><b>풀이</b>트릭을 떠올리는 것보다, 그 트릭이 실제로 일어날 수 있게 앞뒤를 잇는 일에 시간을 더 쓴다는 말이에요. 범인이 왜 하필 그 방법을 골랐는지, 도구를 어떻게 손에 넣었는지까지가 추리의 재료가 돼요.</p><p class="method-read"><b>읽을 때 볼 곳</b>범인이 그 방법을 고른 이유와 도구를 손에 넣은 경로가 설명되나요? 그 설명이 추리의 단서로도 쓰이나요?</p><p class="method-source">본인 발언 요약 · <a href="https://j-nbooks.jp/article/244/" target="_blank" rel="noopener">실업지일본사 · 착상과 조사에 관한 답변 · 2024년 ↗</a></p></li>
+        <li><h3>플롯 · 다중 해결까지 쓰기 전에 짜기</h3><p>『名探偵のいけにえ』(『명탐정의 제물』)는 ‘종교를 믿는 사람의 세계관에 따라 사건의 해결이 달라진다’는 다중 해결 아이디어를 오래 품고 있다가, 실재 사건을 끌어들이는 방식과 합쳐 플롯을 만들었다고 해요. 주요 인물과 설정, 다중 해결까지 플롯에 들어 있었고 작은 인물만 쓰면서 늘었대요. 편집자는 플롯 단계에서 어떤 인물의 동기가 설득력 있는지, 신자에게 기적이 어떻게 보이는지를 꼼꼼히 물었고, 원고는 끝까지 다 쓴 뒤에 보여 줬다고 해요. 2017년에는 다중 해결의 매력을 ‘해결이면서 그 자체로 또 수수께끼가 되는 점’이라고 말했어요.</p><p class="method-note"><b>풀이</b>해답이 여러 번 뒤집히려면 틀린 해답도 그럴듯해야 해요. 틀린 추리마다 무엇을 믿고 있는지, 곧 전제를 미리 정해 두어야 구조가 무너지지 않아요. 그래서 다중 해결은 쓰면서가 아니라 플롯에서 정해져요.</p><p class="method-read"><b>읽을 때 볼 곳</b>해답이 몇 번 나오나요? 앞의 해답은 어떤 전제 때문에 틀렸고, 그 전제를 깨는 단서는 어디에 있었나요?</p><p class="method-source">본인 발언 요약 · <a href="https://note.com/giallo_kobunsha/n/n156e8aee9aa4" target="_blank" rel="noopener">고분샤 대담 · 2022-11-30 수록 / 2023-04-21 공개 ↗</a> · <a href="https://kadobun.jp/feature/interview/36.html" target="_blank" rel="noopener">카도분 인터뷰 · 2017-09-13 ↗</a></p></li>
+        <li><h3>형식 · 아이디어가 가장 살아나는 쓰는 방식 고르기</h3><p>2023년 대담에서 작품마다 미스터리 아이디어가 어떤 쓰는 방식일 때 가장 살아나는지를 생각한다고 말했어요. 2026년에는 책의 판형 자체를 이용한 장치를 생각해, A7 크기의 아주 작은 책 『本を読むのが超速い人の頭の中ってどうなってんの殺人事件』(국내 미출간 · ‘책을 엄청 빨리 읽는 사람의 머릿속은 어떻게 돼 있는 거야 살인사건’)을 냈어요. 2022년 토크 이벤트에서는 이야기가 처진다 싶으면 곧바로 인물을 죽여 버리는 버릇이 있다고 말했다고 전해져요.</p><p class="method-note"><b>풀이</b>시점, 화자, 길이, 사건이 일어나는 시점, 심지어 책의 모양까지 아이디어에 맞춰 바꾼다는 말이에요. 단편 하나하나도 ‘이 추리에는 어떤 화자와 길이가 맞을까’를 따로 고른 결과로 읽을 수 있어요.</p><p class="method-read"><b>읽을 때 볼 곳</b>화자는 누구이고, 왜 그 사람이어야 했을까요? 사건은 이야기의 어디쯤에서 일어나고, 해결은 몇 쪽을 차지하나요?</p><p class="method-source">본인 발언 요약 · <a href="https://note.com/giallo_kobunsha/n/n156e8aee9aa4" target="_blank" rel="noopener">고분샤 대담 · 2023-04-21 공개 ↗</a> · <a href="https://shiraitomoyuki.com/archives/1118" target="_blank" rel="noopener">작가 공식 사이트 · 2026년 신작 안내 ↗</a> · <a href="https://note.com/giallo_kobunsha/n/n2832dd24ea1e" target="_blank" rel="noopener">고분샤 · 토크 이벤트 보고 · 2022년 ↗</a></p></li>
+        <li><h3>퇴고 · 독자가 기억할 단서의 밝기 조절하기</h3><p>『名探偵のいけにえ』(『명탐정의 제물』)는 초고 뒤에 큰 구성 변경은 없었고, 주로 복선의 강약을 조절했다고 해요. 정보가 많아 독자가 전부 기억하지 못하므로 어떤 복선을 더 또렷하게 할지 편집자와 많이 의논했고, 동기에 관한 추론은 사건의 논리와 성격이 달라 관련 요소를 더하고 빼며 균형을 맞췄다고 설명했어요. 2017년에는 출간 전의 고쳐 쓰기가 즐거웠다고 했고, 2024년 에세이에서는 교정에서 지적받은 묘사 하나를 고치느라 수정안을 하나씩 따지다 해가 저문 날을 적었어요.</p><p class="method-note"><b>풀이</b>복선은 ‘심었느냐’보다 ‘독자가 기억하느냐’가 중요해요. 퇴고는 새 장치를 더하는 단계가 아니라, 이미 있는 단서의 밝기를 맞추는 단계로 쓰여요.</p><p class="method-read"><b>읽을 때 볼 곳</b>다 읽고 돌아봤을 때 결정적인 단서는 얼마나 눈에 띄게 놓여 있었나요? 일부러 흐리게 둔 단서는 무엇인가요?</p><p class="method-source">본인 발언 요약 · <a href="https://note.com/giallo_kobunsha/n/n156e8aee9aa4" target="_blank" rel="noopener">고분샤 대담 · 초고 이후의 수정 ↗</a> · <a href="https://kadobun.jp/feature/interview/36.html" target="_blank" rel="noopener">카도분 인터뷰 · 2017-09-13 ↗</a> · <a href="https://www.bookbang.jp/review/article/790130" target="_blank" rel="noopener">본인 에세이 · 2024-12-16 ↗</a></p></li>
+        <li><h3>묶기 · 작품집은 하나의 재료로 여러 요리를</h3><p>2018년 작품집 『少女を殺す100の方法』(국내 미출간 · ‘소녀를 죽이는 100가지 방법’)은 여자아이와 수수께끼 풀이가 나오는 이야기를 좋아해서, ‘젊은 여자 스무 명이 죽는 수수께끼를 푸는 이야기’ 다섯 편을 써서 묶었다고 해요. 2021년 작품집 『ミステリー・オーバードーズ』(국내 미출간 · ‘미스터리 오버도즈’)는 ‘먹는 것, 무언가를 몸에 들이는 것’이 테마인데, 같은 것만 먹이면 금방 질리니 코스 요리처럼 여러 가지를 먹이기로 했대요. 『ぼくは化け物きみは怪物』(『나는 괴이 너는 괴물』)의 다섯 편은 2022년 1월부터 2024년 1월 사이 고분샤의 미스터리 잡지 《잘로》와 앤솔러지에 따로 실렸던 단편이에요. 한 편은 처음 실린 곳을 확인하지 못했어요. 이 책을 묶은 테마에 관한 작가 본인의 설명도 아직 찾지 못했어요.</p><p class="method-note"><b>풀이</b>앞의 두 작품집은 테마 하나를 정하고 편마다 다르게 요리했어요. 『ぼくは化け物きみは怪物』(『나는 괴이 너는 괴물』)는 작가가 밝힌 테마가 없으니, 제목의 ‘괴이’와 ‘괴물’이 다섯 편을 잇는 실인지는 읽는 사람이 찾아야 할 부분이에요.</p><p class="method-read"><b>읽을 때 볼 곳</b>다섯 편에 공통으로 흐르는 재료는 무엇일까요? 편마다 ‘괴이’와 ‘괴물’은 각각 누구일까요?</p><p class="method-source">본인 에세이 요약 · <a href="https://www.bookbang.jp/review/article/546101" target="_blank" rel="noopener">『少女を殺す100の方法』 신간 에세이 · 2018년 ↗</a> · <a href="https://honsuki.jp/pickup/46919/index.html" target="_blank" rel="noopener">『ミステリー・オーバードーズ』 신간 에세이 · 2021-05-28 ↗</a> · <a href="https://ja.wikipedia.org/wiki/%E7%99%BD%E4%BA%95%E6%99%BA%E4%B9%8B" target="_blank" rel="noopener">작품 목록 · 수록작 초출 ↗</a></p></li>
       </ol>
-      <div class="method-apply"><h3>내 글에 적용 · 이 노트의 연습</h3><p>같은 단서가 서로 다른 가설을 뒷받침하도록 두 가지 설명을 적어요. 각 가설이 믿는 전제를 따로 쓰고, 마지막에 그 차이를 가를 단서 하나를 더해요. 모든 가설이 똑같이 옳도록 만들기보다 어떤 전제가 틀렸는지 확인해 보세요.</p><h4>쓴 뒤에 확인할 질문</h4><ul><li>독자가 각 인물이 믿는 전제를 구별할 수 있나요?</li><li>수정하면서 단서만 남거나 단서의 회수만 남은 곳은 없나요?</li></ul><p class="source-note">작가가 직접 제시한 과제와 구분한 학습 제안이에요. 아래 실습 메모에 적용한 결과를 남겨 보세요.</p></div>
-      <details class="method-audit"><summary>기존 설명을 대조한 결과</summary><p>“실제 사건·뉴스를 모아 트릭을 조합한다”는 기존 설명은 <a href="https://j-nbooks.jp/article/244/" target="_blank" rel="noopener">2024년 본인 답변 ↗</a>과 맞지 않아 고쳤어요. “특수조건”의 구별은 작가가 설명했지만, 그 띠지 용어를 떠올린 사람은 편집자 아라이예요. 편집자의 질문과 제안을 모두 작가 자신의 발언으로 묶지 않았어요.</p><p class="source-note">집필 방법 대조: 2026-10-24. 작가·편집자·이 노트의 해석을 구분했어요.</p></details>
+      <details class="method-audit"><summary>자료를 대조한 결과</summary><p>2018년의 “사건·뉴스를 모아 조합하기도 한다”와 2024년의 “트릭은 실제 사건에서 거의 얻지 않는다”는 서로 다른 것을 말해요. 앞의 것은 재료를 모으는 습관, 뒤의 것은 트릭의 출처에 관한 말이라 둘 다 실었어요. ‘특수조건’이라는 띠지 문구를 떠올린 사람은 편집자 아라이예요. 편집자의 질문과 제안은 작가 자신의 발언으로 묶지 않았어요.</p><p>2022년 토크 이벤트의 발언은 진행자 와카바야시 후미가 쓴 보고문으로 전해진 것이라 ‘전해져요’로 구분했어요. 아사히신문 서평 사이트의 인터뷰·에세이 4편과 『ミステリマガジン』(미스터리 매거진) 2026년 10월호 인터뷰는 이번에 원문을 읽지 못해 반영하지 않았어요.</p><p class="source-note">집필 방법 대조: 2026-10-26. 작가·편집자·전해 들은 발언·이 노트의 해석을 구분했어요.</p></details>
     </section>
 
     <section>
@@ -675,7 +719,6 @@ section > p{ color:var(--ink-2) }
         <li><h3>독자가 예상하는 패턴과 인물의 반응 조절하기</h3><p>『invert』에서는 앞의 두 편으로 익숙해진 형식을 마지막 편에서 바꾸려 했다고 해요. 범인들의 성격도 달리해 같은 방식이 매번 통하지 않도록 조절했어요. 연속해서 읽을 때 생기는 반복감을 의식한 선택이에요.</p><p class="method-source">본인 발언 요약 · <a href="https://realsound.jp/book/2021/07/post-826269_2.html" target="_blank" rel="noopener">『invert』의 구성 · 2021-07-31 ↗</a></p></li>
         <li><h3>초고 이후의 편집도 집필의 일부로 보기</h3><p>『medium』은 첫 이야기와 그 해명을 약 일주일에 쓰고, 전체 초고는 약 두 달 만에 마쳤어요. 이후 출간까지 반년이 걸렸고 수정 요청에 따라 원고를 약 30쪽 줄였다고 해요. 초고 속도와 완성까지의 시간은 구별해 읽어요.</p><p class="method-source">본인 발언 요약 · <a href="https://news.kodansha.co.jp/books/8090" target="_blank" rel="noopener">초고와 출간 사이의 수정 · 2020-01-09 ↗</a></p></li>
       </ol>
-      <div class="method-apply"><h3>내 글에 적용 · 이 노트의 연습</h3><p>같은 탐정이 성격이 다른 상대 두 명에게 질문하는 장면을 각각 써요. 첫 상대에게 통한 질문 방식이 두 번째에게는 통하지 않게 해 보고, 탐정이 그 차이를 알아차릴 작은 단서를 앞에 심어 보세요.</p><h4>쓴 뒤에 확인할 질문</h4><ul><li>반전의 결말을 미리 예상해도 그곳에 이르는 논리가 흥미로운가요?</li><li>숨긴 정보가 아니라 이미 보여 준 말과 행동으로 다시 설명할 수 있나요?</li></ul><p class="source-note">작가가 직접 제시한 과제와 구분한 학습 제안이에요. 아래 실습 메모에 적용한 결과를 남겨 보세요.</p></div>
       <details class="method-audit"><summary>기존 설명을 대조한 결과</summary><p>기존의 “『medium』의 플롯 설명은 서로 엇갈린다”는 문장은, 다른 인터뷰의 원문을 다시 확인할 수 없어 현재 검증된 <a href="https://news.kodansha.co.jp/books/8090" target="_blank" rel="noopener">2020년 본인 답변 ↗</a>을 기준으로 고쳤어요. 약 일주일은 “첫 두 화”가 아니라 “제1화와 그 해명”에 관한 말이에요. 띠지 “すべてが、伏線。”의 선정은 이 대담에서 편집자가 설명한 내용이에요.</p><p>고단샤 시리즈 특설 페이지는 확인 당시 점검 안내로 연결되어 근거 목록을 접근 가능한 원문으로 바꿨어요.</p><p class="source-note">집필 방법 대조: 2026-10-24. 작가·편집자·이 노트의 해석을 구분했어요.</p></details>
     </section>
 
@@ -752,7 +795,6 @@ section > p{ color:var(--ink-2) }
         <li><h3>내가 익숙한 이야기 구조를 자각하기</h3><p>만화·드라마·영화도 미스터리 구조로 읽고, 글을 쓸 때도 사건·피해자·가해자·해결의 구도로 생각한다고 해요. 다만 소설을 써 갈수록 사람을 피해자와 가해자로만 나눌 수 없음을 더 파고들었다고 설명했어요.</p><p class="method-source">본인 발언 요약 · <a href="https://kai-you.net/article/80332/page/3" target="_blank" rel="noopener">사카모토 마아야와의 대담 · 2021년 ↗</a></p></li>
         <li><h3>새 매체를 만났을 때 표현 선택을 다시 판단하기</h3><p>『ウェルテルタウンでやすらかに』를 오디오북으로 먼저 발표하면서 동음이의어가 소리로는 구별되지 않을 수 있다는 점을 의식했어요. 처음에는 줄일까 생각했지만, 새 매체에 도전하면서 표현의 힘을 줄이고 싶지는 않아 자유롭게 썼다고 해요.</p><p class="method-source">본인 발언 요약 · <a href="https://mantan-web.jp/article/20230220dog00m200056000c.html" target="_blank" rel="noopener">MANTANWEB 메일 인터뷰 · 2023-02-23 ↗</a></p></li>
       </ol>
-      <div class="method-apply"><h3>내 글에 적용 · 이 노트의 연습</h3><p>아래 실습의 대화 열 줄을 먼저 써요. 인물의 마음을 설명한 문장 하나를 지운 뒤에도 갈등이 전해지는지 읽어 보세요. 마지막에는 소리 내어 읽고, 눈으로만 구별되는 말이 있다면 의도한 효과인지 판단해 보세요.</p><h4>쓴 뒤에 확인할 질문</h4><ul><li>생략한 정보 때문에 이해가 막히는 곳과, 상상할 여지를 주는 곳을 구별했나요?</li><li>지금 장면에서 쓸 수 있는 좋은 아이디어를 뒤로 미루고 있지는 않나요?</li></ul><p class="source-note">작가가 직접 제시한 과제와 구분한 학습 제안이에요. 아래 실습 메모에 적용한 결과를 남겨 보세요.</p></div>
       <details class="method-audit"><summary>기존 설명을 대조한 결과</summary><p>기존의 “사건 전이 3분의 2여도 좋다”, “『少女不十分』부터 플롯을 쓰지 않는다”, “망각탐정만 재독하지 않는다”는 세부 규칙은 다빈치 연속 인터뷰 원문에 현재 접근할 수 없어 이번 대조에서 확인을 보류했어요. 확인된 집필법에서는 제외하고, 접근 가능한 본인 인터뷰로 다시 구성했어요.</p><p>2010년의 “마지막 한 권”이라는 발언을 현재까지 변하지 않은 원칙으로 단정하지 않아요. 속필이나 특정 집필 일수도 초보자가 따라야 할 목표로 삼지 않았어요.</p><p class="source-note">집필 방법 대조: 2026-10-24. 작가·편집자·이 노트의 해석을 구분했어요.</p></details>
     </section>
 
@@ -780,4 +822,6 @@ section > p{ color:var(--ink-2) }
   </div>
 </main>
 
+<script src="books.js"></script>
+<script src="bookshelf.js"></script>
 <script src="learning.js"></script>
