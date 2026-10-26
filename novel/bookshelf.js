@@ -91,12 +91,57 @@
       });
       s.append(ol); art.append(s);
     }
+    // 수록작별 시놉시스: 인물·배경·세계관·컨셉·도입은 펼쳐 두고, 추리와 진상만 접어요.
+    if ((b.stories || []).some(st => st.cast || st.world)) {
+      const s = el('section'); s.append(el('h2', '', '수록작별 시놉시스'));
+      if (b.synNote) s.append(el('p', 'note', b.synNote));
+      b.stories.forEach((st, i) => {
+        if (!st.cast && !st.world) return;
+        const box = el('article', 'syn'), dl = el('dl', 'syn-facts');
+        box.append(el('h3', '', String(i + 1).padStart(2, '0') + ' · ' + st.kt));
+        if (st.cast && st.cast.length) {
+          const ul = el('ul', 'syn-cast');
+          st.cast.forEach(([name, who]) => { const li = el('li'); li.append(el('b', '', name), el('span', '', who)); ul.append(li); });
+          const dd = el('dd'); dd.append(ul); dl.append(el('dt', '', '등장인물'), dd);
+        }
+        [['배경', st.setting], ['세계관', st.world], ['핵심 컨셉', st.concept], ['사건의 시작', st.plot]].forEach(([k, v]) => {
+          if (v) dl.append(el('dt', '', k), el('dd', '', v));
+        });
+        box.append(dl);
+        if (st.twist || (st.solve && st.solve.length)) {
+          const d = el('details', 'spoiler'), ol = el('ol', 'syn-solve');
+          d.append(el('summary', '', '반전과 진상 · 펼쳐 보기'));
+          if (st.twist) { const p = el('p', 'syn-twist'); p.append(el('b', '', '반전'), document.createTextNode(st.twist)); d.append(p); }
+          (st.solve || []).forEach(t => ol.append(el('li', '', t)));
+          if (ol.children.length) d.append(ol);
+          box.append(d);
+        }
+        s.append(box);
+      });
+      art.append(s);
+    }
     if (b.analysis && b.analysis.length) {
       b.analysis.forEach(part => {
         const s = el('section'); s.append(el('h2', '', part.h));
         const body = part.spoiler ? el('details', 'spoiler') : s;
         if (part.spoiler) { body.append(el('summary', '', '줄거리와 해결이 나와요 · 펼쳐 보기')); s.append(body); }
         (part.body || []).forEach(t => { const p = el('p'); p.innerHTML = t; body.append(p); });
+        // 작품별 흐름: 한 줄 요약 → 첫 아이디어에서 완성까지의 단계 → 근거.
+        (part.traces || []).forEach(t => {
+          const box = el('div', 'syn trace'), ol = el('ol', 'trace-steps');
+          box.append(el('h3', '', t.h));
+          if (t.line) { const p = el('p', 'syn-twist'); p.append(el('b', '', '한 줄로'), document.createTextNode(t.line)); box.append(p); }
+          (t.steps || []).forEach(([k, v]) => { const li = el('li'), tx = el('span'); tx.innerHTML = v; li.append(el('span', 'pill', k), tx); ol.append(li); });
+          box.append(ol);
+          if (t.basis) box.append(el('p', 'note', t.basis));
+          body.append(box);
+        });
+        (part.groups || []).forEach(g => {
+          const box = el('div', 'syn'), dl = el('dl', 'syn-facts');
+          box.append(el('h3', '', g.h));
+          g.items.forEach(([k, v]) => { const dd = el('dd'); dd.innerHTML = v; dl.append(el('dt', '', k), dd); });
+          box.append(dl); body.append(box);
+        });
         art.append(s);
       });
     }
