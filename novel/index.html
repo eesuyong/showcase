@@ -113,6 +113,10 @@ section > p{ color:var(--ink-2) }
 .whys{ list-style:none; padding:0; display:grid; gap:10px }
 .whys li{ display:grid; gap:4px; padding:14px 16px; border-left:3px solid var(--accent); border-radius:0 var(--radius) var(--radius) 0; background:var(--sheet) }
 .whys span{ font-size:.92rem; color:var(--ink-2) }
+.influences{ margin:4px 0 0; padding-left:1.1em; display:grid; gap:6px; font-size:.88rem; color:var(--ink-2) }
+.whys .influences li{ display:list-item; padding:0; border:0; border-radius:0; background:none }
+.influences b{ color:var(--ink); margin-right:6px }
+.whys .influence-note{ font-size:.84rem; color:var(--ink-3) }
 .turn{ display:grid; gap:8px; margin-top:12px; padding:16px; border-radius:var(--radius); background:var(--accent-soft) }
 .turn p{ font-size:.94rem }
 .compare{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr)); gap:10px; margin-top:12px }
@@ -153,26 +157,69 @@ section > p{ color:var(--ink-2) }
 .shelf-card .kt{ font-size:.86rem; color:var(--ink-3) }
 .pill{ font-size:.72rem; font-weight:500; line-height:1; padding:5px 9px; border-radius:999px; background:var(--sheet-2); color:var(--ink-2); border:1px solid var(--rule); white-space:nowrap }
 .pill.ready{ background:var(--accent-soft); color:var(--accent); border-color:transparent }
+.proc-tools{ margin-top:12px; display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; font-size:.9rem }
+.proc-tools b{ font-size:.78rem; color:var(--ink-3) }
+.proc-tools a{ font-weight:600; color:var(--accent); text-underline-offset:3px }
+.proc-link{ margin-top:10px; font-size:.9rem; font-weight:600 }
+.proc-link a{ color:var(--accent); text-underline-offset:3px }
+.pill.mine{ background:transparent; color:var(--accent); border-color:var(--accent) }
 .book.read{ border-color:var(--accent) }
 .book-go{ justify-self:start; margin-top:8px; display:inline-flex; align-items:center; min-height:32px; font-size:.86rem; font-weight:600; color:var(--accent); text-underline-offset:3px }
 body.reading main > :not(.book-view){ display:none !important }
-.book-page{ display:grid; gap:30px }
+.book-page{ display:grid; grid-template-columns:minmax(0,1fr); gap:30px }
 .book-head h1{ font-family:var(--font-jp); font-weight:500; font-size:clamp(1.5rem,5.5vw,2.1rem) }
 .book-intro{ margin-top:12px; padding-top:12px; border-top:1px solid var(--rule); font-size:.93rem; color:var(--ink-2) }
-.stories{ list-style:none; padding:0; display:grid; counter-reset:st }
-.stories li{ counter-increment:st; display:grid; grid-template-columns:2rem minmax(0,1fr); column-gap:6px; padding:12px 0; border-bottom:1px solid var(--rule) }
-.stories li:first-child{ border-top:1px solid var(--rule) }
-.stories li::before{ content:counter(st,decimal-leading-zero); grid-row:span 4; font-weight:600; color:var(--accent); font-variant-numeric:tabular-nums }
-.stories .st-note{ font-size:.9rem; color:var(--ink-2) }
-.stories .st-first{ font-size:.78rem; color:var(--ink-3) }
 .book-page section > p + p{ margin-top:10px }
 .spoiler{ padding:14px 16px; border:1px dashed var(--rule-2); border-radius:var(--radius); background:var(--sheet-2) }
 .spoiler summary{ font-size:.9rem; font-weight:600; color:var(--ink-2); cursor:pointer; min-height:30px }
 .spoiler[open] summary{ margin-bottom:10px }
 .spoiler p{ color:var(--ink-2) }
 .spoiler p + p{ margin-top:10px }
+.tab.mine{ border-style:dashed; border-color:var(--accent) }
+.proc-map{ display:grid; gap:14px }
+.proc-phase{ padding:14px 16px; border:1px solid var(--rule); border-radius:var(--radius); background:var(--sheet) }
+.proc-phase h3{ margin:0 }
+.proc-phase > .note{ margin:2px 0 10px }
+.proc-flow{ list-style:none; margin:0; padding:0; display:grid; gap:6px }
+.proc-flow li{ display:grid; grid-template-columns:8.5rem minmax(0,1fr); gap:10px; font-size:.9rem; color:var(--ink-2) }
+.proc-flow a{ font-weight:600; color:var(--accent); text-underline-offset:3px }
+.proc-steps{ display:grid; gap:14px }
+.proc-step{ padding:18px; border:1px solid var(--rule); border-radius:var(--radius); background:var(--sheet); scroll-margin-top:20px }
+.proc-step .proc-no{ margin:0; font-size:.76rem; font-weight:600; letter-spacing:.08em; color:var(--accent) }
+.proc-step h3{ margin:2px 0 6px; font-size:1.05rem }
+.proc-step h4{ margin:14px 0 6px; font-size:.84rem; color:var(--ink-3) }
+.proc-step ul{ margin:0; padding-left:20px; display:grid; gap:5px; font-size:.92rem }
+.proc-goal{ margin:0; font-weight:600 }
+.proc-ask li::marker{ content:'? '; color:var(--accent); font-weight:700 }
+.proc-done{ margin:14px 0 0; padding:10px 12px; border-radius:6px; background:var(--accent-soft); font-size:.92rem }
+.proc-done b{ display:block; font-size:.76rem; color:var(--accent) }
+.proc-basis{ margin-top:12px; display:grid; gap:6px; font-size:.84rem; color:var(--ink-2) }
+.proc-basis p{ margin:0 }
+.proc-step .spoiler{ margin-top:12px }
+.proc-ex{ margin-bottom:8px !important }
+.proc-ex b{ color:var(--ink) }
+@media(max-width:600px){ .proc-flow li{ grid-template-columns:minmax(0,1fr); gap:0 } .proc-step{ padding:15px } }
+.aspects li{ padding:12px 14px; border:1px solid var(--rule); border-radius:var(--radius); background:var(--sheet) }
+.opinion{ display:grid; grid-template-columns:4.2rem minmax(0,1fr); gap:8px; margin:4px 0 0 !important; color:var(--ink-2) }
+.op-tag{ padding-top:2px; font-size:.76rem; font-weight:600; letter-spacing:.02em }
+.is-good .op-tag{ color:var(--accent) }
+.is-bad .op-tag{ color:var(--ink-3) }
 .syn{ padding:18px 0; border-top:1px solid var(--rule) }
-.syn h3{ margin:0 0 12px; font-size:1.05rem }
+.syn h3{ margin:0 0 4px; font-size:1.05rem }
+.syn .st-first{ margin:0 0 8px; font-size:.78rem; color:var(--ink-3) }
+.st-tags{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:0 0 14px }
+.st-tags b{ font-size:.78rem; margin-right:2px }
+.spoiler h4, .syn h4{ margin:18px 0 8px; font-size:.9rem; color:var(--ink) }
+.syn .ref{ margin-top:18px }
+.pattern-ex{ margin:8px 0 4px; padding-left:1.1em; display:grid; gap:5px; font-size:.88rem; color:var(--ink-2) }
+.pattern-ex b{ color:var(--ink); font-weight:600 }
+.design .opinion{ grid-template-columns:2.4rem minmax(0,1fr) }
+.design .opinion .op-tag{ color:var(--accent) }
+.moves a.pill{ text-decoration:none }
+.cost{ margin:0; padding:10px 14px; border-left:3px solid var(--rule-2); border-radius:6px; background:var(--sheet-2); font-size:.92rem; color:var(--ink-2) }
+.cost b{ display:block; color:var(--ink); margin-bottom:3px }
+.trace-line{ margin:0 0 12px; font-size:.93rem; color:var(--ink) !important }
+.trace-line b{ color:var(--accent) }
 .syn-facts{ display:grid; grid-template-columns:5.5rem minmax(0,1fr); gap:10px 14px; margin:0 0 14px; font-size:.93rem }
 .syn-facts dt{ color:var(--accent); font-size:.82rem; font-weight:600; padding-top:2px }
 .syn-facts dd{ margin:0; min-width:0; color:var(--ink-2) }
@@ -180,6 +227,10 @@ body.reading main > :not(.book-view){ display:none !important }
 .syn-cast b{ color:var(--ink); margin-right:6px }
 .syn-twist{ margin:0 0 14px; padding:12px 14px; border-left:3px solid var(--accent); border-radius:6px; background:var(--accent-soft); color:var(--ink) !important; font-size:.94rem }
 .syn-twist b{ display:block; font-size:.76rem; color:var(--accent); margin-bottom:4px }
+.design{ list-style:none; margin:0; padding:0; display:grid; gap:12px }
+.design li{ font-size:.92rem }
+.design .design-h{ display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; margin:0 0 3px; color:var(--ink) }
+.design li > p:last-child{ margin:0; color:var(--ink-2) }
 .trace-steps{ list-style:none; margin:0; padding:0; display:grid; gap:0 }
 .trace-steps li{ position:relative; display:grid; grid-template-columns:4.6rem minmax(0,1fr); gap:10px; padding:0 0 14px; font-size:.92rem; color:var(--ink-2) }
 .trace-steps li:not(:last-child)::after{ content:''; position:absolute; left:2.3rem; top:26px; bottom:2px; border-left:1px dashed var(--rule-2) }
@@ -198,7 +249,7 @@ body.reading main > :not(.book-view){ display:none !important }
 
   <section class="course" aria-labelledby="novel-course-title">
     <h2 id="novel-course-title">읽고 비교하기</h2>
-    <ol><li><a href="#c-terms">공통 노트의 용어</a>로 본격·사회파·특수설정을 구별해요.</li><li><a href="#author-comparison">작가 비교</a>에서 지금 배우고 싶은 방법을 고르고, 작가의 핵심·대표작·집필 방식을 읽어요.</li></ol>
+    <ol><li><a href="#c-terms">공통 노트의 용어</a>로 본격·사회파·특수설정을 구별해요.</li><li><a href="#author-comparison">작가 비교</a>에서 지금 배우고 싶은 방법을 고르고, 작가의 핵심·대표작·집필 방식을 읽어요.</li><li><a href="#a-process">나의 집필 프로세스</a>에서 롤모델의 방법을 내가 따라 쓸 순서로 정리해요.</li><li><a href="cliches.html">추리소설 클리셰 모음</a>에서 착상할 때 뒤집을 전제를 골라요.</li></ol>
     <p>생애와 데뷔 과정은 각 작가의 ‘생애·심화’에서 이어 읽을 수 있어요.</p>
   </section>
 
@@ -209,6 +260,7 @@ body.reading main > :not(.book-view){ display:none !important }
     <button class="tab" role="tab" data-author="shirai" aria-selected="false"><b>시라이 도모유키</b><small>白井智之 · 『名探偵のいけにえ』</small></button>
     <button class="tab" role="tab" data-author="aizawa" aria-selected="false"><b>아이자와 사코</b><small>相沢沙呼 · 『medium』</small></button>
     <button class="tab" role="tab" data-author="nisio" aria-selected="false"><b>니시오 이신</b><small>西尾維新 · 『クビキリサイクル』</small></button>
+    <button class="tab mine" role="tab" data-author="process" aria-selected="false"><b>나의 집필 프로세스</b><small>롤모델 · 시라이 도모유키</small></button>
   </div>
 
   <!-- 공통 노트: 작가를 가리지 않는 장르·시장 이야기 -->
@@ -632,7 +684,15 @@ body.reading main > :not(.book-view){ display:none !important }
         <li><b>설정은 장식이 아니라 도구</b><span>특수설정을 눈에 갇힌 산장에 빗대요. 경찰이 들어오지 못하게 막는 산장처럼, 설정은 추리를 성립시키는 장치라는 거예요. 데뷔작의 기발한 설정은 푸아그라 생산 영상을 보다가 떠올렸다고 해요.</span></li>
         <li><b>다중 해결을 좋아해요</b><span>여러 해답을 차례로 내놓았다가 뒤집는 구성을 가장 좋아하는 미스터리 형식으로 꼽아요. 그는 '논리적으로 바르게 추리하면 같은 해답에 닿아야 한다'고 말해요. 그래서 해답이 여럿 나올 때 어느 추리가 어디서 어긋났는지 따지는 것이 다중 해결의 재미로 읽혀요.</span></li>
         <li><b>특수설정 대신 '특수조건'</b><span>『名探偵のいけにえ』(명탐정의 제물)는 세계의 규칙이 바뀌는 게 아니라, 기적을 믿는 사람들의 '보는 방식'만 다르다고 해서 작가와 편집자가 논의해 띠지에 特殊条件(특수조건)이라는 말을 썼어요. 다중 해결까지 플롯 단계에서 다 짜 두었다고 해요.</span></li>
-        <li><b>본격과 호러 사이에서 자랐어요</b><span>요코미조 세이시를 좋아하고, 신본격의 아야쓰지 유키토와 노리즈키 린타로, 호러와 미스터리를 섞은 미쓰다 신조와 아메무라 고도 좋아했다고 해요.</span></li>
+        <li><b>본격과 호러 사이에서 자랐어요</b><span>요코미조 세이시를 좋아하고, 신본격의 아야쓰지 유키토와 노리즈키 린타로, 호러와 미스터리를 섞은 미쓰다 신조와 아메무라 고도 좋아했다고 해요.</span>
+          <ul class="influences">
+            <li><b>요코미조 세이시</b>명탐정 긴다이치 고스케 시리즈(『옥문도』, 『이누가미 일족』). 시골 명문가와 옛 전설의 괴기스러운 분위기 속 연쇄 살인을 본격 논리로 풀어요.</li>
+            <li><b>아야쓰지 유키토</b>『십각관의 살인』으로 신본격 시대를 연 작가예요. 독자를 속이는 서술 트릭으로 유명하고, 호러 『Another』도 썼어요. 시라이에게 ‘잔혹한 특수설정 퍼즐 작가’라는 별명을 붙였어요.</li>
+            <li><b>노리즈키 린타로</b>자기 이름과 같은 탐정을 내세워 논리를 끝까지 밀어붙여요(『요리코를 위해』). 탐정이 찾은 해답이 정말 진실인지 확신할 수 없다는 고민을 깊이 다룬 작가로 알려져요.</li>
+            <li><b>미쓰다 신조</b>민속 괴담과 본격을 섞은 도조 겐야 시리즈(『잘린 머리처럼 불길한 것』). 마지막에 논리적인 해결이 나와도 괴이의 기운이 다 사라지지 않게 남겨요.</li>
+            <li><b>아메무라 고</b>『점막인간』(국내 미출간 · 뜻 그대로 옮김)으로 일본 호러소설대상(장편상)을 받으며 나온 호러 작가예요. 끔찍하고 기괴한 세계 속에 미스터리의 반전을 숨겨요.</li>
+          </ul>
+          <span class="influence-note">시라이와 닿는 곳(이 노트의 해석): 괴기스러운 분위기 위의 본격 논리(요코미조), 독자를 속이는 장치(아야쓰지), 해답이 진실인지 묻는 다중 해결(노리즈키), 호러와 본격의 섞기(미쓰다), 끔찍한 세계 속 반전(아메무라).</span></li>
       </ol>
       <div class="compare">
         <div><p class="eyebrow">이마무라 마사히로</p><p><b>설정</b>클로즈드 서클에 강렬한 설정 하나</p><p><b>짜임</b>고전을 잰 정석 구조, 소거법</p><p><b>독자</b>규칙을 외우는 부담을 줄이려 해요</p></div>
@@ -641,13 +701,26 @@ body.reading main > :not(.book-view){ display:none !important }
       <p style="margin-top:10px">같은 특수설정 본격이지만, 이 노트가 보기엔 이마무라는 '설정 하나를 정석 구조에 얹는' 쪽, 시라이는 '논리를 위해 세계를 통째로 짓는' 쪽이에요.</p>
     </section>
 
+    <section>
+      <h2>독자가 본 시라이 도모유키</h2>
+      <p style="margin-bottom:12px">일본과 한국 독자 리뷰에서 여러 사람이 같은 말을 한 것만 모았어요. 한두 사람의 의견은 뺐고, 『나는 괴이 너는 괴물』과 『명탐정의 제물』 · 『엘리펀트 헤드』 · 『인간의 얼굴은 먹기 힘들다』 같은 다른 작품의 평에서 되풀이되는 것만 작가의 속성으로 남겼어요. ‘공통 의견’은 일본과 한국 독자가 함께 말한 것이에요. 속성의 이름은 이 노트가 붙였어요.</p>
+      <ul class="design aspects">
+        <li><p class="design-h"><b>설정을 트릭의 도구로 쓰는 작가</b></p><p class="opinion is-good"><span class="op-tag">좋게</span><span><span class="pill">공통 의견</span> 작품마다 기괴한 세계를 새로 짓는데, 그 설정이 장식이 아니라 추리와 맞물린다고 해요.</span></p><p class="opinion is-bad"><span class="op-tag">아쉽게</span><span><span class="pill">공통 의견</span> 비현실적인 설정에 처음엔 당황하고, 새 규칙을 익히느라 인물에게 마음을 붙이기 어렵다고 해요.</span></p></li>
+        <li><p class="design-h"><b>논리가 먼저인 작가</b></p><p class="opinion is-good"><span class="op-tag">좋게</span><span><span class="pill">공통 의견</span> 세계가 아무리 황당해도 논리는 무너지지 않는다는 평이 가장 꾸준해요.</span></p><p class="opinion is-bad"><span class="op-tag">아쉽게</span><span><span class="pill">한국 독자</span> 추리 설명이 길고 정보가 많아서 머리가 아프다고 해요.</span></p></li>
+        <li><p class="design-h"><b>한 번 더 뒤집는 작가</b></p><p class="opinion is-good"><span class="op-tag">좋게</span><span><span class="pill">공통 의견</span> 답을 몇 번이고 뒤집고, 사소해 보이던 것까지 복선으로 거둬들인다고 해요.</span></p><p class="opinion is-bad"><span class="op-tag">아쉽게</span><span><span class="pill">한국 독자</span> 뒤집기가 되풀이되면 복잡하고 지루하다고 해요.</span></p></li>
+        <li><p class="design-h"><b>불쾌함까지 재료로 쓰는 작가</b></p><p class="opinion is-good"><span class="op-tag">좋게</span><span><span class="pill">공통 의견</span> 끔찍하고 저속해 보이는 설정도 결국 추리의 장치가 된다는 점이 이 작가만의 색으로 받아들여져요.</span></p><p class="opinion is-bad"><span class="op-tag">아쉽게</span><span><span class="pill">공통 의견</span> 잔혹하고 외설적인 묘사 때문에 거의 모든 작품에서 독자가 갈려요.</span></p></li>
+        <li><p class="design-h"><b>지금 바뀌고 있는 작가</b></p><p class="opinion is-good"><span class="op-tag">좋게</span><span><span class="pill">공통 의견</span> 『ぼくは化け物きみは怪物』(『나는 괴이 너는 괴물』)에서는 수위를 덜고 애틋한 여운을 남겨서 입문용으로 좋다고 해요.</span></p><p class="opinion is-bad"><span class="op-tag">아쉽게</span><span><span class="pill">한국 독자</span> 그래도 찝찝함이 남는다는 평은 여전해요. 바뀌는 중이지, 다른 작가가 된 건 아니에요.</span></p></li>
+      </ul>
+      <p class="source-note" style="margin-top:12px">독자 리뷰 대조: 2026-10-27 · 북라이브 · 미스터리 서평 사이트 · 예스24 · 알라딘 · 리디 · 왓챠피디아 · 디시인사이드 추리소설 갤러리 · 일본 개인 블로그와 note 감상. 한국 서점 리뷰에는 출판사 제공 · 이벤트로 받은 책의 리뷰가 많아서 칭찬 쪽으로 기울 수 있어요. 리뷰어 이름은 적지 않았어요.</p>
+    </section>
+
     <section class="writing-methods" aria-labelledby="shirai-methods-title">
       <p class="eyebrow">작가에게 직접 듣는 집필 방법</p>
       <h2 id="shirai-methods-title">작품을 쓰는 과정</h2>
       <p class="method-intro">2017년부터 2024년까지의 본인 인터뷰, 편집자와의 대담, 본인 에세이에서 확인한 방법을 작품이 만들어지는 순서대로 묶었어요. 각 카드는 본인 발언의 한국어 요약, 이 노트의 풀이, 작품을 읽을 때 볼 곳으로 나뉘어요. 특정 작품의 경험과 발언 당시의 생각이라 모든 작품에 똑같이 적용되는 고정 순서는 아니에요.</p>
       <ol class="method-flow" aria-label="집필 단계"><li>착상</li><li>세계</li><li>재료</li><li>개연성</li><li>플롯</li><li>형식</li><li>퇴고</li><li>묶기</li></ol>
       <ol class="method-cards">
-        <li><h3>착상 · 쓰고 싶은 추리를 먼저 정하기</h3><p>2017년에는 “먼저 써 보고 싶은 아이디어가 있고, 거기에 맞춰 설정을 짜는 순서”라고 말했어요. 2018년에도 어떤 소설로 만들지, 어떤 트릭과 논리를 쓰고 싶은지를 머릿속에서 키운 뒤 그걸 재미있게 만들 설정을 생각한다고 했어요. 2024년 답변에서도 작품마다 하고 싶은 미스터리의 구상을 먼저 정한다고 해요. 『名探偵のいけにえ』(『명탐정의 제물』)에서는 다중 추리가 성립할 고립된 공동체를, 『死体の汁を啜れ』(국내 미출간 · ‘시체의 즙을 마셔라’)에서는 여러 시체 아이디어가 들어갈 도시를 마련했다고 설명했어요.</p><p class="method-note"><b>풀이</b>10년 가까이 같은 순서를 말해 왔어요. 다만 2017년에는 설정에서 떠올린 장치도 있어서 “어느 쪽이 먼저라고 딱 잘라 말할 수는 없다”고도 했어요. 원칙이라기보다 가장 자주 쓰는 출발점으로 읽어요.</p><p class="method-read"><b>읽을 때 볼 곳</b>그 편에서 작가가 가장 먼저 떠올렸을 ‘추리 한 수’는 무엇일까요? 특수설정을 지워도 남는 논리가 있나요?</p><p class="method-source">본인 발언 요약 · <a href="https://kadobun.jp/feature/interview/36.html" target="_blank" rel="noopener">카도분 인터뷰 · 2017-09-13 ↗</a> · <a href="https://ton-press.blogspot.com/2018/04/2018_16.html" target="_blank" rel="noopener">도호쿠대학 신문 · 2018-04-16 ↗</a> · <a href="https://j-nbooks.jp/article/244/" target="_blank" rel="noopener">실업지일본사 · 2024년 답변 / 2025-05-02 공개 ↗</a></p></li>
+        <li><h3>착상 · 쓰고 싶은 추리를 먼저 정하기</h3><p>2017년에는 “먼저 써 보고 싶은 아이디어가 있고, 거기에 맞춰 설정을 짜는 순서”라고 말했어요. 2018년에도 어떤 소설로 만들지, 어떤 트릭과 논리를 쓰고 싶은지를 머릿속에서 키운 뒤 그걸 재미있게 만들 설정을 생각한다고 했어요. 2024년 답변에서도 작품마다 하고 싶은 미스터리의 구상을 먼저 정한다고 해요. 『名探偵のいけにえ』(『명탐정의 제물』)에서는 다중 추리가 성립할 고립된 공동체를, 『死体の汁を啜れ』(국내 미출간 · ‘시체의 즙을 마셔라’)에서는 여러 시체 아이디어가 들어갈 도시를 마련했다고 설명했어요.</p><p class="method-note"><b>풀이</b>10년 가까이 같은 순서를 말해 왔어요. 다만 2017년에는 설정에서 떠올린 장치도 있어서 “어느 쪽이 먼저라고 딱 잘라 말할 수는 없다”고도 했어요. 원칙이라기보다 가장 자주 쓰는 출발점으로 읽어요.</p><p class="method-read"><b>읽을 때 볼 곳</b>그 편에서 작가가 가장 먼저 떠올렸을 ‘추리 한 수’는 무엇일까요? 특수설정을 지워도 남는 논리가 있나요?</p><p class="method-read"><b>연습 자료</b><a href="cliches.html">추리소설 클리셰 모음</a>에서 고전이 당연하게 깔고 있는 전제를 골라, 하나만 뒤집어 착상해 봐요.</p><p class="method-source">본인 발언 요약 · <a href="https://kadobun.jp/feature/interview/36.html" target="_blank" rel="noopener">카도분 인터뷰 · 2017-09-13 ↗</a> · <a href="https://ton-press.blogspot.com/2018/04/2018_16.html" target="_blank" rel="noopener">도호쿠대학 신문 · 2018-04-16 ↗</a> · <a href="https://j-nbooks.jp/article/244/" target="_blank" rel="noopener">실업지일본사 · 2024년 답변 / 2025-05-02 공개 ↗</a></p></li>
         <li><h3>세계 · 특수설정은 무대가 아니라 도구</h3><p>2017년에는 특수설정을 무대로 쓰는 게 아니라 미스터리 아이디어를 실현하는 수단으로 쓰는 것이 중요하다고 했어요. 고르는 기준은 자신이 독자로서 읽고 싶은 설정인지예요. 데뷔작 『人間の顔は食べづらい』(『인간의 얼굴은 먹기 힘들다』)의 식용 인간 설정은 해외의 푸아그라 생산 영상을 보다가 떠올렸다고 해요. 2022년 토크 이벤트에서는 쓰고 싶은 수수께끼 풀이의 기법이나 틀이 먼저 있고, 그걸 더 비틀기 위해 기발한 설정을 나중에 떠올린다고 말했다고 전해져요. 그로테스크한 것을 그리려고 쓰는 건 아니라고도 했대요.</p><p class="method-note"><b>풀이</b>잔혹하고 기괴한 세계는 목적이 아니라 결과예요. 추리를 한 번 더 비틀 규칙을 찾다 보니 세계가 이상해진다고 볼 수 있어요. 『名探偵のいけにえ』(『명탐정의 제물』)의 ‘특수조건’, 곧 세계의 법칙은 그대로이고 사람들의 인식만 다르다는 설정도 같은 생각에서 나온 변형이에요.</p><p class="method-read"><b>읽을 때 볼 곳</b>그 편의 설정이 추리에 실제로 쓰이나요, 분위기에만 쓰이나요? 설정의 규칙은 언제, 어떻게 독자에게 알려지나요?</p><p class="method-source">본인 발언 요약 · <a href="https://kadobun.jp/feature/interview/36.html" target="_blank" rel="noopener">카도분 인터뷰 · 2017-09-13 ↗</a> · <a href="https://note.com/giallo_kobunsha/n/n2832dd24ea1e" target="_blank" rel="noopener">고분샤 · 토크 이벤트 보고(2022-07-17 개최, 와카바야시 후미 글) ↗</a></p></li>
         <li><h3>재료 · 실제 사건은 트릭이 아니라 무대와 세부로</h3><p>2018년에는 역사적 사실이나 현실의 사건을 바탕으로 작품을 만들지는 않지만, 사건이나 뉴스를 모아 두었다가 조합하기도 한다고 했어요. 2024년 답변에서는 실제 사건에서 트릭을 얻는 일은 거의 없고, 실제 범죄에 관한 지식은 부족한 세부를 채울 때 도움이 된다고 했어요. 『名探偵のいけにえ』(『명탐정의 제물』)는 실재 교단 ‘인민사원’을 모델로 삼았는데, 트릭과 잘 맞고 남미에 집단 마을을 만든 점이 본격 미스터리의 무대로 매력적이었다고 해요.</p><p class="method-note"><b>풀이</b>실제 사건은 ‘해답’이 아니라 ‘배경과 틀’로 들어와요. 트릭은 직접 만들고, 현실은 그 트릭이 놓일 땅과 세부를 빌려 줘요.</p><p class="method-read"><b>읽을 때 볼 곳</b>실제 역사나 사건을 떠올리게 하는 배경이 있나요? 있다면 그 현실은 트릭이 아니라 어디에 쓰였나요?</p><p class="method-source">본인 발언 요약 · <a href="https://ton-press.blogspot.com/2018/04/2018_16.html" target="_blank" rel="noopener">도호쿠대학 신문 · 2018-04-16 ↗</a> · <a href="https://j-nbooks.jp/article/244/" target="_blank" rel="noopener">실업지일본사 · 2024년 답변 ↗</a> · <a href="https://note.com/giallo_kobunsha/n/n156e8aee9aa4" target="_blank" rel="noopener">고분샤 대담 · 2023-04-21 공개 ↗</a></p></li>
         <li><h3>개연성 · 트릭을 사건의 흐름 안에 맞추기</h3><p>2024년 답변에서 집필 시간의 상당 부분을 동기, 흉기의 입수, 피해자의 동선, 증거 은폐가 서로 맞물리도록 고민하는 데 쓴다고 했어요.</p><p class="method-note"><b>풀이</b>트릭을 떠올리는 것보다, 그 트릭이 실제로 일어날 수 있게 앞뒤를 잇는 일에 시간을 더 쓴다는 말이에요. 범인이 왜 하필 그 방법을 골랐는지, 도구를 어떻게 손에 넣었는지까지가 추리의 재료가 돼요.</p><p class="method-read"><b>읽을 때 볼 곳</b>범인이 그 방법을 고른 이유와 도구를 손에 넣은 경로가 설명되나요? 그 설명이 추리의 단서로도 쓰이나요?</p><p class="method-source">본인 발언 요약 · <a href="https://j-nbooks.jp/article/244/" target="_blank" rel="noopener">실업지일본사 · 착상과 조사에 관한 답변 · 2024년 ↗</a></p></li>
@@ -836,8 +909,18 @@ body.reading main > :not(.book-view){ display:none !important }
       </ol>
     </section>
   </div>
+
+  <!-- 나의 집필 프로세스: 카드는 process.js가 그려요 -->
+  <div class="author" id="a-process" role="tabpanel" hidden>
+    <div class="hero">
+      <p class="name">나의 집필 프로세스<span class="jp">롤모델 · 시라이 도모유키</span></p>
+      <p class="book-intro">시라이 도모유키가 직접 말한 집필 방법을 뼈대로 하고, 『나는 괴이 너는 괴물』 다섯 편을 거꾸로 따라가며 찾은 것을 더해 열 단계로 묶은 안내서예요. 단계마다 할 일, 스스로 던질 질문, 끝나면 손에 남는 것을 적었어요. 근거에는 <span class="pill ready">작가 발언</span> <span class="pill">전해지는 말</span> <span class="pill">이 노트의 해석</span> <span class="pill mine">나의 관찰</span>을 구분해 달았어요. 작가의 고정된 규칙이 아니라, 내가 따라 써 보기 위한 순서예요.</p>
+      <p class="proc-tools"><b>함께 쓰는 자료</b><a href="cliches.html">추리소설 클리셰 모음 · 착상할 때 뒤집을 전제 고르기 →</a></p>
+    </div>
+  </div>
 </main>
 
-<script src="books.js"></script>
-<script src="bookshelf.js"></script>
-<script src="learning.js"></script>
+<script src="books.js?v=20261027r"></script>
+<script src="bookshelf.js?v=20261027r"></script>
+<script src="process.js?v=20261027r"></script>
+<script src="learning.js?v=20261027r"></script>

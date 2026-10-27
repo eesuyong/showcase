@@ -66,6 +66,94 @@
     box.classList.add('read'); box.append(go);
   });
 
+  /* 책 화면의 글 칸(lead·analysis): 문단과, 있으면 [항목, 글] 표. spoiler면 접어요. */
+  function prose(part) {
+    const s = el('section'); s.append(el('h2', '', part.h));
+    const body = part.spoiler ? el('details', 'spoiler') : s;
+    if (part.spoiler) { body.append(el('summary', '', '줄거리와 해결이 나와요 · 펼쳐 보기')); s.append(body); }
+    (part.body || []).forEach(t => { const p = el('p'); p.innerHTML = t; body.append(p); });
+    (part.groups || []).forEach(g => {
+      const dl = el('dl', 'syn-facts');
+      if (g.h) body.append(el('h3', '', g.h));
+      g.items.forEach(([k, v, ex]) => {
+        const dd = el('dd'); dd.innerHTML = v;
+        if (ex && ex.length) {
+          const ul = el('ul', 'pattern-ex');
+          ex.forEach(([kt, t]) => { const li = el('li'); li.append(el('b', '', '〈' + kt + '〉'), document.createTextNode(' ' + t)); ul.append(li); });
+          dd.append(ul);
+        }
+        dl.append(el('dt', '', k), dd);
+      });
+      body.append(dl);
+    });
+    return s;
+  }
+  function tagRow(tags, label) {
+    const p = el('p', 'st-tags');
+    if (label) p.append(el('b', '', label));
+    tags.forEach(t => p.append(el('span', 'pill', t)));
+    return p;
+  }
+  /* 수록작 한 편(집필 훈련용): 한 줄 요약 → 첫 아이디어에서 완성까지 → 인물 설계 · 세계관 설계 → 옮겨 쓸 기술 → 이 선택의 대가 → (접힘) 참고 · 줄거리와 진상 */
+  const STEP = { idea: '1 착상', problems: '2 문제 목록', world: '3 세계', cast: '4 인물', material: '5 재료', logic: '6 개연성', plot: '7 플롯', form: '8 형식', draft: '9 초고', revise: '10 퇴고' };
+  function story(st, i) {
+    const box = el('article', 'syn'), t = st.trace;
+    box.append(el('h3', '', String(i + 1).padStart(2, '0') + ' · ' + st.kt));
+    if (st.first) box.append(el('p', 'st-first', '처음 실린 곳 · ' + st.first));
+    if (st.tags && st.tags.length) box.append(tagRow(st.tags));
+    if (t) {
+      if (t.line) { const p = el('p', 'trace-line'); p.append(el('b', '', '한 줄로 '), document.createTextNode(t.line)); box.append(p); }
+      const ol = el('ol', 'trace-steps');
+      (t.steps || []).forEach(([k, v]) => { const li = el('li'), tx = el('span'); tx.innerHTML = v; li.append(el('span', 'pill', k), tx); ol.append(li); });
+      box.append(el('h4', '', '첫 아이디어에서 완성까지'), ol);
+      if (t.basis) box.append(el('p', 'note', t.basis));
+    }
+    // 인물 설계 · 세계관 설계: [이름, 역할 꼬리표, 왜 이렇게 만들었나]. 인물은 참고 칸의 소개(cast)도 함께 보여 줘요.
+    const intro = new Map((st.cast || []).map(([n, w]) => [n, w]));
+    [['인물 설계', st.castWhy], ['세계관 설계', st.worldWhy]].forEach(([h, rows]) => {
+      if (!rows || !rows.length) return;
+      const ul = el('ul', 'design');
+      rows.forEach(([name, tag, why]) => {
+        const li = el('li'), top = el('p', 'design-h'); top.append(el('b', '', name), el('span', 'pill', tag)); li.append(top);
+        if (intro.has(name)) {
+          [['누구', intro.get(name)], ['왜', why]].forEach(([k, v]) => { const p = el('p', 'opinion'); p.append(el('span', 'op-tag', k), el('span', '', v)); li.append(p); });
+        } else li.append(el('p', '', why));
+        ul.append(li);
+      });
+      box.append(el('h4', '', h), ul);
+    });
+    if (st.moves && st.moves.length) {
+      const ul = el('ul', 'design moves');
+      st.moves.forEach(([name, how, step]) => {
+        const li = el('li'), top = el('p', 'design-h'); top.append(el('b', '', name));
+        if (STEP[step]) { const a = el('a', 'pill ready', '집필 프로세스 ' + STEP[step] + ' →'); a.href = '#process-' + step; top.append(a); }
+        li.append(top, el('p', '', how)); ul.append(li);
+      });
+      box.append(el('h4', '', '옮겨 쓸 기술'), ul);
+    }
+    if (st.cost) {
+      const p = el('p', 'cost'); p.append(el('b', '', st.cost[0]), document.createTextNode(' ' + st.cost[1]));
+      box.append(el('h4', '', '이 선택의 대가'), p);
+    }
+    const d = el('details', 'spoiler ref'), dl = el('dl', 'syn-facts');
+    d.append(el('summary', '', '참고 · 줄거리와 진상'));
+    if (st.cast && st.cast.length) {
+      const ul = el('ul', 'syn-cast');
+      st.cast.forEach(([name, who]) => { const li = el('li'); li.append(el('b', '', name), el('span', '', who)); ul.append(li); });
+      const dd = el('dd'); dd.append(ul); dl.append(el('dt', '', '등장인물'), dd);
+    }
+    [['배경', st.setting], ['세계관', st.world], ['핵심 컨셉', st.concept], ['사건의 시작', st.plot]].forEach(([k, v]) => {
+      if (v) dl.append(el('dt', '', k), el('dd', '', v));
+    });
+    d.append(dl);
+    if (st.twist) { const p = el('p', 'syn-twist'); p.append(el('b', '', '반전'), document.createTextNode(st.twist)); d.append(p); }
+    if (st.solve && st.solve.length) {
+      const ol = el('ol', 'syn-solve'); st.solve.forEach(x => ol.append(el('li', '', x)));
+      d.append(el('h4', '', '추리와 진상'), ol);
+    }
+    box.append(d);
+    return box;
+  }
   /* 책 분석 화면. #book-<id>일 때 body.reading으로 다른 내용을 숨기고 이 책만 보여 줘요. */
   function page(b) {
     const a = authorOf(b.author), art = el('article', 'book-page'); art.id = 'book-' + b.id; art.hidden = true;
@@ -80,70 +168,14 @@
     hero.append(facts);
     if (b.intro) hero.append(el('p', 'book-intro', b.intro));
     art.append(top, hero);
+    (b.lead || []).forEach(part => art.append(prose(part)));
+    (b.analysis || []).forEach(part => art.append(prose(part)));
+    // 수록작: 한 편이 한 덩어리예요. 작가의 결정을 펼쳐 두고, 줄거리와 진상은 참고 칸으로 접어요.
     if (b.stories && b.stories.length) {
-      const s = el('section'), ol = el('ol', 'stories');
-      s.append(el('h2', '', '수록작'));
-      b.stories.forEach(st => {
-        const li = el('li'); li.append(el('b', '', st.kt));
-        if (st.note) li.append(el('span', 'st-note', st.note));
-        if (st.first) li.append(el('span', 'st-first', '처음 실린 곳 · ' + st.first));
-        ol.append(li);
-      });
-      s.append(ol); art.append(s);
-    }
-    // 수록작별 시놉시스: 인물·배경·세계관·컨셉·도입은 펼쳐 두고, 추리와 진상만 접어요.
-    if ((b.stories || []).some(st => st.cast || st.world)) {
-      const s = el('section'); s.append(el('h2', '', '수록작별 시놉시스'));
-      if (b.synNote) s.append(el('p', 'note', b.synNote));
-      b.stories.forEach((st, i) => {
-        if (!st.cast && !st.world) return;
-        const box = el('article', 'syn'), dl = el('dl', 'syn-facts');
-        box.append(el('h3', '', String(i + 1).padStart(2, '0') + ' · ' + st.kt));
-        if (st.cast && st.cast.length) {
-          const ul = el('ul', 'syn-cast');
-          st.cast.forEach(([name, who]) => { const li = el('li'); li.append(el('b', '', name), el('span', '', who)); ul.append(li); });
-          const dd = el('dd'); dd.append(ul); dl.append(el('dt', '', '등장인물'), dd);
-        }
-        [['배경', st.setting], ['세계관', st.world], ['핵심 컨셉', st.concept], ['사건의 시작', st.plot]].forEach(([k, v]) => {
-          if (v) dl.append(el('dt', '', k), el('dd', '', v));
-        });
-        box.append(dl);
-        if (st.twist || (st.solve && st.solve.length)) {
-          const d = el('details', 'spoiler'), ol = el('ol', 'syn-solve');
-          d.append(el('summary', '', '반전과 진상 · 펼쳐 보기'));
-          if (st.twist) { const p = el('p', 'syn-twist'); p.append(el('b', '', '반전'), document.createTextNode(st.twist)); d.append(p); }
-          (st.solve || []).forEach(t => ol.append(el('li', '', t)));
-          if (ol.children.length) d.append(ol);
-          box.append(d);
-        }
-        s.append(box);
-      });
+      const s = el('section'); s.append(el('h2', '', '수록작'));
+      s.append(el('p', 'note', '실린 순서대로 한 편씩이에요. 작가가 내린 결정을 펼쳐 두었고, 줄거리와 진상은 편마다 맨 아래 참고 칸에 접어 두었어요.'));
+      b.stories.forEach((st, i) => s.append(story(st, i)));
       art.append(s);
-    }
-    if (b.analysis && b.analysis.length) {
-      b.analysis.forEach(part => {
-        const s = el('section'); s.append(el('h2', '', part.h));
-        const body = part.spoiler ? el('details', 'spoiler') : s;
-        if (part.spoiler) { body.append(el('summary', '', '줄거리와 해결이 나와요 · 펼쳐 보기')); s.append(body); }
-        (part.body || []).forEach(t => { const p = el('p'); p.innerHTML = t; body.append(p); });
-        // 작품별 흐름: 한 줄 요약 → 첫 아이디어에서 완성까지의 단계 → 근거.
-        (part.traces || []).forEach(t => {
-          const box = el('div', 'syn trace'), ol = el('ol', 'trace-steps');
-          box.append(el('h3', '', t.h));
-          if (t.line) { const p = el('p', 'syn-twist'); p.append(el('b', '', '한 줄로'), document.createTextNode(t.line)); box.append(p); }
-          (t.steps || []).forEach(([k, v]) => { const li = el('li'), tx = el('span'); tx.innerHTML = v; li.append(el('span', 'pill', k), tx); ol.append(li); });
-          box.append(ol);
-          if (t.basis) box.append(el('p', 'note', t.basis));
-          body.append(box);
-        });
-        (part.groups || []).forEach(g => {
-          const box = el('div', 'syn'), dl = el('dl', 'syn-facts');
-          box.append(el('h3', '', g.h));
-          g.items.forEach(([k, v]) => { const dd = el('dd'); dd.innerHTML = v; dl.append(el('dt', '', k), dd); });
-          box.append(dl); body.append(box);
-        });
-        art.append(s);
-      });
     }
     if (!done(b)) art.append(el('p', 'soon-box', b.analysis && b.analysis.length ? '이어서 쓰는 중이에요.' : '분석을 쓰는 중이에요.'));
     if (b.sources && b.sources.length) {

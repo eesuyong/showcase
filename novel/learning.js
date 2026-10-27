@@ -17,7 +17,7 @@
       title: '풀고 싶은 논리에서 세계를 거꾸로 만들기',
       summary: '특이한 설정의 크기보다, 그 규칙이 추리를 성립시키는 데 꼭 필요한지 확인해요.',
       compare: ['추리 아이디어·형식', '다중 해결까지 미리 설계', '복선의 강약 조정'],
-      sources: [['서지 · 신초샤: 작가 소개·수상 이력', 'https://www.shinchosha.co.jp/book/104482/'], ['본인 인터뷰 · 2017-09-13: 아이디어와 설정의 순서, 다중 해결', 'https://kadobun.jp/feature/interview/36.html'], ['본인 인터뷰 · 2018-04-16: 트릭·논리에서 설정으로, 사건·뉴스 모으기', 'https://ton-press.blogspot.com/2018/04/2018_16.html'], ['본인 에세이 · 2018년: 『少女を殺す100の方法』(국내 미출간)를 묶은 방식', 'https://www.bookbang.jp/review/article/546101'], ['본인 에세이 · 2021-05-28: 『ミステリー・オーバードーズ』(국내 미출간)의 테마와 구성', 'https://honsuki.jp/pickup/46919/index.html'], ['토크 이벤트 보고 · 2022-07-17 개최 / 2022-10-31 공개: 기법이 먼저, 설정은 나중 (전해 들은 발언)', 'https://note.com/giallo_kobunsha/n/n2832dd24ea1e'], ['저자·편집자 대담 · 2022-11-30 / 2023-04-21 공개: 플롯·퇴고·쓰는 방식', 'https://note.com/giallo_kobunsha/n/n156e8aee9aa4'], ['본인 답변 · 2024년 / 2025-05-02 공개: 창작과 실제 사건', 'https://j-nbooks.jp/article/244/'], ['본인 에세이 · 2024-12-16: 교정과 퇴고의 하루', 'https://www.bookbang.jp/review/article/790130'], ['작품 목록 · 위키백과: 『ぼくは化け物きみは怪物』(『나는 괴이 너는 괴물』) 수록작의 초출', 'https://ja.wikipedia.org/wiki/%E7%99%BD%E4%BA%95%E6%99%BA%E4%B9%8B']]
+      sources: [['서지 · 신초샤: 작가 소개·수상 이력', 'https://www.shinchosha.co.jp/book/104482/'], ['본인 인터뷰 · 2017-09-13: 아이디어와 설정의 순서, 다중 해결', 'https://kadobun.jp/feature/interview/36.html'], ['본인 인터뷰 · 2018-04-16: 트릭·논리에서 설정으로, 사건·뉴스 모으기', 'https://ton-press.blogspot.com/2018/04/2018_16.html'], ['본인 에세이 · 2018년: 『少女を殺す100の方法』(국내 미출간)를 묶은 방식', 'https://www.bookbang.jp/review/article/546101'], ['본인 에세이 · 2021-05-28: 『ミステリー・オーバードーズ』(국내 미출간)의 테마와 구성', 'https://honsuki.jp/pickup/46919/index.html'], ['토크 이벤트 보고 · 2022-07-17 개최 / 2022-10-31 공개: 기법이 먼저, 설정은 나중 (전해 들은 발언)', 'https://note.com/giallo_kobunsha/n/n2832dd24ea1e'], ['저자·편집자 대담 · 2022-11-30 / 2023-04-21 공개: 플롯·퇴고·쓰는 방식', 'https://note.com/giallo_kobunsha/n/n156e8aee9aa4'], ['본인 답변 · 2024년 / 2025-05-02 공개: 창작과 실제 사건', 'https://j-nbooks.jp/article/244/'], ['본인 에세이 · 2024-12-16: 교정과 퇴고의 하루', 'https://www.bookbang.jp/review/article/790130'], ['작품 목록 · 위키백과: 『ぼくは化け物きみは怪物』(『나는 괴이 너는 괴물』) 수록작의 초출', 'https://ja.wikipedia.org/wiki/%E7%99%BD%E4%BA%95%E6%99%BA%E4%B9%8B'], ['독자 리뷰 · 북라이브: 『ぼくは化け物きみは怪物』', 'https://booklive.jp/review/list/title_id/1647877/vol_no/001'], ['독자 리뷰 · 미스터리 서평 사이트: 『ぼくは化け物きみは怪物』', 'https://mystery-reviews.com/content/book_select?id=18255'], ['독자 리뷰 · 예스24: 『나는 괴이 너는 괴물』', 'https://www.yes24.com/Product/communityModules/GoodsReviewList/158683158'], ['독자 리뷰 · 알라딘: 『나는 괴이 너는 괴물』', 'https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=374259650'], ['독자 리뷰 · 왓챠피디아: 『나는 괴이 너는 괴물』', 'https://pedia.watcha.com/ko/contents/byza5d7'], ['독자 리뷰 · 왓챠피디아: 『엘리펀트 헤드』', 'https://pedia.watcha.com/ko/contents/b9jeOvK'], ['평론가 대담 · 리얼사운드: 『エレファントヘッド』와 다중 해결', 'https://realsound.jp/book/2024/01/post-1555060_2.html']]
     },
     aizawa: {
       title: '독자의 예상과 미리 심어 둔 장치',
@@ -53,6 +53,7 @@
       section.id = id + '-section-' + i;
       const title = section.querySelector('h2').textContent;
       if (/작풍|어떻게 쓰는/.test(title)) core.push([0, section]);
+      else if (/독자가 본/.test(title)) core.push([0.5, section]);
       else if (/대표작/.test(title)) core.push([1, section]);
       else if (/쓰는 과정/.test(title)) core.push([2, section]);
       else deep.push(section);
@@ -63,7 +64,7 @@
     const sources = el('section'); sources.id = id + '-sources';
     sources.append(el('h2', '', '출처와 해석'), el('p', '', '집필 방법의 각 항목에서 발언 시점·해당 작품·원문을 확인할 수 있어요. 아래 목록은 본인 인터뷰, 편집자와의 대담, 평론, 서지를 구분했어요. 작풍 비교는 이 노트의 해석이며 작가의 고정 원칙으로 보지는 않아요.'), sourceList(d.sources), el('p', 'source-note', '집필 방법 대조: ' + (id === 'shirai' ? '2026-10-26' : '2026-10-24') + '. 이 확인일은 모든 생애·판매·번역판 정보의 전수 검증을 뜻하지 않아요. 원문 인터뷰에는 작품 내용이 포함될 수 있어요.'));
     panel.append(sources);
-    const targets = [[summary.id, '핵심'], ...core.map(([, n]) => [n.id, n.querySelector('h2').textContent.replace('작풍의 특징: 트릭은 약한 편일까?', '작풍').replace('작품을 쓰는 과정', '집필 방법')]), [deepBox.id, '생애·심화'], [sources.id, '출처']];
+    const targets = [[summary.id, '핵심'], ...core.map(([, n]) => [n.id, n.querySelector('h2').textContent.replace('작풍의 특징: 트릭은 약한 편일까?', '작풍').replace('작품을 쓰는 과정', '집필 방법').replace(/^독자가 본 .*/, '독자가 본 작가')]), [deepBox.id, '생애·심화'], [sources.id, '출처']];
     targets.forEach(([target, title]) => { const a = el('a', '', title); a.href = '#' + target; toc.append(a); });
     core.filter(([n]) => n === 2).forEach(([, n]) => {
       const note = el('p', 'source-note'); note.append(document.createTextNode('관련 자료를 더 살펴보려면 '));
