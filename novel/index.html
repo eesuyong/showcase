@@ -12,6 +12,7 @@
   --paper:#F3F4F7; --sheet:#FFFFFF; --sheet-2:#F7F8FA;
   --ink:#1A2030; --ink-2:#465066; --ink-3:#737D92; --rule:#E2E5EB; --rule-2:#CBD1DB;
   --accent:#A8640F; --accent-soft:#F6EAD6;
+  --cork:#C9A47A; --cork-2:#B88F63; --note-mine:#FFF3B8; --note-note:#FFFFFF; --note-ask:#FBDDE3; --note-ink:#2A2418; --pin:#C0392B;
   --tag-h:#A83246; --tag-h-soft:#F7E1E5; --tag-s:#2C64A8; --tag-s-soft:#E0EAF7;
   --font-ui:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
   --font-jp:"IBM Plex Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",sans-serif;
@@ -22,6 +23,7 @@
   :root:not([data-theme="light"]){
     --paper:#12151C; --sheet:#1A1F29; --sheet-2:#151922;
     --ink:#E7EAF0; --ink-2:#B3BACA; --ink-3:#8A92A5; --rule:#2A303D; --rule-2:#3A4252;
+    --cork:#5A4632; --cork-2:#4A3928; --note-mine:#4A4220; --note-note:#2A303D; --note-ask:#4A2A31; --note-ink:#F1ECE0; --pin:#E06A5A;
     --accent:#E2A34A; --accent-soft:#3A2C17; --tag-h:#F08C9C; --tag-h-soft:#3D1F25; --tag-s:#8DB8F0; --tag-s-soft:#1C2A3D;
     color-scheme:dark;
   }
@@ -29,7 +31,8 @@
 :root[data-theme="dark"]{
   --paper:#12151C; --sheet:#1A1F29; --sheet-2:#151922;
   --ink:#E7EAF0; --ink-2:#B3BACA; --ink-3:#8A92A5; --rule:#2A303D; --rule-2:#3A4252;
-  --accent:#E2A34A; --accent-soft:#3A2C17; --tag-h:#F08C9C; --tag-h-soft:#3D1F25; --tag-s:#8DB8F0; --tag-s-soft:#1C2A3D;
+  --cork:#5A4632; --cork-2:#4A3928; --note-mine:#4A4220; --note-note:#2A303D; --note-ask:#4A2A31; --note-ink:#F1ECE0; --pin:#E06A5A;
+    --accent:#E2A34A; --accent-soft:#3A2C17; --tag-h:#F08C9C; --tag-h-soft:#3D1F25; --tag-s:#8DB8F0; --tag-s-soft:#1C2A3D;
   color-scheme:dark;
 }
 *,*::before,*::after{ box-sizing:border-box }
@@ -199,6 +202,35 @@ body.reading main > :not(.book-view){ display:none !important }
 .proc-ex{ margin-bottom:8px !important }
 .proc-ex b{ color:var(--ink) }
 @media(max-width:600px){ .proc-flow li{ grid-template-columns:minmax(0,1fr); gap:0 } .proc-step{ padding:15px } }
+/* 집필 중인 작품: 클리셰 뒤집기 보드 + 이어서 쓰는 글 */
+.work{ margin-top:22px; display:grid; gap:14px }
+.work > h2{ font-size:1.25rem }
+.work > .note{ margin-top:-10px }
+.work-line{ padding:14px 16px; border-left:3px solid var(--accent); border-radius:6px; background:var(--accent-soft); color:var(--ink) }
+.work-line b{ display:block; font-size:.78rem; color:var(--accent); margin-bottom:2px }
+.cork-head{ display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:6px 12px; margin-top:10px }
+.cork-head h3{ font-size:1.05rem }
+.cork-head a{ font-size:.85rem; font-weight:600; color:var(--accent); text-underline-offset:3px }
+.cork{ padding:24px 16px; border-radius:var(--radius); display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:22px 16px;
+  background-color:var(--cork); background-image:radial-gradient(var(--cork-2) 1px, transparent 1.4px); background-size:14px 14px; box-shadow:inset 0 0 0 6px var(--cork-2) }
+.pin-card{ position:relative; padding:18px 16px 14px; border-radius:4px; background:var(--note-mine); color:var(--note-ink); box-shadow:0 2px 0 rgba(0,0,0,.08), 0 6px 14px rgba(0,0,0,.16); display:grid; gap:10px; min-width:0 }
+.pin{ position:absolute; top:-6px; left:50%; width:14px; height:14px; margin-left:-7px; border-radius:50%; background:var(--pin); box-shadow:0 2px 3px rgba(0,0,0,.35), inset -2px -2px 0 rgba(0,0,0,.18) }
+.pin-card small{ display:block; font-size:.72rem; font-weight:700; letter-spacing:.02em; opacity:.65; margin-bottom:2px }
+.pin-from{ font-size:.9rem; opacity:.8; padding-bottom:10px; border-bottom:1px dashed rgba(0,0,0,.2) }
+.pin-to{ font-size:1rem; font-weight:600; line-height:1.6 }
+.pin-extra{ font-size:.8rem; opacity:.75 }
+.work-part{ padding:16px 18px; border:1px solid var(--rule); border-radius:var(--radius); background:var(--sheet) }
+.work-part h3{ font-size:1rem; margin-bottom:10px; display:flex; align-items:center; gap:8px }
+.work-part h3::after{ content:''; font-size:.72rem; font-weight:500; padding:3px 8px; border-radius:999px }
+.work-part.mine h3::after{ content:'내 설정'; background:var(--note-mine); color:var(--note-ink) }
+.work-part.note h3::after{ content:'노트가 정리'; background:var(--sheet-2); color:var(--ink-3); border:1px solid var(--rule) }
+.work-part.ask h3::after{ content:'정할 것 · 제안'; background:var(--note-ask); color:var(--note-ink) }
+.work-list{ display:grid; grid-template-columns:8.5rem minmax(0,1fr); gap:10px 14px; font-size:.93rem }
+.work-list dt{ font-weight:600 }
+.work-list dd{ margin:0; color:var(--ink-2) }
+.step-link{ font-size:.78rem; font-weight:600; color:var(--accent); text-underline-offset:2px; white-space:nowrap }
+@media(max-width:600px){ .cork{ grid-template-columns:minmax(0,1fr); padding:20px 14px } .work-list{ grid-template-columns:minmax(0,1fr); gap:2px } .work-list dd{ margin-bottom:10px } }
+
 .aspects li{ padding:12px 14px; border:1px solid var(--rule); border-radius:var(--radius); background:var(--sheet) }
 .opinion{ display:grid; grid-template-columns:4.2rem minmax(0,1fr); gap:8px; margin:4px 0 0 !important; color:var(--ink-2) }
 .op-tag{ padding-top:2px; font-size:.76rem; font-weight:600; letter-spacing:.02em }
@@ -261,6 +293,7 @@ body.reading main > :not(.book-view){ display:none !important }
     <button class="tab" role="tab" data-author="aizawa" aria-selected="false"><b>아이자와 사코</b><small>相沢沙呼 · 『medium』</small></button>
     <button class="tab" role="tab" data-author="nisio" aria-selected="false"><b>니시오 이신</b><small>西尾維新 · 『クビキリサイクル』</small></button>
     <button class="tab mine" role="tab" data-author="process" aria-selected="false"><b>나의 집필 프로세스</b><small>롤모델 · 시라이 도모유키</small></button>
+    <button class="tab mine" role="tab" data-author="works" aria-selected="false"><b>집필 중인 작품</b><small>무당과 형사</small></button>
   </div>
 
   <!-- 공통 노트: 작가를 가리지 않는 장르·시장 이야기 -->
@@ -918,9 +951,16 @@ body.reading main > :not(.book-view){ display:none !important }
       <p class="proc-tools"><b>함께 쓰는 자료</b><a href="cliches.html">추리소설 클리셰 모음 · 착상할 때 뒤집을 전제 고르기 →</a></p>
     </div>
   </div>
+  <div class="author" id="a-works" role="tabpanel" hidden>
+    <div class="hero">
+      <p class="name">집필 중인 작품<span class="jp">코르크보드</span></p>
+      <p class="book-intro">쓰고 있는 작품마다 한 덩어리예요. 코르크보드에는 내 아이디어가 기존 클리셰를 뒤집는 곳만 붙이고, 인물 · 반전 · 정할 것은 그 아래에 이어서 적어요. 항목마다 <a href="#a-process">나의 집필 프로세스</a>의 어느 단계인지 이어 두었어요.</p>
+    </div>
+  </div>
 </main>
 
-<script src="books.js?v=20261027r"></script>
-<script src="bookshelf.js?v=20261027r"></script>
-<script src="process.js?v=20261027r"></script>
-<script src="learning.js?v=20261027r"></script>
+<script src="books.js?v=20261027s"></script>
+<script src="bookshelf.js?v=20261027s"></script>
+<script src="process.js?v=20261027s"></script>
+<script src="works.js?v=20261027y"></script>
+<script src="learning.js?v=20261027s"></script>
