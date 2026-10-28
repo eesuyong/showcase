@@ -172,7 +172,7 @@ body.reading main > :not(.book-view){ display:none !important }
 .book-page{ display:grid; grid-template-columns:minmax(0,1fr); gap:30px }
 .book-head h1{ font-family:var(--font-jp); font-weight:500; font-size:clamp(1.5rem,5.5vw,2.1rem) }
 .book-intro{ margin-top:12px; padding-top:12px; border-top:1px solid var(--rule); font-size:.93rem; color:var(--ink-2) }
-.book-page section > p + p{ margin-top:10px }
+.book-page section > p + p, .work-page section > p + p{ margin-top:10px }
 .spoiler{ padding:14px 16px; border:1px dashed var(--rule-2); border-radius:var(--radius); background:var(--sheet-2) }
 .spoiler summary{ font-size:.9rem; font-weight:600; color:var(--ink-2); cursor:pointer; min-height:30px }
 .spoiler[open] summary{ margin-bottom:10px }
@@ -202,12 +202,11 @@ body.reading main > :not(.book-view){ display:none !important }
 .proc-ex{ margin-bottom:8px !important }
 .proc-ex b{ color:var(--ink) }
 @media(max-width:600px){ .proc-flow li{ grid-template-columns:minmax(0,1fr); gap:0 } .proc-step{ padding:15px } }
-/* 집필 중인 작품: 클리셰 뒤집기 보드 + 이어서 쓰는 글 */
-.work{ margin-top:22px; display:grid; gap:14px }
-.work > h2{ font-size:1.25rem }
-.work > .note{ margin-top:-10px }
-.work-line{ padding:14px 16px; border-left:3px solid var(--accent); border-radius:6px; background:var(--accent-soft); color:var(--ink) }
-.work-line b{ display:block; font-size:.78rem; color:var(--accent); margin-bottom:2px }
+/* 집필 중인 작품: 책 분석(.syn 등)과 같은 모양 + 클리셰 뒤집기 보드 */
+.work-page{ display:grid; grid-template-columns:minmax(0,1fr); gap:30px; margin-top:26px }
+.work-costs{ display:grid; gap:10px }
+.work-page .cork-head{ margin-top:18px }
+.work-page .cork-head h4{ margin:0 }
 .cork-head{ display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:6px 12px; margin-top:10px }
 .cork-head h3{ font-size:1.05rem }
 .cork-head a{ font-size:.85rem; font-weight:600; color:var(--accent); text-underline-offset:3px }
@@ -219,17 +218,7 @@ body.reading main > :not(.book-view){ display:none !important }
 .pin-from{ font-size:.9rem; opacity:.8; padding-bottom:10px; border-bottom:1px dashed rgba(0,0,0,.2) }
 .pin-to{ font-size:1rem; font-weight:600; line-height:1.6 }
 .pin-extra{ font-size:.8rem; opacity:.75 }
-.work-part{ padding:16px 18px; border:1px solid var(--rule); border-radius:var(--radius); background:var(--sheet) }
-.work-part h3{ font-size:1rem; margin-bottom:10px; display:flex; align-items:center; gap:8px }
-.work-part h3::after{ content:''; font-size:.72rem; font-weight:500; padding:3px 8px; border-radius:999px }
-.work-part.mine h3::after{ content:'내 설정'; background:var(--note-mine); color:var(--note-ink) }
-.work-part.note h3::after{ content:'노트가 정리'; background:var(--sheet-2); color:var(--ink-3); border:1px solid var(--rule) }
-.work-part.ask h3::after{ content:'정할 것 · 제안'; background:var(--note-ask); color:var(--note-ink) }
-.work-list{ display:grid; grid-template-columns:8.5rem minmax(0,1fr); gap:10px 14px; font-size:.93rem }
-.work-list dt{ font-weight:600 }
-.work-list dd{ margin:0; color:var(--ink-2) }
-.step-link{ font-size:.78rem; font-weight:600; color:var(--accent); text-underline-offset:2px; white-space:nowrap }
-@media(max-width:600px){ .cork{ grid-template-columns:minmax(0,1fr); padding:20px 14px } .work-list{ grid-template-columns:minmax(0,1fr); gap:2px } .work-list dd{ margin-bottom:10px } }
+@media(max-width:600px){ .cork{ grid-template-columns:minmax(0,1fr); padding:20px 14px } }
 
 .aspects li{ padding:12px 14px; border:1px solid var(--rule); border-radius:var(--radius); background:var(--sheet) }
 .opinion{ display:grid; grid-template-columns:4.2rem minmax(0,1fr); gap:8px; margin:4px 0 0 !important; color:var(--ink-2) }
@@ -953,8 +942,8 @@ body.reading main > :not(.book-view){ display:none !important }
   </div>
   <div class="author" id="a-works" role="tabpanel" hidden>
     <div class="hero">
-      <p class="name">집필 중인 작품<span class="jp">코르크보드</span></p>
-      <p class="book-intro">쓰고 있는 작품마다 한 덩어리예요. 코르크보드에는 내 아이디어가 기존 클리셰를 뒤집는 곳만 붙이고, 인물 · 반전 · 정할 것은 그 아래에 이어서 적어요. 항목마다 <a href="#a-process">나의 집필 프로세스</a>의 어느 단계인지 이어 두었어요.</p>
+      <p class="name">집필 중인 작품<span class="jp">내 작품의 설계 노트</span></p>
+      <p class="book-intro">쓰고 있는 작품을 『나는 괴이 너는 괴물』 책 분석과 같은 틀로 정리해요. 첫 아이디어에서 완성까지, 인물 설계, 세계관 설계, 뒤집는 클리셰, 빌려 온 기술, 이 선택의 대가, 아직 비어 있는 곳 순서예요. 항목마다 <a href="#a-process">나의 집필 프로세스</a>의 어느 단계인지 이어 두었어요.</p>
     </div>
   </div>
 </main>
@@ -962,5 +951,5 @@ body.reading main > :not(.book-view){ display:none !important }
 <script src="books.js?v=20261027s"></script>
 <script src="bookshelf.js?v=20261027s"></script>
 <script src="process.js?v=20261027s"></script>
-<script src="works.js?v=20261027z"></script>
+<script src="works.js?v=20261028d"></script>
 <script src="learning.js?v=20261027s"></script>
