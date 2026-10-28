@@ -205,6 +205,17 @@ body.reading main > :not(.book-view){ display:none !important }
 /* 집필 중인 작품: 책 분석(.syn 등)과 같은 모양 + 클리셰 뒤집기 보드 */
 .work-page{ display:grid; grid-template-columns:minmax(0,1fr); gap:30px; margin-top:26px }
 .work-costs{ display:grid; gap:10px }
+.obi{ margin:0; padding:16px 18px; border-left:3px solid var(--accent); border-radius:6px; background:var(--accent-soft) }
+.obi b{ display:block; font-size:1.15rem; line-height:1.5; color:var(--ink); margin-bottom:6px }
+.obi span{ font-size:.92rem; color:var(--ink-2) }
+.cover-pair{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; max-width:520px; margin:6px 0 0 }
+.cover-pair figure{ margin:0; min-width:0 }
+.cover-pair img{ display:block; width:100%; height:auto; border-radius:4px; box-shadow:0 2px 0 rgba(0,0,0,.06), 0 8px 18px rgba(0,0,0,.18) }
+.cover-pair figcaption{ margin-top:6px; font-size:.8rem; color:var(--ink-3); text-align:center }
+.blurb{ padding:14px 16px; border-radius:6px; background:var(--sheet-2); font-size:.92rem; color:var(--ink-2) }
+.blurb p{ margin:0 }
+.blurb p + p{ margin-top:8px }
+.blurb p:first-child, .blurb p:last-child{ color:var(--ink); font-weight:600 }
 .work-page .cork-head{ margin-top:18px }
 .work-page .cork-head h4{ margin:0 }
 .cork-head{ display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:6px 12px; margin-top:10px }
@@ -282,7 +293,7 @@ body.reading main > :not(.book-view){ display:none !important }
     <button class="tab" role="tab" data-author="aizawa" aria-selected="false"><b>아이자와 사코</b><small>相沢沙呼 · 『medium』</small></button>
     <button class="tab" role="tab" data-author="nisio" aria-selected="false"><b>니시오 이신</b><small>西尾維新 · 『クビキリサイクル』</small></button>
     <button class="tab mine" role="tab" data-author="process" aria-selected="false"><b>나의 집필 프로세스</b><small>롤모델 · 시라이 도모유키</small></button>
-    <button class="tab mine" role="tab" data-author="works" aria-selected="false"><b>집필 중인 작품</b><small>무당과 형사</small></button>
+    <button class="tab mine" role="tab" data-author="works" aria-selected="false"><b>집필 중인 작품</b><small>정답에 이르는 병</small></button>
   </div>
 
   <!-- 공통 노트: 작가를 가리지 않는 장르·시장 이야기 -->
@@ -951,5 +962,5 @@ body.reading main > :not(.book-view){ display:none !important }
 <script src="books.js?v=20261027s"></script>
 <script src="bookshelf.js?v=20261027s"></script>
 <script src="process.js?v=20261027s"></script>
-<script src="works.js?v=20261028j"></script>
+<script src="works.js?v=20261028m"></script>
 <script src="learning.js?v=20261027s"></script>
