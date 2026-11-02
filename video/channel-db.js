@@ -205,7 +205,9 @@ function channelRowsCsv(rows, concepts) {
     el('db-rows').replaceChildren();
     if (!count) {
       const row = document.createElement('tr');
+      row.setAttribute('role', 'row');
       const cell = document.createElement('td');
+      cell.setAttribute('role', 'cell');
       cell.colSpan = 5;
       cell.className = 'db-empty';
       cell.textContent = '조건에 맞는 콘텐츠가 없습니다. 채널이나 컨셉 선택을 줄여 보세요.';
@@ -214,10 +216,15 @@ function channelRowsCsv(rows, concepts) {
     }
     for (const entry of rows.slice(start, start + size)) {
       const row = document.createElement('tr');
+      row.setAttribute('role', 'row');
       const titleCell = document.createElement('td');
+      titleCell.setAttribute('role', 'cell');
+      titleCell.dataset.label = '제목';
       titleCell.textContent = entry.title;
       row.append(titleCell);
       const cell = document.createElement('td');
+      cell.setAttribute('role', 'cell');
+      cell.dataset.label = '컨셉';
       const tags = document.createElement('div');
       tags.className = 'db-concept-tags';
       for (const number of entry.concepts) {
@@ -237,8 +244,10 @@ function channelRowsCsv(rows, concepts) {
         cell.append(note);
       }
       row.append(cell);
-      for (const value of [entry.format === 'videos' ? '일반 영상' : '쇼츠', entry.channelName, entry.published]) {
+      for (const [label, value] of [['유형', entry.format === 'videos' ? '일반 영상' : '쇼츠'], ['채널', entry.channelName], ['게시일', entry.published]]) {
         const metadataCell = document.createElement('td');
+        metadataCell.setAttribute('role', 'cell');
+        metadataCell.dataset.label = label;
         metadataCell.textContent = value;
         row.append(metadataCell);
       }
