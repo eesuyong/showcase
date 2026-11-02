@@ -1,0 +1,3954 @@
+{
+  "checkedOn": "2026-11-02",
+  "period": {
+    "startInclusive": "2026-08-02",
+    "endExclusive": "2026-11-02",
+    "timezone": "Asia/Seoul",
+    "days": 92
+  },
+  "method": "Public channel videos/shorts tabs followed via continuation; publication timestamps checked on each public watch page; live content excluded; concept mapping based on titles.",
+  "concepts": {
+    "1": "시술 비교와 선택 가이드",
+    "2": "일상 피부관리와 생활 습관",
+    "3": "특정 진료 분야의 전문 지식",
+    "4": "시술의 한계·부작용·주의점",
+    "5": "피부 상식과 유행 팩트체크",
+    "6": "화장품·성분·홈케어 제품 해설",
+    "7": "상담 과정과 판단 기준",
+    "8": "장비 원리와 실제 시술 과정",
+    "9": "외모·미감·연예인 분석",
+    "10": "식습관·운동·체중관리",
+    "11": "대중문화·유행·화제 리액션",
+    "12": "원장 일상과 개원 브이로그",
+    "13": "진료 철학과 원장의 관점",
+    "14": "공감 상황극과 가벼운 토크",
+    "15": "브랜드 이야기와 제작 비하인드"
+  },
+  "channels": [
+    {
+      "key": "sim",
+      "name": "피부심 심현철",
+      "channelId": "UCUH_M0bX4f1JZns0WdBJVKQ",
+      "collection": {
+        "videos": {
+          "pages": 1,
+          "checked": 30,
+          "stop": "reached_before_start",
+          "errors": []
+        },
+        "shorts": {
+          "pages": 2,
+          "checked": 96,
+          "stop": "reached_before_start",
+          "errors": []
+        }
+      },
+      "counts": {
+        "videos": 14,
+        "shorts": 73
+      },
+      "items": [
+        {
+          "id": "02cZNPjTylQ",
+          "title": "약사님은 어떤 영양제를 챙겨 먹나요? | 피부심의 보이는 라디오 (feat. 소금약사)",
+          "format": "videos",
+          "published": "2026-10-29",
+          "publishedTimestamp": "2026-10-29T18:19:21+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "-SzZ68SlZeQ",
+          "title": "피부과를 자주가면 피부가 좋아질까?",
+          "format": "videos",
+          "published": "2026-10-22",
+          "publishedTimestamp": "2026-10-22T18:31:03+09:00",
+          "concepts": [
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "6jmzzBrsoQo",
+          "title": "제로이드 만든 그 회사의 화장품 '리얼베리어 익스트림 프로세라 크림' 분석",
+          "format": "videos",
+          "published": "2026-10-15",
+          "publishedTimestamp": "2026-10-15T20:07:54+09:00",
+          "concepts": [
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "FyBUIjZK4Xs",
+          "title": "탈모, 집에서 확인해 볼 수 있습니다",
+          "format": "videos",
+          "published": "2026-10-08",
+          "publishedTimestamp": "2026-10-08T19:59:42+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "YRznNzxGyWs",
+          "title": "대하의 계절, 새우는 이렇게 드세요!",
+          "format": "videos",
+          "published": "2026-10-01",
+          "publishedTimestamp": "2026-10-01T19:04:50+09:00",
+          "concepts": [
+            10
+          ],
+          "tentative": false
+        },
+        {
+          "id": "0E0dQKmSae4",
+          "title": "올영, 쿠팡, 네이버... 클렌징오일 4대장 직접비교!(마녀공장,슈에무라,아누아,더셀랩)",
+          "format": "videos",
+          "published": "2026-09-24",
+          "publishedTimestamp": "2026-09-24T17:53:13+09:00",
+          "concepts": [
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "vuh99JQdPWQ",
+          "title": "연예인들이 추석만 되면 피부과를 찾는 이유?",
+          "format": "videos",
+          "published": "2026-09-17",
+          "publishedTimestamp": "2026-09-17T20:44:46+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "uRV_cYONw40",
+          "title": "손톱,발톱 색이 평소랑 다르고 간지럽다면",
+          "format": "videos",
+          "published": "2026-09-10",
+          "publishedTimestamp": "2026-09-10T20:03:06+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "G-ege0AYs9E",
+          "title": "아이스크림이 몸에 끼치는 영향은?(Feat. 피부심이 과일을 안먹는이유) [피부심의 곤란한도전 - 베스킨라빈스 메가팩 아이스크림]",
+          "format": "videos",
+          "published": "2026-09-03",
+          "publishedTimestamp": "2026-09-03T19:01:52+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "qKt9WnTT9Q0",
+          "title": "더셀 브랜드 영상 같이보기! (with 주하늘님)",
+          "format": "videos",
+          "published": "2026-08-27",
+          "publishedTimestamp": "2026-08-27T18:00:52+09:00",
+          "concepts": [
+            15
+          ],
+          "tentative": false
+        },
+        {
+          "id": "u_Hz0qIVSPQ",
+          "title": "화장품 살 때 브랜드 보세요? 아님 성분도 보세요?",
+          "format": "videos",
+          "published": "2026-08-20",
+          "publishedTimestamp": "2026-08-20T18:00:08+09:00",
+          "concepts": [
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "tfG8anCoK6A",
+          "title": "여름 피부 관리 방법? (Feat. 피부결...)",
+          "format": "videos",
+          "published": "2026-08-13",
+          "publishedTimestamp": "2026-08-13T18:00:38+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "fmNn_l_Q6eI",
+          "title": "비타민C 앰플 이렇게 발라야 하얘집니다",
+          "format": "videos",
+          "published": "2026-08-10",
+          "publishedTimestamp": "2026-08-10T18:36:54+09:00",
+          "concepts": [
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "5gP5CLI4Byc",
+          "title": "피부를 바꾸는 문화를 만듭니다 '더셀'",
+          "format": "videos",
+          "published": "2026-08-05",
+          "publishedTimestamp": "2026-08-05T15:13:49+09:00",
+          "concepts": [
+            15
+          ],
+          "tentative": false
+        },
+        {
+          "id": "uBk4QVPm5XA",
+          "title": "할로윈 분장 피부 뒤집어지는 실수5 #shorts",
+          "format": "shorts",
+          "published": "2026-10-29",
+          "publishedTimestamp": "2026-10-29T17:00:37+09:00",
+          "concepts": [
+            2,
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "VU9Gm37CMaI",
+          "title": "얼음물 세안, 피부에 괜찮을까?",
+          "format": "shorts",
+          "published": "2026-10-28",
+          "publishedTimestamp": "2026-10-28T17:00:23+09:00",
+          "concepts": [
+            2,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "PScUqNAFiyo",
+          "title": "드라마 닥터X 장면 속 장기 이니셜이 실제 사건? #shorts",
+          "format": "shorts",
+          "published": "2026-10-27",
+          "publishedTimestamp": "2026-10-27T18:00:09+09:00",
+          "concepts": [
+            11
+          ],
+          "tentative": false
+        },
+        {
+          "id": "TaIBefftOQU",
+          "title": "피부 때문에 매일 베게 커버 바꾸시는 분? #shorts",
+          "format": "shorts",
+          "published": "2026-10-26",
+          "publishedTimestamp": "2026-10-26T20:00:38+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "qDztvrHkOjU",
+          "title": "분명 예뻐졌는데 티 안나는 사람 특징 #shorts",
+          "format": "shorts",
+          "published": "2026-10-24",
+          "publishedTimestamp": "2026-10-24T17:00:36+09:00",
+          "concepts": [
+            9
+          ],
+          "tentative": false
+        },
+        {
+          "id": "3rGEvX-Qe0Y",
+          "title": "마운자로, 요요 없이 끊는 꿀팁 #shorts",
+          "format": "shorts",
+          "published": "2026-10-23",
+          "publishedTimestamp": "2026-10-23T17:00:26+09:00",
+          "concepts": [
+            10
+          ],
+          "tentative": false
+        },
+        {
+          "id": "mT5Wwp8iwUU",
+          "title": "피부에 최악인 술 5가지 #shorts",
+          "format": "shorts",
+          "published": "2026-10-22",
+          "publishedTimestamp": "2026-10-22T17:00:29+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "KLvgNDJ-Igc",
+          "title": "술 vs 담배, 피부과 전문의 생각은? #shorts",
+          "format": "shorts",
+          "published": "2026-10-21",
+          "publishedTimestamp": "2026-10-21T05:00:36+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "5LoWFZRtfsQ",
+          "title": "POV: 이 나이에 피부 관리 필요없다고 할 때 #shorts",
+          "format": "shorts",
+          "published": "2026-10-20",
+          "publishedTimestamp": "2026-10-20T16:20:59+09:00",
+          "concepts": [
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "95XUlnKidCw",
+          "title": "제로 콜라만 먹게 되면 피부에서 일어나는 일 #shorts",
+          "format": "shorts",
+          "published": "2026-10-15",
+          "publishedTimestamp": "2026-10-15T17:00:05+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "HULY8LMAnJU",
+          "title": "손등 핏줄, 저는 이걸로 가려요 #shorts",
+          "format": "shorts",
+          "published": "2026-10-14",
+          "publishedTimestamp": "2026-10-14T17:00:06+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Qrs5Ja0Ikkk",
+          "title": "핸드크림 아무리 발라도 핏줄 그대로인 이유 #shorts",
+          "format": "shorts",
+          "published": "2026-10-13",
+          "publishedTimestamp": "2026-10-13T18:30:37+09:00",
+          "concepts": [
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "-i1mSgsptyo",
+          "title": "'중안면' 짧아보이게 하는 시술 #shorts",
+          "format": "shorts",
+          "published": "2026-10-12",
+          "publishedTimestamp": "2026-10-12T17:00:07+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "8Kk0Gu4j6V4",
+          "title": "가을 러닝 하시는 분 주목 #shorts",
+          "format": "shorts",
+          "published": "2026-10-10",
+          "publishedTimestamp": "2026-10-10T17:00:19+09:00",
+          "concepts": [
+            10
+          ],
+          "tentative": false
+        },
+        {
+          "id": "LbgHBJozPZA",
+          "title": "피부과 전문의가 보는 서강준 외모 #shorts",
+          "format": "shorts",
+          "published": "2026-10-09",
+          "publishedTimestamp": "2026-10-09T10:00:23+09:00",
+          "concepts": [
+            9
+          ],
+          "tentative": false
+        },
+        {
+          "id": "1dy8DCriL2w",
+          "title": "시선 도둑 #shorts",
+          "format": "shorts",
+          "published": "2026-10-08",
+          "publishedTimestamp": "2026-10-08T17:00:25+09:00",
+          "concepts": [
+            14
+          ],
+          "tentative": true
+        },
+        {
+          "id": "9ZZIZr0vK2I",
+          "title": "피부과 원장이 헬스장 가면 보는 것 #shorts",
+          "format": "shorts",
+          "published": "2026-10-07",
+          "publishedTimestamp": "2026-10-07T17:00:32+09:00",
+          "concepts": [
+            12
+          ],
+          "tentative": false
+        },
+        {
+          "id": "bgNN733dRvU",
+          "title": "여름 지나고 얼굴이 급 늙어보인다면? #shorts",
+          "format": "shorts",
+          "published": "2026-10-05",
+          "publishedTimestamp": "2026-10-05T17:00:29+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "BGZIqCugehE",
+          "title": "하루 3시간 자고 일하는 피부과 원장 #shorts",
+          "format": "shorts",
+          "published": "2026-10-03",
+          "publishedTimestamp": "2026-10-03T09:00:25+09:00",
+          "concepts": [
+            12
+          ],
+          "tentative": false
+        },
+        {
+          "id": "C_2t4yXN5hI",
+          "title": "이란에 서울가 있다?! #shorts",
+          "format": "shorts",
+          "published": "2026-10-02",
+          "publishedTimestamp": "2026-10-02T09:00:27+09:00",
+          "concepts": [
+            11
+          ],
+          "tentative": false
+        },
+        {
+          "id": "nusjIcDO_4s",
+          "title": "피부 갑자기 뒤집어지면 ? #shorts",
+          "format": "shorts",
+          "published": "2026-10-01",
+          "publishedTimestamp": "2026-10-01T17:00:01+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "o34TF6J386s",
+          "title": "피부과 의사가 절대 손대지 않는 부위 #shorts",
+          "format": "shorts",
+          "published": "2026-09-30",
+          "publishedTimestamp": "2026-09-30T17:00:33+09:00",
+          "concepts": [
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "G5suWJ33hNo",
+          "title": "피부과 의사가 마스크팩에서 가장 먼저 보는 것 #shorts",
+          "format": "shorts",
+          "published": "2026-09-29",
+          "publishedTimestamp": "2026-09-29T17:00:19+09:00",
+          "concepts": [
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Yiut0caLfu0",
+          "title": "하루 4시간만 피부는 어떻게 될까? #shorts",
+          "format": "shorts",
+          "published": "2026-09-28",
+          "publishedTimestamp": "2026-09-28T17:00:20+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": true
+        },
+        {
+          "id": "VGLEGdozsGg",
+          "title": "장거리 운전 필수 시청 영상 #shorts",
+          "format": "shorts",
+          "published": "2026-09-26",
+          "publishedTimestamp": "2026-09-26T17:00:03+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": true
+        },
+        {
+          "id": "JAbrULaP4ls",
+          "title": "남자가 좋아하는 여자 얼굴, 여자가 좋아하는 남자 얼굴 특징 #shorts",
+          "format": "shorts",
+          "published": "2026-09-25",
+          "publishedTimestamp": "2026-09-25T17:00:11+09:00",
+          "concepts": [
+            9
+          ],
+          "tentative": false
+        },
+        {
+          "id": "8AWAyfQMz5M",
+          "title": "피부과전문의가 말하는 울쎄라 붓기 #shorts",
+          "format": "shorts",
+          "published": "2026-09-24",
+          "publishedTimestamp": "2026-09-24T17:00:30+09:00",
+          "concepts": [
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "lEOAct740Do",
+          "title": "야름다운 권은비 #shorts",
+          "format": "shorts",
+          "published": "2026-09-23",
+          "publishedTimestamp": "2026-09-23T17:00:13+09:00",
+          "concepts": [
+            9,
+            11
+          ],
+          "tentative": false
+        },
+        {
+          "id": "o3Zhxkqh4po",
+          "title": "주근깨 시술받고 심재성 2도화상 #shorts",
+          "format": "shorts",
+          "published": "2026-09-22",
+          "publishedTimestamp": "2026-09-22T17:00:21+09:00",
+          "concepts": [
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "z9lM-vctqOE",
+          "title": "20대가 받으면 뜯어 말리는 시술 #shorts",
+          "format": "shorts",
+          "published": "2026-09-20",
+          "publishedTimestamp": "2026-09-20T18:00:22+09:00",
+          "concepts": [
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "5_jzZiOePdQ",
+          "title": "피부과 시술 후 뒤집어지는 진짜 이유 #shorts",
+          "format": "shorts",
+          "published": "2026-09-19",
+          "publishedTimestamp": "2026-09-19T17:00:40+09:00",
+          "concepts": [
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "uW95l1sGxRI",
+          "title": "필러 시술 아무 곳에 하지 마세요 #shorts",
+          "format": "shorts",
+          "published": "2026-09-18",
+          "publishedTimestamp": "2026-09-18T17:00:36+09:00",
+          "concepts": [
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "5ffzxK932aA",
+          "title": "세안하고 머리 감기 가능? #shorts",
+          "format": "shorts",
+          "published": "2026-09-17",
+          "publishedTimestamp": "2026-09-17T08:00:15+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "cvRBF2TKZ_c",
+          "title": "넷플릭스 '들쥐' 1인 2역 구별법 #shorts",
+          "format": "shorts",
+          "published": "2026-09-16",
+          "publishedTimestamp": "2026-09-16T17:00:10+09:00",
+          "concepts": [
+            11
+          ],
+          "tentative": false
+        },
+        {
+          "id": "48j87zIdxxo",
+          "title": "독한 서인영이 마취없이 하는 시술?",
+          "format": "shorts",
+          "published": "2026-09-15",
+          "publishedTimestamp": "2026-09-15T17:00:13+09:00",
+          "concepts": [
+            1,
+            11
+          ],
+          "tentative": false
+        },
+        {
+          "id": "_1Lqe7cENa4",
+          "title": "바세린, 아무데나 바르지 마세요 #shorts",
+          "format": "shorts",
+          "published": "2026-09-14",
+          "publishedTimestamp": "2026-09-14T17:30:07+09:00",
+          "concepts": [
+            4,
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "MOeGlCGCKTY",
+          "title": "원장님 향수 뭐 쓰세요? #shorts",
+          "format": "shorts",
+          "published": "2026-09-13",
+          "publishedTimestamp": "2026-09-13T18:00:15+09:00",
+          "concepts": [
+            12
+          ],
+          "tentative": false
+        },
+        {
+          "id": "j8yWluhm6Ig",
+          "title": "마운자로 살 뺐는데 얼굴은 더 늙어보이는 이유 #shorts",
+          "format": "shorts",
+          "published": "2026-09-12",
+          "publishedTimestamp": "2026-09-12T17:00:15+09:00",
+          "concepts": [
+            4,
+            10
+          ],
+          "tentative": false
+        },
+        {
+          "id": "wFBDzVRAfz0",
+          "title": "장원영 1시간 샤워 #shorts",
+          "format": "shorts",
+          "published": "2026-09-11",
+          "publishedTimestamp": "2026-09-11T17:00:33+09:00",
+          "concepts": [
+            2,
+            11
+          ],
+          "tentative": false
+        },
+        {
+          "id": "lNBdoNZ-YJU",
+          "title": "성인도 수족구에 걸릴 수 있어요 #shorts",
+          "format": "shorts",
+          "published": "2026-09-10",
+          "publishedTimestamp": "2026-09-10T17:30:24+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "fIwx7vKPZoo",
+          "title": "피부과원장 인생영화 #shorts",
+          "format": "shorts",
+          "published": "2026-09-09",
+          "publishedTimestamp": "2026-09-09T17:30:15+09:00",
+          "concepts": [
+            11,
+            12
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Aq0123I6j44",
+          "title": "말랐는데 이중턱인 분 손 #shorts",
+          "format": "shorts",
+          "published": "2026-09-08",
+          "publishedTimestamp": "2026-09-08T17:30:19+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "F26gI7_lrtA",
+          "title": "피부과 원장이 본 배우 고윤정님 얼굴 #shorts",
+          "format": "shorts",
+          "published": "2026-09-07",
+          "publishedTimestamp": "2026-09-07T17:30:20+09:00",
+          "concepts": [
+            9
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Wp1Zvz0gHZM",
+          "title": "피부과 전문의가 알려주는 볼륨+촉촉 시술 #shorts",
+          "format": "shorts",
+          "published": "2026-09-07",
+          "publishedTimestamp": "2026-09-07T08:00:06+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "8aIBVPGc6Wk",
+          "title": "여드름 흉터 잘 생기는 타입 #shorts",
+          "format": "shorts",
+          "published": "2026-09-06",
+          "publishedTimestamp": "2026-09-06T17:00:12+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "-knbPinnO7A",
+          "title": "우리 아기 새하얗게 만드는 법 #shorts",
+          "format": "shorts",
+          "published": "2026-09-05",
+          "publishedTimestamp": "2026-09-05T08:00:25+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "rMCrhxBgLkg",
+          "title": "세안 후 수건vs자연 #shorts",
+          "format": "shorts",
+          "published": "2026-09-04",
+          "publishedTimestamp": "2026-09-04T17:00:32+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "PZMQKVbQMCE",
+          "title": "고준희 붓기 빼는 방법 #shorts",
+          "format": "shorts",
+          "published": "2026-09-03",
+          "publishedTimestamp": "2026-09-03T18:00:13+09:00",
+          "concepts": [
+            2,
+            11
+          ],
+          "tentative": false
+        },
+        {
+          "id": "GiFPzDhUDOQ",
+          "title": "러닝 하면 얼굴 더 빨리 늙나요? #shorts",
+          "format": "shorts",
+          "published": "2026-09-02",
+          "publishedTimestamp": "2026-09-02T17:00:32+09:00",
+          "concepts": [
+            2,
+            10
+          ],
+          "tentative": false
+        },
+        {
+          "id": "04r0-y9aay4",
+          "title": "허경환 피부 관리법, 정말 맞을까?",
+          "format": "shorts",
+          "published": "2026-09-01",
+          "publishedTimestamp": "2026-09-01T17:27:25+09:00",
+          "concepts": [
+            5,
+            11
+          ],
+          "tentative": false
+        },
+        {
+          "id": "9AYIsh_9Rgo",
+          "title": "피부에 돈쓰는데 효과없는 사람 특징 #shorts",
+          "format": "shorts",
+          "published": "2026-08-30",
+          "publishedTimestamp": "2026-08-30T17:00:11+09:00",
+          "concepts": [
+            7
+          ],
+          "tentative": true
+        },
+        {
+          "id": "wDhWi4rXk28",
+          "title": "남들 잘 모르는 가성비 시술 #shorts",
+          "format": "shorts",
+          "published": "2026-08-29",
+          "publishedTimestamp": "2026-08-29T17:00:14+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "tAbbkyG7q9M",
+          "title": "첫인상 좋은 사람 특징 #shorts",
+          "format": "shorts",
+          "published": "2026-08-28",
+          "publishedTimestamp": "2026-08-28T17:00:06+09:00",
+          "concepts": [
+            9
+          ],
+          "tentative": false
+        },
+        {
+          "id": "BwpVcV0EAms",
+          "title": "나이들수록 성격이 얼굴에 남는 이유 #shorts",
+          "format": "shorts",
+          "published": "2026-08-27",
+          "publishedTimestamp": "2026-08-27T17:00:17+09:00",
+          "concepts": [
+            9
+          ],
+          "tentative": false
+        },
+        {
+          "id": "44uXph_GbWE",
+          "title": "평생 딱 한번 시술 받을 수 있다면? #shorts",
+          "format": "shorts",
+          "published": "2026-08-26",
+          "publishedTimestamp": "2026-08-26T17:00:08+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "BXYlxlVgUOs",
+          "title": "리센느 원이가 선크림 안발라도 하얀 이유?  #shorts",
+          "format": "shorts",
+          "published": "2026-08-25",
+          "publishedTimestamp": "2026-08-25T14:37:46+09:00",
+          "concepts": [
+            5,
+            11
+          ],
+          "tentative": false
+        },
+        {
+          "id": "wIcL62onItk",
+          "title": "여성탈모가 남자보다 더 어려운 이유 #shorts",
+          "format": "shorts",
+          "published": "2026-08-24",
+          "publishedTimestamp": "2026-08-24T17:00:35+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "7kG95l4waa4",
+          "title": "울쎄라 VS써마지 #shorts",
+          "format": "shorts",
+          "published": "2026-08-22",
+          "publishedTimestamp": "2026-08-22T17:00:09+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "U5GDNJYPQ5w",
+          "title": "피부과 원장의 수능 대비 공부 비법 #shorts",
+          "format": "shorts",
+          "published": "2026-08-21",
+          "publishedTimestamp": "2026-08-21T18:00:33+09:00",
+          "concepts": [
+            12
+          ],
+          "tentative": false
+        },
+        {
+          "id": "3kS2GQnljg0",
+          "title": "피부과 전문의의 저녁 루틴 #shorts",
+          "format": "shorts",
+          "published": "2026-08-20",
+          "publishedTimestamp": "2026-08-20T17:00:12+09:00",
+          "concepts": [
+            2,
+            12
+          ],
+          "tentative": false
+        },
+        {
+          "id": "nLSArCFubjE",
+          "title": "여드름 흉터 안 남기려면 #shorts",
+          "format": "shorts",
+          "published": "2026-08-19",
+          "publishedTimestamp": "2026-08-19T17:00:13+09:00",
+          "concepts": [
+            2,
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "U0OBvWINE6A",
+          "title": "비타민c 오해 풀어드림 #shorts",
+          "format": "shorts",
+          "published": "2026-08-18",
+          "publishedTimestamp": "2026-08-18T17:00:29+09:00",
+          "concepts": [
+            5,
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "J8qUpVzfP0I",
+          "title": "여드름 흉터 습관 #shorts",
+          "format": "shorts",
+          "published": "2026-08-17",
+          "publishedTimestamp": "2026-08-17T17:00:15+09:00",
+          "concepts": [
+            2,
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "r3Y9B8WrEMc",
+          "title": "위고비, 마운자로.. 평생 맞나요? #shorts",
+          "format": "shorts",
+          "published": "2026-08-16",
+          "publishedTimestamp": "2026-08-16T17:00:35+09:00",
+          "concepts": [
+            10
+          ],
+          "tentative": false
+        },
+        {
+          "id": "3BLiGTrDxd4",
+          "title": "화장하고 선크림 어떻게 덧발라요? #shorts",
+          "format": "shorts",
+          "published": "2026-08-15",
+          "publishedTimestamp": "2026-08-15T17:00:22+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "3vXC2n-9sPg",
+          "title": "비타민C 효과 없는 이유 #shorts",
+          "format": "shorts",
+          "published": "2026-08-14",
+          "publishedTimestamp": "2026-08-14T17:00:38+09:00",
+          "concepts": [
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "lrIPENjrc4k",
+          "title": "피부과 원장의 드림카는? #shorts",
+          "format": "shorts",
+          "published": "2026-08-13",
+          "publishedTimestamp": "2026-08-13T17:00:23+09:00",
+          "concepts": [
+            12
+          ],
+          "tentative": false
+        },
+        {
+          "id": "T5_g8YZBAOI",
+          "title": "유부녀 킬러 정준원 #shorts",
+          "format": "shorts",
+          "published": "2026-08-12",
+          "publishedTimestamp": "2026-08-12T17:00:31+09:00",
+          "concepts": [
+            9,
+            11
+          ],
+          "tentative": false
+        },
+        {
+          "id": "8rH2Vr7KzsU",
+          "title": "배우 이동욱의 독특한 세안법 #shorts",
+          "format": "shorts",
+          "published": "2026-08-11",
+          "publishedTimestamp": "2026-08-11T10:33:39+09:00",
+          "concepts": [
+            2,
+            11
+          ],
+          "tentative": false
+        },
+        {
+          "id": "e_U5yqxNiLk",
+          "title": "피부심이 점쟁이(?) 소리 들은 이유 #shorts",
+          "format": "shorts",
+          "published": "2026-08-06",
+          "publishedTimestamp": "2026-08-06T17:56:19+09:00",
+          "concepts": [
+            12
+          ],
+          "tentative": true
+        },
+        {
+          "id": "lkrTCjMmjtI",
+          "title": "눈에 주름이 있는데 쌍꺼풀 생기면 어떡해요 #shorts",
+          "format": "shorts",
+          "published": "2026-08-04",
+          "publishedTimestamp": "2026-08-04T14:00:26+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "8YlKsPasFB4",
+          "title": "원장님, 얼굴에 털이 좀 있는데 밀어도 돼요??! #shorts",
+          "format": "shorts",
+          "published": "2026-08-03",
+          "publishedTimestamp": "2026-08-03T16:26:05+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "sCqGptEWuRw",
+          "title": "써마지 하면 좋은 피부 5가지 #shorts",
+          "format": "shorts",
+          "published": "2026-08-02",
+          "publishedTimestamp": "2026-08-02T17:00:36+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        }
+      ],
+      "subscribers": {
+        "display": "79.8만명",
+        "checkedOn": "2026-11-02",
+        "source": "https://www.youtube.com/channel/UCUH_M0bX4f1JZns0WdBJVKQ"
+      }
+    },
+    {
+      "key": "king",
+      "name": "피부왕정윤",
+      "channelId": "UC5o9Z5lgw4kk4fjDhweZxKg",
+      "collection": {
+        "videos": {
+          "pages": 1,
+          "checked": 30,
+          "stop": "reached_before_start",
+          "errors": []
+        },
+        "shorts": {
+          "pages": 1,
+          "checked": 48,
+          "stop": "reached_before_start",
+          "errors": []
+        }
+      },
+      "counts": {
+        "videos": 13,
+        "shorts": 10
+      },
+      "items": [
+        {
+          "id": "um4w4zrfQg0",
+          "title": "\"마운자로하면 폭삭 늙습니다\" 위고비 마운자로하면서 생기는 심각한 피부 부작용 | 마운자로페이스 위고비페이스 마운자로부작용",
+          "format": "videos",
+          "published": "2026-10-29",
+          "publishedTimestamp": "2026-10-29T12:30:06+09:00",
+          "concepts": [
+            3,
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "eOLlx7nPlEU",
+          "title": "\"이거 모르면 먹어도 똥만 됩니다\" 콜라겐영양제 히알루론산영양제 불편하지만 꼭 알아야 하는 진실 | 피부영양제추천 피부좋아지는영양제",
+          "format": "videos",
+          "published": "2026-10-21",
+          "publishedTimestamp": "2026-10-21T12:30:25+09:00",
+          "concepts": [
+            2,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "4dS__iRPpIY",
+          "title": "\"한 달마다 받으면 손해라고?!\" 최적의 효과를 보장하는 스킨부스터 레이저 리프팅 시술 간격 시술 주기 총정리",
+          "format": "videos",
+          "published": "2026-10-14",
+          "publishedTimestamp": "2026-10-14T12:30:26+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "6swBmxBxiGs",
+          "title": "\"받을수록 오히려 빨리 늙습니다\" 서울대 피부과전문의가 폭로하는 비추천 위험 시술 3가지 | 비추천시술 피부과부작용 피부노화",
+          "format": "videos",
+          "published": "2026-10-07",
+          "publishedTimestamp": "2026-10-07T12:30:36+09:00",
+          "concepts": [
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Z0VneaBqzNE",
+          "title": "\"보톡스로 주름 말고 리프팅하세요\" 요새 완전 핫한 하안부 보톡스 3부위 | 티 안나고 자연스레 젊어지는 방법",
+          "format": "videos",
+          "published": "2026-09-30",
+          "publishedTimestamp": "2026-09-30T12:30:09+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "sV8eTihTMk8",
+          "title": "\"다이어트하면 더 커집니다\" 나이 들수록 넙데데해진 얼굴을 작게 만드는 홈케어 방법 | 동안마사지 얼굴윤곽 브이라인",
+          "format": "videos",
+          "published": "2026-09-23",
+          "publishedTimestamp": "2026-09-23T12:30:16+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Lqt7i3jeaeA",
+          "title": "\"이거 빠지면 하나마나입니다\" 여드름흉터 치료, 단 하나만 고르라면 무조건 이게 답입니다 | 서브시전 미라젯 쥬베룩 프락셀",
+          "format": "videos",
+          "published": "2026-09-16",
+          "publishedTimestamp": "2026-09-16T12:30:24+09:00",
+          "concepts": [
+            1,
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "a3je0qjSGKM",
+          "title": "\"울쎄라 써마지보다 이게 좋아요\" 강남 사모님들이 가장 만족한 동안시술 1위 | 스컬트라 스컬트라효과 스컬트라부작용 ",
+          "format": "videos",
+          "published": "2026-09-09",
+          "publishedTimestamp": "2026-09-09T12:30:22+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "jLkklyp5uHk",
+          "title": "\"모공 색소 피지 이거 하나면 끝\" 피부과의사가 매일 꼭 챙겨쓰는 찐 화장품성분 | 나이아신아마이드 화장품추천 광고없음",
+          "format": "videos",
+          "published": "2026-09-02",
+          "publishedTimestamp": "2026-09-02T12:30:02+09:00",
+          "concepts": [
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "lJXIBc4ohFc",
+          "title": "\"묻고 따지지 말고 일단 발라보세요\" 누구나 바르기만 하면 효과 보는 여드름 근본 치료제 윈레비 크림의 모든 것 | 효과 부작용 주의사항 사용법 가격",
+          "format": "videos",
+          "published": "2026-08-26",
+          "publishedTimestamp": "2026-08-26T12:30:20+09:00",
+          "concepts": [
+            3,
+            4,
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "R3Mzxa2EPY0",
+          "title": "\"이대로만 따라하세요\" 누구나 동안이 될 수 있는 노화 예방법 | 또래보다 10살 젊어지는 방법 대공개!",
+          "format": "videos",
+          "published": "2026-08-19",
+          "publishedTimestamp": "2026-08-19T12:30:03+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "AfMtLXXZX-M",
+          "title": "\"너무 쉽게 환해집니다\" 안면홍조 술톤피부 시술 없이 집에서 해결하는 방법 | 홍조치료 화장품추천 선크림추천",
+          "format": "videos",
+          "published": "2026-08-12",
+          "publishedTimestamp": "2026-08-12T12:30:05+09:00",
+          "concepts": [
+            2,
+            3,
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "d9SffSHe80k",
+          "title": "\"이 영상 보고 돈 아끼세요\" A~Z까지 완벽 정리한 스킨부스터 티어리스트 | 리쥬란 쥬베룩 스컬트라 리투오",
+          "format": "videos",
+          "published": "2026-08-05",
+          "publishedTimestamp": "2026-08-05T12:30:32+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "JztIZhLy3IE",
+          "title": "나도 모르게 확 늙는 피부과 시술 TOP2 | 2 Skin Treatments You Shouldn't Get Too Often",
+          "format": "shorts",
+          "published": "2026-10-30",
+          "publishedTimestamp": "2026-10-30T18:31:18+09:00",
+          "concepts": [
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "0HiJWVmgqLI",
+          "title": "안 하면 손해! 가성비 최고 피부과시술 TOP3 | 3 Best-Value Treatments Recommend to Friends",
+          "format": "shorts",
+          "published": "2026-10-28",
+          "publishedTimestamp": "2026-10-28T18:34:15+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "OmNfQoDp0X4",
+          "title": "스킨부스터 티어리스트 믿으면 큰일나는 이유 | Skin Booster Rankings? Don't Trust Them",
+          "format": "shorts",
+          "published": "2026-10-26",
+          "publishedTimestamp": "2026-10-26T18:56:18+09:00",
+          "concepts": [
+            1,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "nUBm7k8CUg8",
+          "title": "팔뚝살 뱃살 허벅지 고민종결 바디시술 추천 | 3 body treatments for different body concerns",
+          "format": "shorts",
+          "published": "2026-10-23",
+          "publishedTimestamp": "2026-10-23T19:11:08+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "gNNws4Ch8jE",
+          "title": "3040은 안 하면 손해! 효과 최고 피부과 시술 추천 | 3 treatments people in their 30s and 40s wish they'd started sooner",
+          "format": "shorts",
+          "published": "2026-10-21",
+          "publishedTimestamp": "2026-10-21T18:15:23+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "atqBRLa3xgY",
+          "title": "요새 못 구해서 난리라는 다이소추천템 화장품 BEST5 | 5 Daiso Skincare Finds a Dermatologist Keeps Stocked Up On",
+          "format": "shorts",
+          "published": "2026-10-19",
+          "publishedTimestamp": "2026-10-19T18:09:35+09:00",
+          "concepts": [
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Fls246NvzLg",
+          "title": "10배 젊어지고 예뻐지는 보톡스 추천 부위 TOP3 | Botox? Focus on these 3 areas",
+          "format": "shorts",
+          "published": "2026-10-16",
+          "publishedTimestamp": "2026-10-16T19:00:11+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "eNC6NV83bA4",
+          "title": "비타민C 앰플 이렇게 안 바르면 돈만 날립니다! | 5 reasons your expensive vitamin C serum isn't working",
+          "format": "shorts",
+          "published": "2026-10-14",
+          "publishedTimestamp": "2026-10-14T17:46:46+09:00",
+          "concepts": [
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "4PNE7nbbCok",
+          "title": "모르면 손해 보는 연예인 리프팅 시술 3가지 | Most people still don't know about 3 treatments popular with celebrities",
+          "format": "shorts",
+          "published": "2026-10-12",
+          "publishedTimestamp": "2026-10-12T18:13:01+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "-Gly31zWgqc",
+          "title": "병원 안 가고 여드름 말끔히 해결하는 약국연고 추천 | 3 acne treatments you can buy without a prescription",
+          "format": "shorts",
+          "published": "2026-10-09",
+          "publishedTimestamp": "2026-10-09T19:17:53+09:00",
+          "concepts": [
+            3,
+            6
+          ],
+          "tentative": false
+        }
+      ],
+      "subscribers": {
+        "display": "17.4만명",
+        "checkedOn": "2026-11-02",
+        "source": "https://www.youtube.com/channel/UC5o9Z5lgw4kk4fjDhweZxKg"
+      }
+    },
+    {
+      "key": "blanc",
+      "name": "닥터블랑 김현준",
+      "channelId": "UCXFd79l1HUumoM6spU4D1Cw",
+      "collection": {
+        "videos": {
+          "pages": 1,
+          "checked": 30,
+          "stop": "reached_before_start",
+          "errors": []
+        },
+        "shorts": {
+          "pages": 1,
+          "checked": 48,
+          "stop": "reached_before_start",
+          "errors": []
+        }
+      },
+      "counts": {
+        "videos": 13,
+        "shorts": 13
+      },
+      "items": [
+        {
+          "id": "8o-UHVvBSNo",
+          "title": "\"단돈 만 원으로 모공·피지·색소침착까지?\" 올리브영 인기 나이아신아마이드 세럼 리뷰",
+          "format": "videos",
+          "published": "2026-10-29",
+          "publishedTimestamp": "2026-10-29T17:41:26+09:00",
+          "concepts": [
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Xp3lC0QLxw8",
+          "title": "\"의사는 이렇게 관리합니다\" 부작용 없이 무조건 피부 좋아지는 방법",
+          "format": "videos",
+          "published": "2026-10-22",
+          "publishedTimestamp": "2026-10-22T18:00:43+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "1HzGNKVgUdo",
+          "title": "\"의사는 어떤 관리를 할까?\" 피부 노화 예방 관리 16가지 티어리스트",
+          "format": "videos",
+          "published": "2026-10-15",
+          "publishedTimestamp": "2026-10-15T18:45:19+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "-AW8sfczqL4",
+          "title": "\"구달 vs 스킨수티컬즈, 과연 8배 비싼 값을 할까?\" 직접 써본 비타민C 세럼 비교·추천",
+          "format": "videos",
+          "published": "2026-10-08",
+          "publishedTimestamp": "2026-10-08T18:01:24+09:00",
+          "concepts": [
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "wbWjrsATIkA",
+          "title": "“이소티논 소용 없습니다” 의사가 알려주는 집에서 피부 장벽 100% 복구하는 법",
+          "format": "videos",
+          "published": "2026-10-01",
+          "publishedTimestamp": "2026-10-01T18:01:44+09:00",
+          "concepts": [
+            2,
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "sL8fAQf90i0",
+          "title": "“지금도 무심코 하고 있을 거예요” 점점 피부 늙게 만드는 17가지 습관",
+          "format": "videos",
+          "published": "2026-09-23",
+          "publishedTimestamp": "2026-09-23T18:24:50+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "qxyAYXBhYGM",
+          "title": "“돈 버리고 피부 버립니다” 의사가 뜯어말리는 스킨케어 5가지",
+          "format": "videos",
+          "published": "2026-09-17",
+          "publishedTimestamp": "2026-09-17T18:01:38+09:00",
+          "concepts": [
+            2,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "2sTN_SiO2pQ",
+          "title": "의사가 알려주는 최고의 스킨부스터 티어 총정리｜효과·가격·통증·추천 대상",
+          "format": "videos",
+          "published": "2026-09-10",
+          "publishedTimestamp": "2026-09-10T18:08:48+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "y3z7TT-hoX0",
+          "title": "“울쎄라·써마지가 무조건 좋을까?” 주름·탄력·얼굴형·가격별 리프팅 시술 총정리",
+          "format": "videos",
+          "published": "2026-09-03",
+          "publishedTimestamp": "2026-09-03T18:58:43+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "2B4oyKvkW34",
+          "title": "“따라하면 피부과 안 가도 됩니다” 집에서 하는 건성 피부 클렌징 & 스킨케어 루틴",
+          "format": "videos",
+          "published": "2026-08-28",
+          "publishedTimestamp": "2026-08-28T18:09:08+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "w8inQRjjqhk",
+          "title": "\"세안법만 바꿔보세요!\" 좁쌀 여드름 피부과 안 가고 없애는 법",
+          "format": "videos",
+          "published": "2026-08-21",
+          "publishedTimestamp": "2026-08-21T18:13:19+09:00",
+          "concepts": [
+            2,
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "33vilF44vJM",
+          "title": "90%가 잘못하고 있는 샤워 습관｜등드름, 가드름 극복한 의사가 추천하는 샤워 꿀템",
+          "format": "videos",
+          "published": "2026-08-14",
+          "publishedTimestamp": "2026-08-14T18:12:57+09:00",
+          "concepts": [
+            2,
+            3,
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "xi_DuSrnxU0",
+          "title": "병원에서 안 알려주는 보톡스 효과 2배 높이는 방법 l 보톡스 추천 부위·가격·주기·부작용 총정리",
+          "format": "videos",
+          "published": "2026-08-07",
+          "publishedTimestamp": "2026-08-07T20:23:43+09:00",
+          "concepts": [
+            1,
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "ebfJ19uxRv8",
+          "title": "\"눈밑 시술 고민이면 꼭 보세요\" 눈밑 시술 하면 안되는 이유",
+          "format": "shorts",
+          "published": "2026-10-27",
+          "publishedTimestamp": "2026-10-27T18:35:22+09:00",
+          "concepts": [
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "f2OxdENXcUw",
+          "title": "아젤리아 크림 그냥 쓰면 오히려 부작용 납니다",
+          "format": "shorts",
+          "published": "2026-10-20",
+          "publishedTimestamp": "2026-10-20T17:56:01+09:00",
+          "concepts": [
+            4,
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "svXIPLXOb54",
+          "title": "“돈 버리고 피부 버립니다” 의사가 뜯어말리는 스킨케어",
+          "format": "shorts",
+          "published": "2026-10-16",
+          "publishedTimestamp": "2026-10-16T19:47:10+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "8BKFsUAR04c",
+          "title": "의사가 고른 리쥬란보다 좋은 최고의 스킨부스터는?",
+          "format": "shorts",
+          "published": "2026-10-06",
+          "publishedTimestamp": "2026-10-06T17:23:27+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Dat0vG8ek10",
+          "title": "99%는 모르고 있는 멀쩡한 피부 늙게 만드는 습관",
+          "format": "shorts",
+          "published": "2026-09-29",
+          "publishedTimestamp": "2026-09-29T17:10:25+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Xs7E_NzEleM",
+          "title": "\"제발 이건 하지 마세요\" 의사가 뜯어 말리는 스킨케어",
+          "format": "shorts",
+          "published": "2026-09-21",
+          "publishedTimestamp": "2026-09-21T19:15:39+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "8OVBvrZAoaQ",
+          "title": "“집에서 5일만 따라하세요” 좁쌀 여드름 삭제하는 세안법",
+          "format": "shorts",
+          "published": "2026-09-15",
+          "publishedTimestamp": "2026-09-15T18:06:02+09:00",
+          "concepts": [
+            2,
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "OKuET-sUl9I",
+          "title": "울쎄라 vs 써마지, 최고의 리프팅 시술은?",
+          "format": "shorts",
+          "published": "2026-09-08",
+          "publishedTimestamp": "2026-09-08T18:22:15+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "p_3ShaofU5k",
+          "title": "집에서도 가능한 건성 피부 깐달걀 스킨케어 루틴!",
+          "format": "shorts",
+          "published": "2026-09-01",
+          "publishedTimestamp": "2026-09-01T19:06:17+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Wl507_s_jaY",
+          "title": "모르면 손해보는 나이대별 피부 추천 시술",
+          "format": "shorts",
+          "published": "2026-08-24",
+          "publishedTimestamp": "2026-08-24T18:34:04+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "RhI_xQI0Oq4",
+          "title": "병원 안 가고 집에서 가장 빠르게 바디트러블 없애는 샤워 꿀템!",
+          "format": "shorts",
+          "published": "2026-08-18",
+          "publishedTimestamp": "2026-08-18T19:25:40+09:00",
+          "concepts": [
+            3,
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "IuBtKyAMn64",
+          "title": "\"보톡스 무조건 여기 맞으세요!\" 효과 200% 보는 부위 3군데",
+          "format": "shorts",
+          "published": "2026-08-10",
+          "publishedTimestamp": "2026-08-10T19:55:56+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "nHMi9Vn74-c",
+          "title": "딱 20초로 끝내는 피부 인기 시술 주기 정리",
+          "format": "shorts",
+          "published": "2026-08-04",
+          "publishedTimestamp": "2026-08-04T18:04:05+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        }
+      ],
+      "subscribers": {
+        "display": "19.9만명",
+        "checkedOn": "2026-11-02",
+        "source": "https://www.youtube.com/channel/UCXFd79l1HUumoM6spU4D1Cw"
+      }
+    },
+    {
+      "key": "lee",
+      "name": "피친남 이승주",
+      "channelId": "UC6YgjhgNFnL2Oh_swQrLk_Q",
+      "collection": {
+        "videos": {
+          "pages": 1,
+          "checked": 30,
+          "stop": "reached_before_start",
+          "errors": []
+        },
+        "shorts": {
+          "pages": 1,
+          "checked": 39,
+          "stop": "reached_before_start",
+          "errors": []
+        }
+      },
+      "counts": {
+        "videos": 13,
+        "shorts": 4
+      },
+      "items": [
+        {
+          "id": "9h-Ip9_SwNg",
+          "title": "시뻘건 얼굴, 화장품만 바꾼다고 해결 안됩니다!",
+          "format": "videos",
+          "published": "2026-10-30",
+          "publishedTimestamp": "2026-10-30T18:51:36+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Q2BRtfIYHKo",
+          "title": "리쥬란만 맞는 당신이 봐야할 영상 | 스킨부스터의 모든 것 | 적은 돈으로 내 피부 컨디션 끌어올리는 법",
+          "format": "videos",
+          "published": "2026-10-24",
+          "publishedTimestamp": "2026-10-24T11:00:11+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "DLhI2QfM5Es",
+          "title": "피부과 가기 전, 집에서 할 수 있는 긴급 진정 루틴",
+          "format": "videos",
+          "published": "2026-10-18",
+          "publishedTimestamp": "2026-10-18T16:30:24+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "uujq5O-Msrc",
+          "title": "말이 너무 많은 환자가 왔다.",
+          "format": "videos",
+          "published": "2026-10-14",
+          "publishedTimestamp": "2026-10-14T19:00:37+09:00",
+          "concepts": [
+            14
+          ],
+          "tentative": false
+        },
+        {
+          "id": "K-9gS4Fkpb8",
+          "title": "피부과에서 호구 안 당하고 가성비 있게 보톡스&필러 맞는 법 총정리 (남녀차이)",
+          "format": "videos",
+          "published": "2026-10-02",
+          "publishedTimestamp": "2026-10-02T18:36:13+09:00",
+          "concepts": [
+            1,
+            7
+          ],
+          "tentative": false
+        },
+        {
+          "id": "i8x6fQC6bC8",
+          "title": "임산부라면 이 피부관리는 하지 마세요｜튼살·기미·색소침착 관리법",
+          "format": "videos",
+          "published": "2026-09-25",
+          "publishedTimestamp": "2026-09-25T18:43:17+09:00",
+          "concepts": [
+            2,
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "7H7hjn_7Fik",
+          "title": "마운자로 부작용 줄이면서 감량하는 법 | 급격한 얼굴 노화 & 마운자로 여드름",
+          "format": "videos",
+          "published": "2026-09-18",
+          "publishedTimestamp": "2026-09-18T18:15:12+09:00",
+          "concepts": [
+            3,
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "97YPVJwUoAY",
+          "title": "슬슬 처짐이 사작되자 초조해진 30대 의사, 안티에이징 풀코스",
+          "format": "videos",
+          "published": "2026-09-11",
+          "publishedTimestamp": "2026-09-11T18:20:11+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "vmfFPOpDOuw",
+          "title": "속건조? 수부지..?💦 피부과 의사가 들으면 화나는 말",
+          "format": "videos",
+          "published": "2026-09-04",
+          "publishedTimestamp": "2026-09-04T18:33:26+09:00",
+          "concepts": [
+            3,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "u96xoUqO2EQ",
+          "title": "❗턱에 여드름이 계속 난다면 ‘이것’부터 확인하세요 | 트러블 \"남녀별 원인\" 알려드립니다.",
+          "format": "videos",
+          "published": "2026-08-28",
+          "publishedTimestamp": "2026-08-28T18:30:23+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "xJ_EQVHHAUA",
+          "title": "국산 보톡스로 효과 못봤던 이유 | 보톡스 내성? | 피부과 전문의가 정리해드립니다.",
+          "format": "videos",
+          "published": "2026-08-21",
+          "publishedTimestamp": "2026-08-21T18:15:38+09:00",
+          "concepts": [
+            4,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "jN85vo5H8NI",
+          "title": "피부과에서 말해주지 않는 보톡스의 진실",
+          "format": "videos",
+          "published": "2026-08-14",
+          "publishedTimestamp": "2026-08-14T18:28:36+09:00",
+          "concepts": [
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "goKf4bHvtMU",
+          "title": "수능으로 연세 의대에 갈 수 있었던 이야기",
+          "format": "videos",
+          "published": "2026-08-07",
+          "publishedTimestamp": "2026-08-07T18:52:21+09:00",
+          "concepts": [
+            12
+          ],
+          "tentative": false
+        },
+        {
+          "id": "63nmgnjUxeY",
+          "title": "선크림 완전히 지울 수 있는 세안법",
+          "format": "shorts",
+          "published": "2026-10-01",
+          "publishedTimestamp": "2026-10-01T12:30:26+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "fDX_RNv8Awk",
+          "title": "우애좋은 형제2",
+          "format": "shorts",
+          "published": "2026-09-30",
+          "publishedTimestamp": "2026-09-30T18:15:02+09:00",
+          "concepts": [
+            14
+          ],
+          "tentative": false
+        },
+        {
+          "id": "vVvbddatOeg",
+          "title": "피부과 전문의가 병원 장비로 직접 해봄",
+          "format": "shorts",
+          "published": "2026-09-30",
+          "publishedTimestamp": "2026-09-30T12:30:24+09:00",
+          "concepts": [
+            8
+          ],
+          "tentative": false
+        },
+        {
+          "id": "6TUIei7fg_Q",
+          "title": "약산성 폼 한번만으로 잘 닦일까??",
+          "format": "shorts",
+          "published": "2026-09-29",
+          "publishedTimestamp": "2026-09-29T18:15:24+09:00",
+          "concepts": [
+            2,
+            5
+          ],
+          "tentative": false
+        }
+      ],
+      "subscribers": {
+        "display": "11.4만명",
+        "checkedOn": "2026-11-02",
+        "source": "https://www.youtube.com/channel/UC6YgjhgNFnL2Oh_swQrLk_Q"
+      }
+    },
+    {
+      "key": "ryan",
+      "name": "닥터라이언TV 피부과전문의",
+      "channelId": "UC8yatiB3Vd2Y7qEznqvOAiw",
+      "collection": {
+        "videos": {
+          "pages": 1,
+          "checked": 30,
+          "stop": "reached_before_start",
+          "errors": []
+        },
+        "shorts": {
+          "pages": 1,
+          "checked": 48,
+          "stop": "reached_before_start",
+          "errors": []
+        }
+      },
+      "counts": {
+        "videos": 13,
+        "shorts": 20
+      },
+      "items": [
+        {
+          "id": "zgAlEMBk1Do",
+          "title": "흉터 치료레이저의 혁신 미라젯! 200% 효과보는 법ㅣ미라젯 절대 피해야할 흉터 타입과 시술 노하우🔍",
+          "format": "videos",
+          "published": "2026-10-31",
+          "publishedTimestamp": "2026-10-31T09:36:19+09:00",
+          "concepts": [
+            4,
+            8
+          ],
+          "tentative": false
+        },
+        {
+          "id": "L82nGYKvoTI",
+          "title": "\"여드름 흉터 때문에 대인기피증까지 생겼는데 치료할 수 있을까요..?\"ㅣ흉터치료 전문의 닥터라이언의 난치성 피부고민 해결 EP.3",
+          "format": "videos",
+          "published": "2026-10-23",
+          "publishedTimestamp": "2026-10-23T19:00:36+09:00",
+          "concepts": [
+            3,
+            7
+          ],
+          "tentative": false
+        },
+        {
+          "id": "yXtX4aHy7Hk",
+          "title": "'17년 경력 피부과 전문의'가 알려주는 민감성 피부 고민 한 방에 해결하는 법! (속당김, 속건조, 속주름 솔루션)",
+          "format": "videos",
+          "published": "2026-10-16",
+          "publishedTimestamp": "2026-10-16T19:00:23+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "YcUAS1qWMTI",
+          "title": "병원 가기 전 챗 지피티를 맹신하면 안 되는 이유 ㅋㅋㅋㅣ여드름 흉터치료 피부과 전문의 vs 챗지피티 2편",
+          "format": "videos",
+          "published": "2026-10-09",
+          "publishedTimestamp": "2026-10-09T19:00:24+09:00",
+          "concepts": [
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "AQ5ZyiUpIrE",
+          "title": "\"진짜 이 정도일 줄은 몰랐습니다...\" 17년 차 피부과 의사가 깜짝 놀란 요즘 ai 흉터 진단 수준ㄷㄷ(여드름 흉터치료 피부과 전문의 vs 챗지피티 1편)",
+          "format": "videos",
+          "published": "2026-10-02",
+          "publishedTimestamp": "2026-10-02T19:00:14+09:00",
+          "concepts": [
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "HUtOiIHjLak",
+          "title": "피부과 전문의가 직접 보여주는 5세대 스킨부스터 '쥬브아셀' 200% 효과보는 시술방법",
+          "format": "videos",
+          "published": "2026-09-25",
+          "publishedTimestamp": "2026-09-25T19:00:21+09:00",
+          "concepts": [
+            8
+          ],
+          "tentative": false
+        },
+        {
+          "id": "zvJn0hUSQ14",
+          "title": "17년 차 흉터치료 전문의가 알려주는 S급~C급 여드름 흉터 치료법 티어리스트!ㅣ피부과 시술 티어리스트 3탄! (프락셀레이저, 피코프락셀, 미라젯, 울트라클리어 등)",
+          "format": "videos",
+          "published": "2026-09-18",
+          "publishedTimestamp": "2026-09-18T19:00:23+09:00",
+          "concepts": [
+            1,
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "6DHyMwfSUCU",
+          "title": "국민 여드름약 이소티논의 진실 \"이거 모르고 먹으면 정말 큰일 납니다\"ㅣ이소티논 고용량 vs 저용량 복용법",
+          "format": "videos",
+          "published": "2026-09-11",
+          "publishedTimestamp": "2026-09-11T19:00:37+09:00",
+          "concepts": [
+            3,
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "m87ZLghZQ_w",
+          "title": "\"3대 장비가격이 도합 9억원?!\"ㅣ여드름흉터 레이저계 전설급 3신기의 시너지 효과 대공개!",
+          "format": "videos",
+          "published": "2026-09-04",
+          "publishedTimestamp": "2026-09-04T19:00:36+09:00",
+          "concepts": [
+            8
+          ],
+          "tentative": false
+        },
+        {
+          "id": "CMwjmxWSR5Y",
+          "title": "피부과에서 절대 알려주지 않는 울쎄라 받고 100% 돈 날리는 이유ㅣ모르면 호구당하는 울쎄라 진실",
+          "format": "videos",
+          "published": "2026-08-28",
+          "publishedTimestamp": "2026-08-28T19:00:23+09:00",
+          "concepts": [
+            1,
+            4,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Akd2U7ewgAg",
+          "title": "5세대 스킨부스터 리투오&쥬브아셀 손주사 vs 캐뉼라, 뭐가 더 효과가 좋을까?ㅣ120명의 환자의 만족도를 조사해봤습니다!",
+          "format": "videos",
+          "published": "2026-08-21",
+          "publishedTimestamp": "2026-08-21T19:00:36+09:00",
+          "concepts": [
+            1,
+            8
+          ],
+          "tentative": false
+        },
+        {
+          "id": "1PjrawjG6F0",
+          "title": "눈 밑에 오돌토돌 생긴 흰색 뾰루지 한관종, 재발없이 싹 없애는 방법 (co2레이저, 아그네스 레이저 치료법)",
+          "format": "videos",
+          "published": "2026-08-14",
+          "publishedTimestamp": "2026-08-14T19:00:17+09:00",
+          "concepts": [
+            3,
+            8
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Re4IRkFQkiQ",
+          "title": "\"이런 기미도 치료가 될까요..?\" 난치성 기미 치료케이스 싹 모아왔습니다ㅣ17년 차 색소치료 장인 닥터라이언의 5가지 색소 치료케이스 (기미, 흑자, 잡티, 오타모반 치료)",
+          "format": "videos",
+          "published": "2026-08-07",
+          "publishedTimestamp": "2026-08-07T19:00:24+09:00",
+          "concepts": [
+            3,
+            7
+          ],
+          "tentative": false
+        },
+        {
+          "id": "UxvUV2u5Jq4",
+          "title": "혁신적인 모공치료, 여드름 흉터치료 레이저 '울트라 클리어'의 실제 시술과정",
+          "format": "shorts",
+          "published": "2026-10-28",
+          "publishedTimestamp": "2026-10-28T19:00:29+09:00",
+          "concepts": [
+            8
+          ],
+          "tentative": false
+        },
+        {
+          "id": "n4B3HvKyNlk",
+          "title": "여드름 흉터치료 레이저 '울트라펄스 알파' 200% 효과보는 법💥",
+          "format": "shorts",
+          "published": "2026-10-26",
+          "publishedTimestamp": "2026-10-26T19:00:35+09:00",
+          "concepts": [
+            8
+          ],
+          "tentative": false
+        },
+        {
+          "id": "sNEWdA68dKc",
+          "title": "건조해진 날씨, 늘어난 잔주름에 가장 효과좋은 S급 스킨부스터는?!🤔",
+          "format": "shorts",
+          "published": "2026-10-20",
+          "publishedTimestamp": "2026-10-20T19:00:33+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "u7_0eOrDz5M",
+          "title": "여드름 흉터치료, 챗지피티에게 물어봤더니...ㅣ피부과 치료 챗지피티를 맹신하면 안 되는 이유😂",
+          "format": "shorts",
+          "published": "2026-10-14",
+          "publishedTimestamp": "2026-10-14T19:00:22+09:00",
+          "concepts": [
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "0q41u1Oqbpg",
+          "title": "여드름 흉터 치료, 울트라펄스 알파를 무조건 고집하면 안되는 이유!🙅‍♂️",
+          "format": "shorts",
+          "published": "2026-10-12",
+          "publishedTimestamp": "2026-10-12T19:00:26+09:00",
+          "concepts": [
+            1,
+            7
+          ],
+          "tentative": false
+        },
+        {
+          "id": "axl5lZC4Kjc",
+          "title": "여드름 흉터치료에 대한 챗지피티 답변 퀄리티...ㄷㄷ 피부과 전문의도 깜짝 놀랐습니다!",
+          "format": "shorts",
+          "published": "2026-10-06",
+          "publishedTimestamp": "2026-10-06T19:00:08+09:00",
+          "concepts": [
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "S2qBkU_WRUg",
+          "title": "'울트라펄스 알파'가 여드름 흉터레이저계 끝판왕 S급 레이저인 이유",
+          "format": "shorts",
+          "published": "2026-09-30",
+          "publishedTimestamp": "2026-09-30T19:00:18+09:00",
+          "concepts": [
+            8
+          ],
+          "tentative": false
+        },
+        {
+          "id": "U7srZulTkig",
+          "title": "사람들이 잘 모르는 여드름약(이소티논)의 부작용",
+          "format": "shorts",
+          "published": "2026-09-28",
+          "publishedTimestamp": "2026-09-28T19:00:05+09:00",
+          "concepts": [
+            3,
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "I6Zbtiv2HsQ",
+          "title": "여드름 흉터에 새살 차오르게 하는 A급 레이저는?! #미라젯",
+          "format": "shorts",
+          "published": "2026-09-22",
+          "publishedTimestamp": "2026-09-22T19:00:33+09:00",
+          "concepts": [
+            1,
+            8
+          ],
+          "tentative": false
+        },
+        {
+          "id": "5kzzZSFDYYQ",
+          "title": "여드름약 이소티논 어떻게 먹어야할까?ㅣ이소티논 고용량법 vs 저용량법",
+          "format": "shorts",
+          "published": "2026-09-16",
+          "publishedTimestamp": "2026-09-16T19:00:22+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "bFBK2SoCT5U",
+          "title": "국민 여드름약 이소티논, 많이 먹으면 안 되는 이유? 😱",
+          "format": "shorts",
+          "published": "2026-09-14",
+          "publishedTimestamp": "2026-09-14T19:00:09+09:00",
+          "concepts": [
+            3,
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Se99yZR9S3E",
+          "title": "현존하는 하이엔드급 '여드름흉터 레이저 3대장' 조합 치료 후기👀",
+          "format": "shorts",
+          "published": "2026-09-08",
+          "publishedTimestamp": "2026-09-08T19:00:08+09:00",
+          "concepts": [
+            8
+          ],
+          "tentative": false
+        },
+        {
+          "id": "rmSY18yNkr8",
+          "title": "병원에서 절대 안 알려주는 울쎄라 리프팅 꼼수ㅣ이런 병원 거르세요!🙅‍♂️",
+          "format": "shorts",
+          "published": "2026-09-02",
+          "publishedTimestamp": "2026-09-02T19:00:08+09:00",
+          "concepts": [
+            5,
+            7
+          ],
+          "tentative": false
+        },
+        {
+          "id": "g9wOAs7wKy0",
+          "title": "울쎄라 이렇게 쏘면 그냥 돈 버리는 겁니다! 😱",
+          "format": "shorts",
+          "published": "2026-08-31",
+          "publishedTimestamp": "2026-08-31T19:00:28+09:00",
+          "concepts": [
+            4,
+            8
+          ],
+          "tentative": false
+        },
+        {
+          "id": "4Mq052yFYFg",
+          "title": "스킨부스터 '리투오' 200% 효과보려면 이렇게 시술 받으세요!☝",
+          "format": "shorts",
+          "published": "2026-08-25",
+          "publishedTimestamp": "2026-08-25T19:00:30+09:00",
+          "concepts": [
+            8
+          ],
+          "tentative": false
+        },
+        {
+          "id": "diaugLlL5-0",
+          "title": "눈 밑에 생긴 하얀 좁쌀자국 한관종, '아그네스' 레이저를 맹신해선 안되는 이유",
+          "format": "shorts",
+          "published": "2026-08-19",
+          "publishedTimestamp": "2026-08-19T19:00:10+09:00",
+          "concepts": [
+            1,
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "HNskgS-9ng8",
+          "title": "한관종 vs 비립종 구별하는 방법은?! 🔍",
+          "format": "shorts",
+          "published": "2026-08-17",
+          "publishedTimestamp": "2026-08-17T19:00:16+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "n8XYFWAU3vg",
+          "title": "코 모공 흉터 치료 입문자 시술로 가장 유명한 시술은?! 🤔",
+          "format": "shorts",
+          "published": "2026-08-11",
+          "publishedTimestamp": "2026-08-11T19:00:18+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "jIzfNaWVlU4",
+          "title": "크기가 작은 여드름 흉터 치료가 더 어려운 이유🔍",
+          "format": "shorts",
+          "published": "2026-08-05",
+          "publishedTimestamp": "2026-08-05T19:00:27+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "zkZRuZdAMLU",
+          "title": "여드름 흉터 치료, 두 흉터 중 더 치료하기 어려운 흉터는?!",
+          "format": "shorts",
+          "published": "2026-08-03",
+          "publishedTimestamp": "2026-08-03T19:00:31+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        }
+      ],
+      "subscribers": {
+        "display": "2.53만명",
+        "checkedOn": "2026-11-02",
+        "source": "https://www.youtube.com/channel/UC8yatiB3Vd2Y7qEznqvOAiw"
+      }
+    },
+    {
+      "key": "ten",
+      "name": "피부텐텐 · 피부가 예뻐지는 10분",
+      "channelId": "UCxA9k7UJz50ZJPa5aUGf7fw",
+      "collection": {
+        "videos": {
+          "pages": 1,
+          "checked": 30,
+          "stop": "reached_before_start",
+          "errors": []
+        },
+        "shorts": {
+          "pages": 3,
+          "checked": 144,
+          "stop": "reached_before_start",
+          "errors": []
+        }
+      },
+      "counts": {
+        "videos": 25,
+        "shorts": 119
+      },
+      "items": [
+        {
+          "id": "svV6X1OUoKo",
+          "title": "다이소 화장품 싸다고 다 좋을까? 피부과 전문의의 솔직한 성분 판정 | 고혜림 피부과 전문의",
+          "format": "videos",
+          "published": "2026-10-29",
+          "publishedTimestamp": "2026-10-29T15:59:15+09:00",
+          "concepts": [
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "wX99rImDyAU",
+          "title": "안 아픈 리프팅 올타이트, 근데 효과는 울써마지 급이라고요?! | 피부과 전문의 박효진",
+          "format": "videos",
+          "published": "2026-10-27",
+          "publishedTimestamp": "2026-10-27T16:01:32+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "qMUYCMrc6fY",
+          "title": "40대부터 얼굴에 '귀티'가 갈리는 이유 3가지 | 표정근육·피부톤·얼굴윤곽",
+          "format": "videos",
+          "published": "2026-10-20",
+          "publishedTimestamp": "2026-10-20T14:52:05+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Uq-yPxR19UU",
+          "title": "다른거 다 받아봤지만, 이거 딱 1개로 눈가주름, 목주름 전부 해결할 수 있습니다🔥 - 피부과전문의 고혜림",
+          "format": "videos",
+          "published": "2026-10-15",
+          "publishedTimestamp": "2026-10-15T14:25:41+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "y9XA_62s8EY",
+          "title": "다 똑같은 팔자주름이 아니다! 유형별 팔자주름 해결방법 - 피부과전문의 정한미",
+          "format": "videos",
+          "published": "2026-10-14",
+          "publishedTimestamp": "2026-10-14T14:23:59+09:00",
+          "concepts": [
+            1,
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "S3JHvypnbJs",
+          "title": "SNS 보고 따라 했다가 돈만 날리는 시술 vs 진짜 돈값하는 시술 | 피부과 전문의 권수현",
+          "format": "videos",
+          "published": "2026-10-08",
+          "publishedTimestamp": "2026-10-08T15:49:22+09:00",
+          "concepts": [
+            1,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "-jt4h_abV5o",
+          "title": "운동 열심히 했는데 피부는 늙는다?🔥 | 운동 후 꼭 해야 하는 피부관리",
+          "format": "videos",
+          "published": "2026-10-07",
+          "publishedTimestamp": "2026-10-07T14:55:28+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "5x64Avj05HA",
+          "title": "✨마흔에 리즈 찍은 피부과 의사 | 20대보다 지금이 더 예쁜 이유 💁‍♀️",
+          "format": "videos",
+          "published": "2026-10-01",
+          "publishedTimestamp": "2026-10-01T17:25:20+09:00",
+          "concepts": [
+            13
+          ],
+          "tentative": false
+        },
+        {
+          "id": "0xq5IskoBjU",
+          "title": "'팔자' '마리오네트' '이마' '목' 주름 😞 수술 없이 '내 살'로 채우는 기적의 시술  | 피부과 전문의 정한미 박효진",
+          "format": "videos",
+          "published": "2026-09-29",
+          "publishedTimestamp": "2026-09-29T15:16:04+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "YTnwpLF-iQI",
+          "title": "🔥 팔자주름, 스킨부스터, 피부결까지 우아해지는 방법 몰아보기!!!! 가장 인기많은 영상들만 모아왔습니다.",
+          "format": "videos",
+          "published": "2026-09-24",
+          "publishedTimestamp": "2026-09-24T10:00:23+09:00",
+          "concepts": [
+            1,
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "KvV1n-vS_uU",
+          "title": "볼륨, 피부결, 탄력, 잔주름이 해결된다? 과연...😧고우리 시술 직접 받아봤습니다 - 고혜림 피부과 전문의",
+          "format": "videos",
+          "published": "2026-09-22",
+          "publishedTimestamp": "2026-09-22T13:55:26+09:00",
+          "concepts": [
+            8
+          ],
+          "tentative": false
+        },
+        {
+          "id": "q5IkBC8ynSw",
+          "title": "동안 되려다 노안 됩니다… 받을수록 손해 보는 시술 Top4 | 피부과 전문의 박효진",
+          "format": "videos",
+          "published": "2026-09-17",
+          "publishedTimestamp": "2026-09-17T14:07:55+09:00",
+          "concepts": [
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "7O93sc_giD8",
+          "title": "가격대별 피부과 시술 추천 총정리 | 10만원부터 300만원까지, 내 예산에 맞는 시술은?",
+          "format": "videos",
+          "published": "2026-09-15",
+          "publishedTimestamp": "2026-09-15T12:21:22+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "nyyk4MkHPWc",
+          "title": "40대 돈 쓴 보람 있는 시술 3가지 | 사진 속 내 얼굴이 낯설다면 당장 '이거'하세요🔥 - 고혜림 피부과전문의",
+          "format": "videos",
+          "published": "2026-09-10",
+          "publishedTimestamp": "2026-09-10T14:37:23+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "K9CTgg9vW2I",
+          "title": "운동으로 안돼서 '이 시술'  직접 받아봤습니다 | 피부과 전문의 정한미",
+          "format": "videos",
+          "published": "2026-09-08",
+          "publishedTimestamp": "2026-09-08T17:57:23+09:00",
+          "concepts": [
+            8
+          ],
+          "tentative": false
+        },
+        {
+          "id": "qKP1DdhafbE",
+          "title": "다른거 다 필요없고 딱 이것만 하면 눈가 주름 없어집니다🔥 - 김현욱 피부과전문의",
+          "format": "videos",
+          "published": "2026-09-03",
+          "publishedTimestamp": "2026-09-03T10:20:59+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "xpQLXwKq9j4",
+          "title": "의사 며느리가 시어머니 10년 회춘시킨 비결?! 수술 없이 눈밑지방 싹 없애는 가장 확실한 방법 공개합니다",
+          "format": "videos",
+          "published": "2026-09-01",
+          "publishedTimestamp": "2026-09-01T09:52:53+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "7ARxxCytVf0",
+          "title": "효과는 즉각 고통은 제로! 리프팅 계의 신세계, 의사가 직접 해봤습니다 | 피부과전문의 정한미",
+          "format": "videos",
+          "published": "2026-08-28",
+          "publishedTimestamp": "2026-08-28T17:58:43+09:00",
+          "concepts": [
+            8
+          ],
+          "tentative": false
+        },
+        {
+          "id": "4oezLGGXMXE",
+          "title": "턱살 고민 완전 해결! 이중턱 확실하게 없애는 시술 TOP3 | 피부과전문의 박새미, 정한미",
+          "format": "videos",
+          "published": "2026-08-25",
+          "publishedTimestamp": "2026-08-25T17:33:51+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "CjxKQ3Q499g",
+          "title": "당뇨 합병증 막는 골든타임, 피부가 보내는 구조 신호 | 피부과전문의 김종식",
+          "format": "videos",
+          "published": "2026-08-20",
+          "publishedTimestamp": "2026-08-20T10:45:38+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Q78n3zP2wi0",
+          "title": "'얼굴 노화 10년 막습니다' 의사의 리얼 노화 홈케어 극복템과 시술 추천 | 피부과전문의 박새미",
+          "format": "videos",
+          "published": "2026-08-18",
+          "publishedTimestamp": "2026-08-18T16:12:26+09:00",
+          "concepts": [
+            1,
+            2,
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "3o4usSREUTQ",
+          "title": "강남 사모님들이 미백 레이저 대신 주기적으로 받는 시술 1위 | 피부과전문의 김종식",
+          "format": "videos",
+          "published": "2026-08-13",
+          "publishedTimestamp": "2026-08-13T15:16:24+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "BL4MqZa02EM",
+          "title": "'이것' 모르고 피부과 시술 받으면 10년 늙어 보입니다  | 피부과전문의 정한미",
+          "format": "videos",
+          "published": "2026-08-11",
+          "publishedTimestamp": "2026-08-11T18:47:23+09:00",
+          "concepts": [
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "ZOWd-FkWNzM",
+          "title": "(광고❌) 모공, 색소, 피지까지 한번에? 10년차 피부과의사의 찐 데일리템 화장품ㅣ 피부과전문의 정한미",
+          "format": "videos",
+          "published": "2026-08-06",
+          "publishedTimestamp": "2026-08-06T16:59:52+09:00",
+          "concepts": [
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "e7BqBaUWplI",
+          "title": "무릎아픈 힘든 운동 없이! 셀룰라이트 없애고 애플힙 만드는 1등 방법 !!최초공개!! | 피부과전문의 박효진",
+          "format": "videos",
+          "published": "2026-08-04",
+          "publishedTimestamp": "2026-08-04T10:22:13+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "rGuWDTnwSJE",
+          "title": "피부과 의사가 절대 포기 못하는 시술 하나 | 피부과 전문의 박효진",
+          "format": "shorts",
+          "published": "2026-10-30",
+          "publishedTimestamp": "2026-10-30T16:35:42+09:00",
+          "concepts": [
+            1,
+            13
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Q15Sl3TVPgE",
+          "title": "피부 좋은 사람들이 절대 안 하는 것",
+          "format": "shorts",
+          "published": "2026-10-30",
+          "publishedTimestamp": "2026-10-30T12:46:43+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "5Mk_ejujHnw",
+          "title": "얼굴 하얘지고 싶다면 무슨 시술을 받아야 할까?",
+          "format": "shorts",
+          "published": "2026-10-29",
+          "publishedTimestamp": "2026-10-29T18:36:09+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "W8-lNXV1A_s",
+          "title": "요즘 피부과에서 제일 인기 있는 볼륨 시술",
+          "format": "shorts",
+          "published": "2026-10-29",
+          "publishedTimestamp": "2026-10-29T18:30:28+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "3eUQsQ1CZgg",
+          "title": "턱 보톡스 오래 맞으면 얼굴에 생기는 일",
+          "format": "shorts",
+          "published": "2026-10-28",
+          "publishedTimestamp": "2026-10-28T18:37:34+09:00",
+          "concepts": [
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "f28wLhle9FY",
+          "title": "필러 넣어도 되는 곳 넣으면 안되는 곳",
+          "format": "shorts",
+          "published": "2026-10-28",
+          "publishedTimestamp": "2026-10-28T18:05:02+09:00",
+          "concepts": [
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "z5BJpgSykpI",
+          "title": "크림으로도 속당김이 해결 안될 때",
+          "format": "shorts",
+          "published": "2026-10-27",
+          "publishedTimestamp": "2026-10-27T18:07:51+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "0YM8lAlepwY",
+          "title": "부작용 걱정 덜하고 자연스러운 시술 3가지",
+          "format": "shorts",
+          "published": "2026-10-27",
+          "publishedTimestamp": "2026-10-27T17:32:50+09:00",
+          "concepts": [
+            1,
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "twfkEs2H8Rk",
+          "title": "보톡스 내성은 제품 탓이 아닙니다",
+          "format": "shorts",
+          "published": "2026-10-26",
+          "publishedTimestamp": "2026-10-26T17:25:14+09:00",
+          "concepts": [
+            4,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "6ug6SSOL85k",
+          "title": "유독 빨리 늙는 사람은 이유가 있습니다",
+          "format": "shorts",
+          "published": "2026-10-26",
+          "publishedTimestamp": "2026-10-26T15:38:24+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "dEPsJRUxbTc",
+          "title": "피부과 의사가 피부를 위해 꼭 챙겨 먹는 영양제",
+          "format": "shorts",
+          "published": "2026-10-23",
+          "publishedTimestamp": "2026-10-23T18:31:50+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "aKaK5UpGd0I",
+          "title": "같은 시술을 했는데 결과가 다른 이유",
+          "format": "shorts",
+          "published": "2026-10-23",
+          "publishedTimestamp": "2026-10-23T18:03:41+09:00",
+          "concepts": [
+            7
+          ],
+          "tentative": false
+        },
+        {
+          "id": "F6yVZ6RlMCk",
+          "title": "한 번 하면 4개월마다 또 찾는 시술",
+          "format": "shorts",
+          "published": "2026-10-22",
+          "publishedTimestamp": "2026-10-22T18:40:35+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "KxchD6XQ9FY",
+          "title": "먹는 콜라겐 진짜 피부에 효과 있을까?",
+          "format": "shorts",
+          "published": "2026-10-22",
+          "publishedTimestamp": "2026-10-22T18:13:47+09:00",
+          "concepts": [
+            2,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "fbaVIK425vs",
+          "title": "피부를 더 빨리 늙게 하는 나쁜 습관 하나",
+          "format": "shorts",
+          "published": "2026-10-21",
+          "publishedTimestamp": "2026-10-21T14:02:41+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "ZgcjCyl98sA",
+          "title": "패인 볼도 매력이 될 수 있는 이유",
+          "format": "shorts",
+          "published": "2026-10-21",
+          "publishedTimestamp": "2026-10-21T12:49:17+09:00",
+          "concepts": [
+            9
+          ],
+          "tentative": false
+        },
+        {
+          "id": "jhWxGjdEaS8",
+          "title": "의사가 비추천하는 보톡스 부위는?",
+          "format": "shorts",
+          "published": "2026-10-20",
+          "publishedTimestamp": "2026-10-20T17:31:35+09:00",
+          "concepts": [
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "-ebTzTEFI5E",
+          "title": "피부 하얀 사람이 더 빨리 늙는 이유",
+          "format": "shorts",
+          "published": "2026-10-20",
+          "publishedTimestamp": "2026-10-20T14:09:02+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "pMO3wxC3ppU",
+          "title": "선크림vs보습제 피부과의사의 선택은",
+          "format": "shorts",
+          "published": "2026-10-19",
+          "publishedTimestamp": "2026-10-19T17:57:56+09:00",
+          "concepts": [
+            2,
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "ZuJkEmNCYlE",
+          "title": "아침 물세안만 해도 되는 피부",
+          "format": "shorts",
+          "published": "2026-10-19",
+          "publishedTimestamp": "2026-10-19T11:38:33+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "YLg6xErEME8",
+          "title": "미감 좋은 피부과의사 어떻게 찾을까?",
+          "format": "shorts",
+          "published": "2026-10-16",
+          "publishedTimestamp": "2026-10-16T16:28:32+09:00",
+          "concepts": [
+            7,
+            9
+          ],
+          "tentative": false
+        },
+        {
+          "id": "fbnWR6qrqKM",
+          "title": "비타민C 바르고 따가우면 참아도 될까?",
+          "format": "shorts",
+          "published": "2026-10-16",
+          "publishedTimestamp": "2026-10-16T13:55:22+09:00",
+          "concepts": [
+            4,
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "lPumuqDaCPE",
+          "title": "내 팔자주름에 맞는 시술 거울 보면 알 수 있어요",
+          "format": "shorts",
+          "published": "2026-10-15",
+          "publishedTimestamp": "2026-10-15T17:07:44+09:00",
+          "concepts": [
+            1,
+            7
+          ],
+          "tentative": false
+        },
+        {
+          "id": "1GfC9QtZ-L8",
+          "title": "시술 예약 전에 꼭 알아야 할 붓기 타이밍",
+          "format": "shorts",
+          "published": "2026-10-15",
+          "publishedTimestamp": "2026-10-15T14:44:55+09:00",
+          "concepts": [
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "gNlUNu0iw5M",
+          "title": "피부과 의사가 제일 좋아하는 시술은?",
+          "format": "shorts",
+          "published": "2026-10-14",
+          "publishedTimestamp": "2026-10-14T18:31:29+09:00",
+          "concepts": [
+            1,
+            13
+          ],
+          "tentative": false
+        },
+        {
+          "id": "kfnpzZ6z3X8",
+          "title": "환절기 푸석한 피부 어떻게 관리할까?",
+          "format": "shorts",
+          "published": "2026-10-14",
+          "publishedTimestamp": "2026-10-14T17:40:35+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "QIk5_f5MYz0",
+          "title": "보톡스 · 스킨부스터 하다 끊으면 더 늙는다?!",
+          "format": "shorts",
+          "published": "2026-10-13",
+          "publishedTimestamp": "2026-10-13T14:10:40+09:00",
+          "concepts": [
+            4,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "OS8ECHrtZRw",
+          "title": "평생 하나만 해야한다면? 보톡스 vs 리프팅",
+          "format": "shorts",
+          "published": "2026-10-13",
+          "publishedTimestamp": "2026-10-13T10:52:48+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "L0w_tTWRIwM",
+          "title": "피부과 의사가 절대 안 하는 습관 TOP3",
+          "format": "shorts",
+          "published": "2026-10-12",
+          "publishedTimestamp": "2026-10-12T18:10:50+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "GknU7YAw0MI",
+          "title": "임신하면 바로 끊어야 할 화장품 성분 3가지",
+          "format": "shorts",
+          "published": "2026-10-12",
+          "publishedTimestamp": "2026-10-12T17:21:21+09:00",
+          "concepts": [
+            4,
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "fktssF3bBpE",
+          "title": "다크서클을 해결하려면 원인을 알아야합니다",
+          "format": "shorts",
+          "published": "2026-10-08",
+          "publishedTimestamp": "2026-10-08T18:11:13+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "9EN_BrLA5cU",
+          "title": "겨울 오기 전 속건조 미리 잡는 시술은?",
+          "format": "shorts",
+          "published": "2026-10-08",
+          "publishedTimestamp": "2026-10-08T16:06:12+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "N5-509tkfV0",
+          "title": "엄마는 피부 좋은데 나는 왜 이럴까?",
+          "format": "shorts",
+          "published": "2026-10-07",
+          "publishedTimestamp": "2026-10-07T18:04:38+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "adBeHiFTzT8",
+          "title": "요즘 핫한 시술 내 얼굴엔 어떤 게 맞을까?",
+          "format": "shorts",
+          "published": "2026-10-07",
+          "publishedTimestamp": "2026-10-07T17:14:41+09:00",
+          "concepts": [
+            1,
+            7
+          ],
+          "tentative": false
+        },
+        {
+          "id": "yZQUkqgIUDE",
+          "title": "울쎄라 계속 받아도 근막은 괜찮습니다",
+          "format": "shorts",
+          "published": "2026-10-06",
+          "publishedTimestamp": "2026-10-06T17:53:43+09:00",
+          "concepts": [
+            4,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "JEsTIvur590",
+          "title": "레티놀 바르고 피부 뒤집어졌다면",
+          "format": "shorts",
+          "published": "2026-10-06",
+          "publishedTimestamp": "2026-10-06T12:32:19+09:00",
+          "concepts": [
+            4,
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "IhTZvWyJ0v4",
+          "title": "가로 목주름 없애는 시술 2가지 | 부드러운 필러 vs 리투오 파인",
+          "format": "shorts",
+          "published": "2026-10-02",
+          "publishedTimestamp": "2026-10-02T19:05:36+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "_D2O-WrooHU",
+          "title": "피부과 의사에게 물었다 | 지성은 닦는 토너를 써도 되나요?",
+          "format": "shorts",
+          "published": "2026-10-02",
+          "publishedTimestamp": "2026-10-02T18:57:04+09:00",
+          "concepts": [
+            2,
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "1HdklL4X4Ew",
+          "title": "등드름, 가드름 왜 자꾸 날까?",
+          "format": "shorts",
+          "published": "2026-10-01",
+          "publishedTimestamp": "2026-10-01T18:34:07+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "YbVkN-gDMgc",
+          "title": "피부과 원장이 뽑은 의사 손 타는 시술?",
+          "format": "shorts",
+          "published": "2026-10-01",
+          "publishedTimestamp": "2026-10-01T14:46:56+09:00",
+          "concepts": [
+            7
+          ],
+          "tentative": false
+        },
+        {
+          "id": "TXiSmGdx7K8",
+          "title": "화장품 여러 개 바르면 다 흡수될까?",
+          "format": "shorts",
+          "published": "2026-09-30",
+          "publishedTimestamp": "2026-09-30T18:14:16+09:00",
+          "concepts": [
+            5,
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "l9kI9PBX2XM",
+          "title": "건성 피부는 정말 더 빨리 늙을까?",
+          "format": "shorts",
+          "published": "2026-09-30",
+          "publishedTimestamp": "2026-09-30T08:32:10+09:00",
+          "concepts": [
+            3,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "9MHNo6KgiSg",
+          "title": "헬스하고 바로 안 씻으면 모공부터 막힙니다",
+          "format": "shorts",
+          "published": "2026-09-29",
+          "publishedTimestamp": "2026-09-29T18:13:05+09:00",
+          "concepts": [
+            2,
+            10
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Wk90qMCx174",
+          "title": "피부과 의사는 화장품을 몇 개나 쓸까?",
+          "format": "shorts",
+          "published": "2026-09-29",
+          "publishedTimestamp": "2026-09-29T16:12:55+09:00",
+          "concepts": [
+            6,
+            12
+          ],
+          "tentative": false
+        },
+        {
+          "id": "oFpfgpFqEcA",
+          "title": "즉각적으로 예뻐지고 싶을 때 | 피부과 의사가 받는 최애 시술?",
+          "format": "shorts",
+          "published": "2026-09-28",
+          "publishedTimestamp": "2026-09-28T18:37:59+09:00",
+          "concepts": [
+            1,
+            13
+          ],
+          "tentative": false
+        },
+        {
+          "id": "FB2fN6w8RDA",
+          "title": "히알루론산은 피부에서 어떤 일을 할까?",
+          "format": "shorts",
+          "published": "2026-09-28",
+          "publishedTimestamp": "2026-09-28T18:02:27+09:00",
+          "concepts": [
+            3,
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "0RWjX6DVT54",
+          "title": "커피가 피부 노화를 앞당기는 이유",
+          "format": "shorts",
+          "published": "2026-09-23",
+          "publishedTimestamp": "2026-09-23T16:11:46+09:00",
+          "concepts": [
+            2,
+            10
+          ],
+          "tentative": false
+        },
+        {
+          "id": "-eKHwMB0lZw",
+          "title": "관리하는 남자가 꾸준히 해주는 시술",
+          "format": "shorts",
+          "published": "2026-09-23",
+          "publishedTimestamp": "2026-09-23T11:39:27+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "ajbR7uHjKg0",
+          "title": "턱 보톡스 맞으면 얼굴이 작아질까?",
+          "format": "shorts",
+          "published": "2026-09-22",
+          "publishedTimestamp": "2026-09-22T16:55:40+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "bJQ3MXV4J_s",
+          "title": "리프팅 효과 오래 유지하려면?",
+          "format": "shorts",
+          "published": "2026-09-22",
+          "publishedTimestamp": "2026-09-22T15:23:08+09:00",
+          "concepts": [
+            1,
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "3IH9gn5a1CY",
+          "title": "지성피부 피부과 의사의 피부 좋아 보이는 화장법",
+          "format": "shorts",
+          "published": "2026-09-21",
+          "publishedTimestamp": "2026-09-21T18:22:34+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "_DoRt5UjP0w",
+          "title": "비타민C 밤에만 바르면 아까운 이유",
+          "format": "shorts",
+          "published": "2026-09-21",
+          "publishedTimestamp": "2026-09-21T16:17:59+09:00",
+          "concepts": [
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "JtdDz3_RxiA",
+          "title": "요즘 피부과에서 많이 찾는 스킨부스터는?",
+          "format": "shorts",
+          "published": "2026-09-18",
+          "publishedTimestamp": "2026-09-18T16:30:59+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "L6ycOm41sRk",
+          "title": "눈가 주름은 깊어지면 되돌리기 어렵습니다",
+          "format": "shorts",
+          "published": "2026-09-18",
+          "publishedTimestamp": "2026-09-18T12:52:29+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "BOiYc1PxvbU",
+          "title": "위고비 후 찾아온 급노화 되돌릴 수 있습니다",
+          "format": "shorts",
+          "published": "2026-09-17",
+          "publishedTimestamp": "2026-09-17T17:03:57+09:00",
+          "concepts": [
+            1,
+            10
+          ],
+          "tentative": false
+        },
+        {
+          "id": "iPGdKBkOEwU",
+          "title": "각질 제거 굳이 안 해도 됩니다",
+          "format": "shorts",
+          "published": "2026-09-17",
+          "publishedTimestamp": "2026-09-17T15:20:25+09:00",
+          "concepts": [
+            2,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "3K4b5vNVkOQ",
+          "title": "울쎄라 자주 맞으면 근막이 너덜너덜해진다?!",
+          "format": "shorts",
+          "published": "2026-09-16",
+          "publishedTimestamp": "2026-09-16T18:10:15+09:00",
+          "concepts": [
+            4,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "yS_rLpRImG0",
+          "title": "피부과 의사가 꼽은 돈값 하는 시술 TOP3",
+          "format": "shorts",
+          "published": "2026-09-16",
+          "publishedTimestamp": "2026-09-16T15:15:24+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "U0eKnN8pK6c",
+          "title": "연예인 도자기 피부, 피부 톤보단 결이 먼저",
+          "format": "shorts",
+          "published": "2026-09-15",
+          "publishedTimestamp": "2026-09-15T17:47:32+09:00",
+          "concepts": [
+            9,
+            11
+          ],
+          "tentative": false
+        },
+        {
+          "id": "s0T9-fiy6lA",
+          "title": "세안 후 스킨 로션을 안 바르게 되면",
+          "format": "shorts",
+          "published": "2026-09-15",
+          "publishedTimestamp": "2026-09-15T16:34:01+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "LXou6YBSVBk",
+          "title": "수입산 보톡스 맞아야 내성이 안 생긴다?",
+          "format": "shorts",
+          "published": "2026-09-14",
+          "publishedTimestamp": "2026-09-14T18:17:09+09:00",
+          "concepts": [
+            4,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "2HKtJrlwDL0",
+          "title": "잘생긴 남자들한테는 공통점이 있습니다",
+          "format": "shorts",
+          "published": "2026-09-14",
+          "publishedTimestamp": "2026-09-14T13:26:35+09:00",
+          "concepts": [
+            9
+          ],
+          "tentative": false
+        },
+        {
+          "id": "0Ur0i_msu10",
+          "title": "매일 마시는 바닐라 라떼, 여드름의 원인일 수 있어요",
+          "format": "shorts",
+          "published": "2026-09-11",
+          "publishedTimestamp": "2026-09-11T18:08:15+09:00",
+          "concepts": [
+            3,
+            10
+          ],
+          "tentative": false
+        },
+        {
+          "id": "C0gRn-dhMLc",
+          "title": "실내에만 있는 날 선크림 바를까 말까",
+          "format": "shorts",
+          "published": "2026-09-11",
+          "publishedTimestamp": "2026-09-11T14:05:01+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "ejsPbO2zUrI",
+          "title": "얼태기 올 때 피부과 의사가 하는 것",
+          "format": "shorts",
+          "published": "2026-09-10",
+          "publishedTimestamp": "2026-09-10T17:47:22+09:00",
+          "concepts": [
+            12
+          ],
+          "tentative": true
+        },
+        {
+          "id": "UirLMOuCw-8",
+          "title": "40대 피부과 의사가 매일 바르는 3가지",
+          "format": "shorts",
+          "published": "2026-09-10",
+          "publishedTimestamp": "2026-09-10T14:27:04+09:00",
+          "concepts": [
+            6,
+            12
+          ],
+          "tentative": false
+        },
+        {
+          "id": "D6AQ3xJlLFY",
+          "title": "피부 슬로우에이징 '이것'부터 시작하세요",
+          "format": "shorts",
+          "published": "2026-09-09",
+          "publishedTimestamp": "2026-09-09T18:25:29+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "C50CPaOkb8c",
+          "title": "나비존 모공 유독 안 없어진다면",
+          "format": "shorts",
+          "published": "2026-09-09",
+          "publishedTimestamp": "2026-09-09T17:40:19+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "TP9mA1kSqfk",
+          "title": "이 관리 2가지는 꼭 하세요! 3살은 어려보입니다🔥",
+          "format": "shorts",
+          "published": "2026-09-08",
+          "publishedTimestamp": "2026-09-08T20:15:22+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": true
+        },
+        {
+          "id": "Cr7-IBMQiSs",
+          "title": "여드름치료 가장 효과좋은 방법은?",
+          "format": "shorts",
+          "published": "2026-09-08",
+          "publishedTimestamp": "2026-09-08T16:23:56+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Do7PQNjRV1w",
+          "title": "평생 하나만 해야한다면? 보톡스 vs 스킨보톡스",
+          "format": "shorts",
+          "published": "2026-09-07",
+          "publishedTimestamp": "2026-09-07T19:17:45+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Org7b3skdOI",
+          "title": "20년째 미간 주름 안 생기는 이유",
+          "format": "shorts",
+          "published": "2026-09-07",
+          "publishedTimestamp": "2026-09-07T13:59:26+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": true
+        },
+        {
+          "id": "qOr72eqyrwA",
+          "title": "갑자기 훅 늙어 보이는 건 나이보다 볼륨",
+          "format": "shorts",
+          "published": "2026-09-04",
+          "publishedTimestamp": "2026-09-04T18:22:31+09:00",
+          "concepts": [
+            3,
+            9
+          ],
+          "tentative": false
+        },
+        {
+          "id": "EKLQp2SaePU",
+          "title": "예뻐지려면 울써마지보다 얼굴 '윤곽' 먼저",
+          "format": "shorts",
+          "published": "2026-09-04",
+          "publishedTimestamp": "2026-09-04T16:31:03+09:00",
+          "concepts": [
+            7,
+            9
+          ],
+          "tentative": false
+        },
+        {
+          "id": "5lb2kapAaqk",
+          "title": "리프팅 시작 시기 나이보다 순서예요",
+          "format": "shorts",
+          "published": "2026-09-03",
+          "publishedTimestamp": "2026-09-03T17:17:52+09:00",
+          "concepts": [
+            1,
+            7
+          ],
+          "tentative": false
+        },
+        {
+          "id": "yftTCVVZBHU",
+          "title": "운동 후 피부 열감 이렇게 내리세요",
+          "format": "shorts",
+          "published": "2026-09-03",
+          "publishedTimestamp": "2026-09-03T16:27:02+09:00",
+          "concepts": [
+            2,
+            10
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Fl99Z5n8MY4",
+          "title": "술 vs 담배 vs 설탕 피부 노화 최악은?",
+          "format": "shorts",
+          "published": "2026-09-02",
+          "publishedTimestamp": "2026-09-02T17:59:06+09:00",
+          "concepts": [
+            2,
+            10
+          ],
+          "tentative": false
+        },
+        {
+          "id": "YJXhguxbxOU",
+          "title": "피부 장벽 무너졌을 때 지킬 건 4가지",
+          "format": "shorts",
+          "published": "2026-09-02",
+          "publishedTimestamp": "2026-09-02T13:54:17+09:00",
+          "concepts": [
+            2,
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "94LwNbPkdS4",
+          "title": "지성피부 피부과 의사의 클렌징루틴",
+          "format": "shorts",
+          "published": "2026-09-01",
+          "publishedTimestamp": "2026-09-01T18:20:26+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "cd8UaZc0X_Q",
+          "title": "예비신부 · 예비신랑 시술은 이거 하나면 돼요",
+          "format": "shorts",
+          "published": "2026-09-01",
+          "publishedTimestamp": "2026-09-01T17:40:31+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "JawOeo4ke0k",
+          "title": "팔자주름 요즘엔 필러 대신 '이것'",
+          "format": "shorts",
+          "published": "2026-08-31",
+          "publishedTimestamp": "2026-08-31T18:23:37+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "DxuBpkZF8sk",
+          "title": "피부과 의사가 꼭 챙겨 먹는 영양제 2개",
+          "format": "shorts",
+          "published": "2026-08-31",
+          "publishedTimestamp": "2026-08-31T17:23:12+09:00",
+          "concepts": [
+            10
+          ],
+          "tentative": false
+        },
+        {
+          "id": "YCVbUc7LDyE",
+          "title": "시술 효과 오래 가는 사람 이렇게 관리합니다",
+          "format": "shorts",
+          "published": "2026-08-28",
+          "publishedTimestamp": "2026-08-28T17:41:09+09:00",
+          "concepts": [
+            1,
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Avo2MxdWTgg",
+          "title": "생리 전 턱드름 의사는 이렇게 없앱니다",
+          "format": "shorts",
+          "published": "2026-08-28",
+          "publishedTimestamp": "2026-08-28T15:14:06+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "MdJXBARe_ao",
+          "title": "선크림 안 바르기 VS  화장 안 지우고 자기 뭐가 더 나쁠까",
+          "format": "shorts",
+          "published": "2026-08-27",
+          "publishedTimestamp": "2026-08-27T18:21:56+09:00",
+          "concepts": [
+            2,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "rquEqwLodIA",
+          "title": "레티놀은 언제부터? 이때 놓치면 늦어요",
+          "format": "shorts",
+          "published": "2026-08-27",
+          "publishedTimestamp": "2026-08-27T15:02:11+09:00",
+          "concepts": [
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "vt9cdViY5Sk",
+          "title": "보톡스 내성 일찍 맞아서 아닙니다",
+          "format": "shorts",
+          "published": "2026-08-26",
+          "publishedTimestamp": "2026-08-26T19:00:30+09:00",
+          "concepts": [
+            4,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "11QrHKA2jxg",
+          "title": "호구 안 되는 피부과 상담법",
+          "format": "shorts",
+          "published": "2026-08-26",
+          "publishedTimestamp": "2026-08-26T17:59:25+09:00",
+          "concepts": [
+            7
+          ],
+          "tentative": false
+        },
+        {
+          "id": "tYqkWKk0d5c",
+          "title": "오돌토돌 튀어나온 그것 쥐젖? 비립종?",
+          "format": "shorts",
+          "published": "2026-08-25",
+          "publishedTimestamp": "2026-08-25T19:04:45+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "fpV9DyZ4khs",
+          "title": "리프팅 볼 꺼짐 진짜 원인은?",
+          "format": "shorts",
+          "published": "2026-08-25",
+          "publishedTimestamp": "2026-08-25T18:34:23+09:00",
+          "concepts": [
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "AvoDHx-YGV0",
+          "title": "피부과의사가 꼭 하는 동안 시술 3가지",
+          "format": "shorts",
+          "published": "2026-08-24",
+          "publishedTimestamp": "2026-08-24T17:50:18+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "6yth-MLXd4k",
+          "title": "물 많이 마시면 피부 탄력 좋아진다?",
+          "format": "shorts",
+          "published": "2026-08-24",
+          "publishedTimestamp": "2026-08-24T15:58:22+09:00",
+          "concepts": [
+            2,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "2MXyLqyCecw",
+          "title": "보톡스 4개월마다 맞는 사람들이 놓치는 것",
+          "format": "shorts",
+          "published": "2026-08-21",
+          "publishedTimestamp": "2026-08-21T18:07:14+09:00",
+          "concepts": [
+            1,
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "Q4zrUKeUOsg",
+          "title": "남자 피부과 의사가 자기 얼굴에 하는 시술",
+          "format": "shorts",
+          "published": "2026-08-21",
+          "publishedTimestamp": "2026-08-21T14:06:48+09:00",
+          "concepts": [
+            1,
+            13
+          ],
+          "tentative": false
+        },
+        {
+          "id": "wOkLNxW0Nfk",
+          "title": "경락 · 괄사 자주 하면 진짜 리프팅이 된다?",
+          "format": "shorts",
+          "published": "2026-08-20",
+          "publishedTimestamp": "2026-08-20T18:19:51+09:00",
+          "concepts": [
+            2,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "8aEbWAT8xlc",
+          "title": "보톡스 자주 맞으면 내성이 생긴다?",
+          "format": "shorts",
+          "published": "2026-08-20",
+          "publishedTimestamp": "2026-08-20T17:25:06+09:00",
+          "concepts": [
+            4,
+            5
+          ],
+          "tentative": false
+        },
+        {
+          "id": "y3DRH0K77VM",
+          "title": "한 번만 받아도 만족하는 시술 TOP3",
+          "format": "shorts",
+          "published": "2026-08-19",
+          "publishedTimestamp": "2026-08-19T18:32:11+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "SZK7q3Ft2Tg",
+          "title": "30-40대 볼 꺼짐 요즘은 이걸로 채웁니다",
+          "format": "shorts",
+          "published": "2026-08-19",
+          "publishedTimestamp": "2026-08-19T14:45:05+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "k3iTSFdhwPc",
+          "title": "지성 vs 건성 화잘먹 방법 다릅니다",
+          "format": "shorts",
+          "published": "2026-08-18",
+          "publishedTimestamp": "2026-08-18T18:02:54+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "usNEOpNp8zc",
+          "title": "비타민C 먹기 VS 바르기",
+          "format": "shorts",
+          "published": "2026-08-18",
+          "publishedTimestamp": "2026-08-18T15:42:04+09:00",
+          "concepts": [
+            6,
+            10
+          ],
+          "tentative": false
+        },
+        {
+          "id": "ig7IX8ntElA",
+          "title": "눈가VS 팔자주름 VS 미간 나이 확 티나는 곳 1위는?",
+          "format": "shorts",
+          "published": "2026-08-14",
+          "publishedTimestamp": "2026-08-14T18:33:27+09:00",
+          "concepts": [
+            9
+          ],
+          "tentative": false
+        },
+        {
+          "id": "qeyYLySNe8E",
+          "title": "통증도 비용도 부담 제로 요즘 대세는 '이 시술'",
+          "format": "shorts",
+          "published": "2026-08-14",
+          "publishedTimestamp": "2026-08-14T14:29:28+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "z-sqpRAubME",
+          "title": "의사도 N년째 꾸준히 하는 효과 미친 시술 TOP2",
+          "format": "shorts",
+          "published": "2026-08-13",
+          "publishedTimestamp": "2026-08-13T18:47:07+09:00",
+          "concepts": [
+            1,
+            13
+          ],
+          "tentative": false
+        },
+        {
+          "id": "PxXqUUzC9_Y",
+          "title": "건성피부 스킨부스터 원탑은 무조건 '이거'",
+          "format": "shorts",
+          "published": "2026-08-13",
+          "publishedTimestamp": "2026-08-13T14:31:01+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "_17qc1X1vzU",
+          "title": "주름 생기기 전? 후? 보톡스 언제가 좋을까",
+          "format": "shorts",
+          "published": "2026-08-12",
+          "publishedTimestamp": "2026-08-12T18:18:27+09:00",
+          "concepts": [
+            1,
+            7
+          ],
+          "tentative": false
+        },
+        {
+          "id": "rw57TY_cFN0",
+          "title": "피부과 의사가 절대 안 하는 습관 TOP3",
+          "format": "shorts",
+          "published": "2026-08-12",
+          "publishedTimestamp": "2026-08-12T14:47:58+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "7dAWftVFsyE",
+          "title": "여름에 화장 잘 무너지는 피부, 무조건 '이거' 하세요",
+          "format": "shorts",
+          "published": "2026-08-11",
+          "publishedTimestamp": "2026-08-11T18:20:20+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": true
+        },
+        {
+          "id": "XxJWe5Z5Vps",
+          "title": "얼굴 비대칭 뼈 깎지 말고 '이거' 먼저",
+          "format": "shorts",
+          "published": "2026-08-11",
+          "publishedTimestamp": "2026-08-11T14:58:29+09:00",
+          "concepts": [
+            1,
+            9
+          ],
+          "tentative": false
+        },
+        {
+          "id": "fx0Wni3yaJ4",
+          "title": "면도 후 나는 뾰루지? 이렇게 면도해 보세요",
+          "format": "shorts",
+          "published": "2026-08-10",
+          "publishedTimestamp": "2026-08-10T18:21:12+09:00",
+          "concepts": [
+            2
+          ],
+          "tentative": false
+        },
+        {
+          "id": "fCeVVt1jtXk",
+          "title": "기미 · 주근깨 치료법 완전히 다르다",
+          "format": "shorts",
+          "published": "2026-08-10",
+          "publishedTimestamp": "2026-08-10T10:11:58+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "ESa9Sr_5rHk",
+          "title": "넙데데한 얼굴 여백 줄이는 시술 TOP2",
+          "format": "shorts",
+          "published": "2026-08-07",
+          "publishedTimestamp": "2026-08-07T18:09:30+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "I1oedyQzShU",
+          "title": "숨은 턱선 찾고 싶다면?! 이중턱 없애는 방법",
+          "format": "shorts",
+          "published": "2026-08-07",
+          "publishedTimestamp": "2026-08-07T12:19:49+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "fIzoDkQlHmw",
+          "title": "1년에 한 번으로 피부 탄력 지키는 법",
+          "format": "shorts",
+          "published": "2026-08-06",
+          "publishedTimestamp": "2026-08-06T18:06:24+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "r-0vCX__rak",
+          "title": "어플없이도 맑게 빛나는 물광 피부 시술 TOP3",
+          "format": "shorts",
+          "published": "2026-08-06",
+          "publishedTimestamp": "2026-08-06T14:34:11+09:00",
+          "concepts": [
+            1
+          ],
+          "tentative": false
+        },
+        {
+          "id": "If2_UJ6i12Q",
+          "title": "얼굴형은 상관없다?! 피부 두께별 고주파 주기",
+          "format": "shorts",
+          "published": "2026-08-05",
+          "publishedTimestamp": "2026-08-05T14:58:30+09:00",
+          "concepts": [
+            1,
+            7
+          ],
+          "tentative": false
+        },
+        {
+          "id": "C-LJeIV7NCE",
+          "title": "퀭한 눈 밑 진짜 원인 알고보니 '앞볼' 때문?!",
+          "format": "shorts",
+          "published": "2026-08-04",
+          "publishedTimestamp": "2026-08-04T18:07:17+09:00",
+          "concepts": [
+            3
+          ],
+          "tentative": false
+        },
+        {
+          "id": "_kqqV-t7R3o",
+          "title": "비타민C 앰플 포기 금지! 자극 없이 바르는 꿀팁",
+          "format": "shorts",
+          "published": "2026-08-04",
+          "publishedTimestamp": "2026-08-04T14:55:35+09:00",
+          "concepts": [
+            4,
+            6
+          ],
+          "tentative": false
+        },
+        {
+          "id": "n_so0BwcUwY",
+          "title": "비싼 울써마지 이런 얼굴은 효과 1도 없음",
+          "format": "shorts",
+          "published": "2026-08-03",
+          "publishedTimestamp": "2026-08-03T17:56:05+09:00",
+          "concepts": [
+            1,
+            4
+          ],
+          "tentative": false
+        },
+        {
+          "id": "qtCiGS2X1Tk",
+          "title": "반신욕으로 꿀피부? '이것' 모르면 헛수고",
+          "format": "shorts",
+          "published": "2026-08-03",
+          "publishedTimestamp": "2026-08-03T15:02:01+09:00",
+          "concepts": [
+            2,
+            5
+          ],
+          "tentative": false
+        }
+      ],
+      "subscribers": {
+        "display": "32.4만명",
+        "checkedOn": "2026-11-02",
+        "source": "https://www.youtube.com/channel/UCxA9k7UJz50ZJPa5aUGf7fw"
+      }
+    }
+  ]
+}
