@@ -66,11 +66,11 @@ function channelCsvCell(value) {
 }
 
 function channelRowsCsv(rows, concepts) {
-  const header = ['채널', '유형', '게시일', '제목', '컨셉', '분류 상태'];
+  const header = ['제목', '컨셉', '유형', '채널', '게시일', '분류 상태'];
   const lines = rows.map(row => [
-    row.channelName, row.format === 'videos' ? '일반 영상' : '쇼츠',
-    row.published, row.title,
+    row.title,
     row.concepts.map(number => String(number).padStart(2, '0') + ' ' + concepts[number]).join(' / '),
+    row.format === 'videos' ? '일반 영상' : '쇼츠', row.channelName, row.published,
     row.tentative ? '잠정 분류 · 본문 확인 필요' : '제목 기준 분류',
   ]);
   return '\uFEFF' + [header, ...lines].map(line => line.map(channelCsvCell).join(',')).join('\r\n');
@@ -214,11 +214,9 @@ function channelRowsCsv(rows, concepts) {
     }
     for (const entry of rows.slice(start, start + size)) {
       const row = document.createElement('tr');
-      for (const value of [entry.channelName, entry.format === 'videos' ? '일반 영상' : '쇼츠', entry.published, entry.title]) {
-        const cell = document.createElement('td');
-        cell.textContent = value;
-        row.append(cell);
-      }
+      const titleCell = document.createElement('td');
+      titleCell.textContent = entry.title;
+      row.append(titleCell);
       const cell = document.createElement('td');
       const tags = document.createElement('div');
       tags.className = 'db-concept-tags';
@@ -239,6 +237,11 @@ function channelRowsCsv(rows, concepts) {
         cell.append(note);
       }
       row.append(cell);
+      for (const value of [entry.format === 'videos' ? '일반 영상' : '쇼츠', entry.channelName, entry.published]) {
+        const metadataCell = document.createElement('td');
+        metadataCell.textContent = value;
+        row.append(metadataCell);
+      }
       el('db-rows').append(row);
     }
     el('db-page-label').textContent = count ? state.page + ' / ' + pages + ' 페이지' : '결과 없음';
