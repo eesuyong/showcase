@@ -142,10 +142,16 @@
       st.cast.forEach(([name, who]) => { const li = el('li'); li.append(el('b', '', name), el('span', '', who)); ul.append(li); });
       const dd = el('dd'); dd.append(ul); dl.append(el('dt', '', '등장인물'), dd);
     }
-    [['배경', st.setting], ['세계관', st.world], ['핵심 컨셉', st.concept], ['사건의 시작', st.plot]].forEach(([k, v]) => {
+    // 줄거리(synopsis)가 있으면 '사건의 시작'은 그 첫 대목과 겹쳐서 빼요.
+    [['배경', st.setting], ['세계관', st.world], ['핵심 컨셉', st.concept], ['사건의 시작', st.synopsis ? '' : st.plot]].forEach(([k, v]) => {
       if (v) dl.append(el('dt', '', k), el('dd', '', v));
     });
     d.append(dl);
+    if (st.synopsis && st.synopsis.length) {
+      const ol = el('ol', 'trace-steps');
+      st.synopsis.forEach(([k, v]) => { const li = el('li'); li.append(el('span', 'pill', k), el('span', '', v)); ol.append(li); });
+      d.append(el('h4', '', '줄거리 · 처음부터 끝까지'), ol);
+    }
     if (st.twist) { const p = el('p', 'syn-twist'); p.append(el('b', '', '반전'), document.createTextNode(st.twist)); d.append(p); }
     if (st.solve && st.solve.length) {
       const ol = el('ol', 'syn-solve'); st.solve.forEach(x => ol.append(el('li', '', x)));
@@ -170,10 +176,10 @@
     art.append(top, hero);
     (b.lead || []).forEach(part => art.append(prose(part)));
     (b.analysis || []).forEach(part => art.append(prose(part)));
-    // 수록작: 한 편이 한 덩어리예요. 작가의 결정을 펼쳐 두고, 줄거리와 진상은 참고 칸으로 접어요.
+    // 수록작(장편은 장): 한 편이 한 덩어리예요. 작가의 결정을 펼쳐 두고, 줄거리와 진상은 참고 칸으로 접어요.
     if (b.stories && b.stories.length) {
-      const s = el('section'); s.append(el('h2', '', '수록작'));
-      s.append(el('p', 'note', '실린 순서대로 한 편씩이에요. 작가가 내린 결정을 펼쳐 두었고, 줄거리와 진상은 편마다 맨 아래 참고 칸에 접어 두었어요.'));
+      const s = el('section'); s.append(el('h2', '', b.partsH || '수록작'));
+      s.append(el('p', 'note', b.partsNote || '실린 순서대로 한 편씩이에요. 작가가 내린 결정을 펼쳐 두었고, 줄거리와 진상은 편마다 맨 아래 참고 칸에 접어 두었어요.'));
       b.stories.forEach((st, i) => s.append(story(st, i)));
       art.append(s);
     }
