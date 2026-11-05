@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>쇼츠 촬영 연습</title>
+<style>
+:root{--paper:#f5f2ec;--sheet:#fffdf9;--ink:#332c27;--muted:#72675d;--line:#dcd3c7;--accent:#73543a;--p-bg:#16120f;--p-panel:#211b17;--p-line:#3d342c;--p-ink:#fbf6ee;--p-dim:#8d8378;--p-cue:#e3b97a;--p-rec:#e2574c}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.7}
+a{color:inherit;text-underline-offset:4px}h1,h2,h3,p{margin-top:0}p{color:var(--muted)}
+header,main{max-width:1280px;margin:auto;padding:20px 32px}header{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);font-size:13px}
+button{padding:10px 16px;background:var(--accent);color:#fff;border:1px solid var(--accent);font:inherit;cursor:pointer;border-radius:0}button.secondary{background:transparent;color:var(--accent)}button:disabled{opacity:.45;cursor:not-allowed}
+input,textarea,select{padding:10px 12px;background:var(--sheet);border:1px solid var(--line);border-radius:0;font:inherit;color:var(--ink)}textarea{width:100%;resize:vertical}
+:is(a,button,input,textarea,select,summary):focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.studio-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin:8px 0 18px}.studio-head h1{font:400 clamp(30px,4vw,46px)/1.2 Georgia,"AppleMyungjo",serif;letter-spacing:-.04em;margin-bottom:6px}.studio-head p{margin:0;max-width:640px;font-size:14px}
+.modes{display:flex;border:1px solid var(--accent)}.modes button{background:transparent;color:var(--accent);border:0;padding:12px 18px;min-height:44px}.modes button[aria-checked="true"]{background:var(--accent);color:#fff;font-weight:600}.modes small{display:block;font-size:11px;opacity:.8;font-weight:400}
+
+/* 좌: 영상·카메라 / 우: 초시계·프롬프터 */
+.studio{display:grid;grid-template-columns:minmax(280px,380px) minmax(0,1fr);gap:20px;background:var(--p-bg);color:var(--p-ink);padding:18px;border-radius:14px;height:min(calc(100vh - 150px),780px);min-height:560px}
+.stage{display:flex;flex-direction:column;gap:10px;min-height:0}
+.stage-frame{position:relative;flex:1;min-height:0;aspect-ratio:9/16;max-width:100%;margin:0 auto;width:auto;height:100%;background:#000;border-radius:10px;overflow:hidden}
+.stage-frame>*{position:absolute;inset:0;width:100%;height:100%}.stage-frame iframe{border:0}
+.stage-empty{display:grid;place-items:center;text-align:center;padding:20px;color:var(--p-dim);font-size:13px}
+.stage-tools{display:flex;flex-wrap:wrap;gap:8px;font-size:13px}.stage-tools label{display:flex;align-items:center;gap:6px;min-height:36px}.stage-tools input[type=checkbox]{width:18px;height:18px;accent-color:var(--p-cue)}.stage-tools a{color:var(--p-ink);border:1px solid var(--p-line);padding:7px 12px;text-decoration:none;font-size:13px;background:transparent}
+.desk{display:flex;flex-direction:column;min-width:0;min-height:0;background:var(--p-panel);border-radius:10px;padding:16px 18px;outline:none}.desk:fullscreen{border-radius:0;padding:28px 40px}
+.clock-row{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}.clock{font:600 clamp(40px,5vw,64px)/1 ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums;letter-spacing:-.03em}.clock small{font-size:.38em;color:var(--p-dim);font-weight:400;margin-left:6px}.clock.is-over{color:var(--p-rec)}
+.beat-now{text-align:right;font-size:13px;color:var(--p-dim)}.beat-now strong{display:block;font-size:17px;color:var(--p-cue)}
+.timebar{position:relative;height:16px;margin:12px 0 4px;display:flex;gap:2px;cursor:pointer}.timebar span{flex:var(--w) 0 0;background:#3a312a;border-radius:2px}.timebar span.is-done{background:#6d5a45}.timebar span.is-active{background:var(--p-cue)}.timebar .target{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--p-rec)}
+.prompter-screen{--prompter-size:46px;position:relative;flex:1;min-height:180px;margin:8px 0;overflow:hidden;mask-image:linear-gradient(transparent,#000 12%,#000 78%,transparent);-webkit-mask-image:linear-gradient(transparent,#000 12%,#000 78%,transparent)}
+.prompter-screen::before{content:"";position:absolute;left:0;right:0;top:36%;border-top:2px dashed rgba(227,185,122,.3);pointer-events:none}.prompter-screen.is-mirrored .prompter-track{scale:-1 1}
+.prompter-screen[data-countdown]:not([data-countdown=""])::after{content:attr(data-countdown);position:absolute;inset:0;display:grid;place-items:center;font:600 150px/1 Georgia,serif;color:var(--p-cue);background:rgba(33,27,23,.85)}
+.prompter-track{transition:transform .45s ease}.prompter-line{margin:0 0 .5em;font-size:var(--prompter-size);line-height:1.38;font-weight:600;letter-spacing:-.02em;word-break:keep-all;overflow-wrap:anywhere;color:var(--p-dim);opacity:.55;cursor:pointer;transition:color .25s,opacity .25s}.prompter-line.is-past{opacity:.25}.prompter-line.is-active{color:var(--p-ink);opacity:1}
+.prompter-label{display:block;font-size:max(13px,calc(var(--prompter-size)*.32));font-weight:500;letter-spacing:.04em;color:var(--p-cue);margin-bottom:.15em}
+.desk-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.desk-bar button{min-height:46px}.desk-bar button.secondary{color:var(--p-ink);border-color:#4a3f35;min-width:46px;white-space:nowrap;padding-inline:12px}#play{min-width:140px;background:var(--p-cue);border-color:var(--p-cue);color:#1d1712;font-weight:700}.desk-bar .spacer{flex:1}
+.desk-settings{margin-top:10px;font-size:13px;color:var(--p-dim)}.desk-settings summary{cursor:pointer;min-height:32px}.desk-settings>div{display:flex;flex-wrap:wrap;gap:10px 22px;padding-top:8px;align-items:center}.desk-settings label{display:flex;align-items:center;gap:8px}.desk-settings select{background:#2b241f;color:var(--p-ink);border-color:var(--p-line);padding:6px 8px}.desk-settings input[type=range]{accent-color:var(--p-cue);width:120px}.desk-settings input[type=checkbox]{width:18px;height:18px;accent-color:var(--p-cue)}
+.status{min-height:1.4em;margin:8px 0 0;font-size:13px;color:var(--p-cue)}
+.hint{font-size:12px;color:var(--p-dim);margin:0}
+
+/* 아래: 대본·결과·표 */
+.below{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;margin-top:28px}.panel{background:var(--sheet);border:1px solid var(--line);padding:20px 22px}.panel h2{font-size:19px;font-weight:600;letter-spacing:-.02em;margin-bottom:6px}.panel>p{font-size:13px}
+.field{display:block;font-size:13px;margin:14px 0 6px}.field small{display:block;color:var(--muted);font-size:12px}.field code{font-size:12px;background:#ece6dc;padding:1px 5px}
+.row{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-top:12px;font-size:13px}.row input[type=range]{accent-color:var(--accent);width:150px;padding:0;border:0;background:transparent}.row label{display:flex;gap:8px;align-items:center}
+#script{font-size:16px;line-height:1.8}
+.facts{display:grid;gap:12px;margin:0}.facts>div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;padding-bottom:12px;border-bottom:1px solid var(--line)}.facts>div:last-child{border:0;padding:0}.facts dt{font-size:12px;color:var(--accent)}.facts dd{margin:0;font-size:14px;min-width:0}.facts small{display:block;color:var(--muted);font-size:12px}
+.result{border-color:var(--accent)}.result-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}.result-grid div{background:var(--paper);padding:12px}.result-grid strong{display:block;font-size:24px;font-variant-numeric:tabular-nums}.result-grid span{font-size:12px;color:var(--muted)}.result p{font-size:14px;color:var(--ink);margin-bottom:0}
+.tips{font-size:13px;color:var(--muted);padding-left:18px;margin:8px 0 0}.tips li{margin-bottom:4px}
+.timeline-wrap{grid-column:1/-1}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:600px;font-size:14px;font-variant-numeric:tabular-nums}th,td{text-align:left;vertical-align:top;padding:12px 10px;border-bottom:1px solid var(--line)}th{font-weight:500;color:var(--accent);background:#ece6dc}td:first-child{white-space:nowrap;width:130px}td:nth-child(n+3){white-space:nowrap;width:90px}tbody tr{cursor:pointer}tbody tr:hover{background:var(--paper)}tbody tr.is-active{background:#ece6dc}td.slow{color:#2f6b8a}td.fast{color:#b04a3c}
+footer{max-width:1280px;margin:auto;padding:24px 32px 40px;font-size:12px;color:var(--muted)}footer p{margin:6px 0}
+[hidden]{display:none!important}
+
+@media(max-width:900px){
+ header,main,footer{padding-inline:16px}header{flex-wrap:wrap;gap:4px 16px;font-size:12px}
+ .modes{width:100%}.modes button{flex:1}
+ .studio{grid-template-columns:minmax(0,1fr);height:auto;min-height:0;padding:12px;gap:14px}
+ .studio-head{margin-bottom:12px}.studio-head h1{font-size:28px}.studio-head p{font-size:13px}
+ .stage-frame{height:auto;width:min(100%,calc(34vh * 9 / 16));flex:none}.stage-tools{justify-content:center}
+ .desk{padding:12px}.prompter-screen{flex:none;height:44vh}.clock{font-size:40px}.beat-now strong{font-size:15px}
+ .prompter-line{font-size:min(var(--prompter-size),9vw)}
+ #play{flex:1 1 100%}.desk-bar button.secondary{flex:1 1 0}.desk-bar .spacer{display:none}
+ .below{grid-template-columns:minmax(0,1fr);gap:18px}.panel{padding:16px}
+ .facts>div{grid-template-columns:minmax(0,1fr);gap:2px}.result-grid{grid-template-columns:minmax(0,1fr)}
+ input:not([type=checkbox]):not([type=range]),select,textarea{font-size:16px}.row input[type=range]{flex:1}
+ table{min-width:0}thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}tbody{display:grid;gap:10px}tbody tr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px 10px;border:1px solid var(--line);padding:12px;background:var(--sheet)}td{display:block;padding:0;border:0;width:auto!important;white-space:normal!important;font-size:13px}td:first-child{grid-column:1/-1;font-weight:600;color:var(--accent)}td:nth-child(2){grid-column:1/-1;font-size:15px}td[data-label]:nth-child(n+3)::before{content:attr(data-label);display:block;font-size:11px;color:var(--muted)}
+}
+</style>
+</head>
+<body>
+<header><a href="index.html#story">← 영상 기획으로</a><span>영상 / 06 레퍼런스 · 촬영 연습</span></header>
+<main>
+<div class="studio-head">
+ <div><h1>쇼츠 촬영 연습</h1><p>설명형 피부과 쇼츠를 보며 말하는 박자를 익히고, 같은 화면 구성에서 내 대본을 소리 내 읽어 봅니다.</p></div>
+ <div class="modes" role="radiogroup" aria-label="연습 단계">
+  <button type="button" role="radio" data-mode="watch" aria-checked="true">① 레퍼런스 보기<small>영상에 맞춰 박자 익히기</small></button>
+  <button type="button" role="radio" data-mode="practice" aria-checked="false">② 내 대본 연습<small>프롬프터로 리허설</small></button>
+ </div>
+</div>
+
+<div class="studio">
+ <section class="stage" aria-label="영상">
+  <div class="stage-frame">
+   <div id="yt-player"></div>
+   <div class="stage-empty" id="yt-fallback" hidden><div>영상을 이 화면에서 불러오지 못했어요.<br>인터넷 연결을 확인하거나, 아래 링크로 유튜브에서 보세요.</div></div>
+  </div>
+  <div class="stage-tools" id="tools-watch">
+   <label><input type="checkbox" id="yt-mute"> 소리 끄고 따라 읽기</label>
+   <label id="loop-wrap"><input type="checkbox" id="loop-beat"> 이 구간 반복</label>
+   <a href="https://www.youtube.com/watch?v=CMwjmxWSR5Y&amp;t=774s" target="_blank" rel="noopener noreferrer">원본 풀 영상 ↗</a>
+  </div>
+ </section>
+
+ <section class="desk" id="desk" tabindex="-1" aria-label="초시계와 프롬프터">
+  <div class="clock-row">
+   <div class="clock" id="clock" aria-live="off">00:00.0<small>/ 01:09</small></div>
+   <div class="beat-now" id="beat-now"></div>
+  </div>
+  <div class="timebar" id="timebar" aria-hidden="true"></div>
+  <div class="prompter-screen" id="screen"><div class="prompter-track" id="track"></div></div>
+  <div class="desk-bar">
+   <button type="button" id="play" aria-pressed="false">▶ 시작</button>
+   <button type="button" class="secondary" id="prev" aria-label="이전 문장">◀</button>
+   <button type="button" class="secondary" id="next" aria-label="다음 문장">▶</button>
+   <button type="button" class="secondary" id="restart" aria-label="처음으로">⟲</button>
+   <span class="spacer"></span>
+   <button type="button" class="secondary" id="fullscreen">프롬프터 크게</button>
+  </div>
+  <details class="desk-settings"><summary>화면 설정</summary><div>
+   <label>글자 크기 <input id="size" type="range" min="24" max="96" step="2" value="46"></label>
+   <label id="speed-wrap">재생 속도 <select id="speed"><option value="0.75">0.75배</option><option value="1" selected>1배</option><option value="1.25">1.25배</option></select></label>
+   <label id="countdown-wrap"><input type="checkbox" id="countdown" checked> 3초 카운트다운</label>
+   <label><input type="checkbox" id="mirror"> 글자 좌우 반전</label>
+  </div></details>
+  <p class="status" id="status" role="status"></p>
+  <p class="hint" id="key-hint">스페이스: 시작/멈춤 · ← →: 문장 이동</p>
+ </section>
+</div>
+
+<div class="below">
+ <section class="panel" id="panel-watch">
+  <h2>읽을 문장</h2>
+  <p>영상 재생 시간에 맞춰 오른쪽 프롬프터가 넘어갑니다.</p>
+  <label class="field" for="watch-source">프롬프터에 띄울 것</label>
+  <select id="watch-source"><option value="beats">구간별 역할 (무엇을 말하는 구간인지)</option><option value="vtt">레퍼런스 자막 파일 (.vtt)</option></select>
+  <div id="vtt-box" hidden><label class="field" for="vtt-file">자막 파일<small>쇼츠에서 받은 유튜브 자막(.vtt)을 고르면 실제 문장이 시간에 맞춰 뜹니다. 파일은 이 브라우저 안에서만 읽어요.</small></label><input id="vtt-file" type="file" accept=".vtt,text/vtt"></div>
+  <ol class="tips"><li>처음엔 소리를 켜고 한 번 봅니다. 어디서 빨라지고 어디서 쉬는지 들어 보세요.</li><li>두 번째는 <b>소리 끄고 따라 읽기</b>를 켜고, 영상 입 모양에 맞춰 소리 내 읽어 봅니다.</li><li>어려운 구간은 <b>이 구간 반복</b>으로 몇 번 더 따라 합니다.</li></ol>
+ </section>
+ <section class="panel" id="panel-ref">
+  <h2>기준 영상</h2>
+  <dl class="facts">
+   <div><dt>쇼츠</dt><dd><a href="https://www.youtube.com/shorts/rmSY18yNkr8" target="_blank" rel="noopener noreferrer">병원에서 절대 안 알려주는 울쎄라 리프팅 꼼수 ↗</a><small>닥터라이언TV 피부과전문의 · 2026-09-02 · 1분 11초</small></dd></div>
+   <div><dt>원본</dt><dd><a href="https://www.youtube.com/watch?v=CMwjmxWSR5Y&amp;t=774s" target="_blank" rel="noopener noreferrer">피부과에서 절대 알려주지 않는 울쎄라 받고 100% 돈 날리는 이유 ↗</a><small>2026-08-28 · 21분 2초 중 12:54–14:02 구간을 잘라 사용</small></dd></div>
+   <div><dt>말 빠르기</dt><dd><strong>초당 6.6음절 · 분당 약 390음절</strong><small>뉴스 아나운서(분당 300~350음절)보다 10~20% 빠름. 쇼츠 편집에서 잘라 낸 쉼은 0.5초 한 군데뿐이라 화자의 원래 속도에 가깝습니다.</small></dd></div>
+   <div><dt>흐름</dt><dd>반박·비판하는 대목에서 초당 7.5~7.9음절로 빨라지고, 마지막 결론 한 문장만 초당 4.2음절로 늦춥니다.<small>유튜브 자동 자막 기준 · 0.1~0.3초 오차 가능 · 확인일 2026.11.05</small></dd></div>
+  </dl>
+ </section>
+
+ <section class="panel" id="panel-practice" hidden>
+  <h2>내 대본</h2>
+  <p>한 줄에 한 문장씩 씁니다. 이 브라우저에 자동 저장돼요.</p>
+  <label class="field" for="script">대본<small>줄 앞에 <code>[00:12]</code>나 <code>00–03초</code>처럼 시간을 쓰면 그 시각에 맞추고, 없으면 아래 말 빠르기로 계산합니다.</small></label>
+  <textarea id="script" rows="8" spellcheck="false"></textarea>
+  <div class="row"><label>넘기는 방식 <select id="advance"><option value="manual">직접 넘기기 · 내 속도 재기</option><option value="auto">자동 · 정한 속도로 넘어감</option></select></label><button type="button" class="secondary" id="load-story">05 영상 구성 초안 불러오기</button></div>
+  <div class="row" id="pace-row"><label>말 빠르기 <output id="pace-out">6.6</output>음절/초 <input id="pace" type="range" min="3" max="9" step="0.1" value="6.6"></label><button type="button" class="secondary" id="pace-ref">레퍼런스 속도로</button></div>
+  <div class="row"><label>목표 길이 <select id="target"><option value="0">대본 길이에 맞춤</option><option value="15">15초</option><option value="30" selected>30초</option><option value="45">45초</option><option value="60">60초</option></select></label></div>
+  <ol class="tips"><li><b>직접 넘기기</b>: 한 문장을 다 읽으면 스페이스(또는 다음 ▶)를 누르세요. 문장마다 걸린 시간을 재서 레퍼런스 속도와 비교해 줍니다.</li><li><b>자동</b>: 정한 속도로 문장이 넘어갑니다. 따라가기 버거운 문장이 고쳐야 할 문장이에요.</li><li>실제 촬영 때는 시선을 카메라 렌즈 쪽에 두세요. 프롬프터 창을 렌즈 바로 아래로 옮기면 눈이 덜 내려갑니다.</li><li>왼쪽 레퍼런스 영상은 연습 중에도 따로 틀어 볼 수 있어요.</li></ol>
+ </section>
+ <section class="panel result" id="panel-result" hidden aria-live="polite">
+  <h2>방금 연습 결과</h2>
+  <div class="result-grid"><div><span>걸린 시간</span><strong id="r-time">-</strong></div><div><span>목표 대비</span><strong id="r-target">-</strong></div><div><span>평균 속도</span><strong id="r-pace">-</strong></div></div>
+  <p id="r-note"></p>
+ </section>
+ <section class="panel" id="panel-practice-empty" hidden>
+  <h2>방금 연습 결과</h2>
+  <p>연습을 한 번 끝까지 하면 여기에 걸린 시간과 속도가 나옵니다.</p>
+ </section>
+
+ <section class="timeline-wrap">
+  <h2 style="font-size:19px;margin-bottom:4px">시간대별 문장</h2><p style="font-size:13px">행을 누르면 그 시각으로 이동합니다.</p>
+  <div class="table-wrap"><table id="timeline"><thead><tr><th>시간</th><th>문장</th><th>음절</th><th>속도</th><th id="th-mine" hidden>내 기록</th></tr></thead><tbody></tbody></table></div>
+ </section>
+</div>
+</main>
+<footer><p>레퍼런스 영상은 유튜브 플레이어로 재생하며, 저작권은 각 채널에 있습니다. 이 페이지는 내부 촬영 연습용입니다.</p><p>자막 파일은 이 브라우저 안에서만 읽고 저장하거나 전송하지 않습니다.</p></footer>
+<script src="reference.js"></script>
+</body>
+</html>
