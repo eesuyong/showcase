@@ -45,7 +45,7 @@
   const el = {
     clock: $('clock'), beatNow: $('beat-now'), timebar: $('timebar'), screen: $('screen'), track: $('track'),
     play: $('play'), prev: $('prev'), next: $('next'), restart: $('restart'), fullscreen: $('fullscreen'),
-    size: $('size'), speed: $('speed'), countdown: $('countdown'), countdownWrap: $('countdown-wrap'), mirror: $('mirror'),
+    size: $('size'), speed: $('speed'), countdown: $('countdown'), countdownWrap: $('countdown-wrap'), mirror: $('mirror'), karaoke: $('karaoke'), karaokeWrap: $('karaoke-wrap'),
     status: $('status'), keyHint: $('key-hint'), desk: $('desk'),
     ytFallback: $('yt-fallback'), ytMute: $('yt-mute'), loopBeat: $('loop-beat'),
     loopWrap: $('loop-wrap'),
@@ -78,7 +78,7 @@
   function save() {
     try {
       localStorage.setItem(STORE_KEY, JSON.stringify({
-        referenceSourceVersion: 1, mode: state.mode, script: el.script.value, refScript: el.refScript.value, watchSource: el.watchSource.value, advance: el.advance.value, pace: el.pace.value, target: el.target.value, size: el.size.value, mirror: el.mirror.checked
+        referenceSourceVersion: 1, mode: state.mode, script: el.script.value, refScript: el.refScript.value, watchSource: el.watchSource.value, advance: el.advance.value, pace: el.pace.value, target: el.target.value, size: el.size.value, mirror: el.mirror.checked, karaoke: el.karaoke.checked
       }));
     } catch { /* 저장이 막힌 브라우저에서는 저장 없이 동작 */ }
   }
@@ -152,7 +152,7 @@
       const p = document.createElement('p');
       p.className = 'prompter-line';
       if (line.label) { const tag = document.createElement('span'); tag.className = 'prompter-label'; tag.textContent = line.label; p.append(tag); }
-      p.append(document.createTextNode(line.text));
+      const text = document.createElement('span'); text.className = 'prompter-text'; text.textContent = line.text; p.append(text);
       p.addEventListener('click', () => jump(index));
       el.track.append(p);
 
@@ -191,6 +191,15 @@
     update();
   }
 
+  // 노래방처럼 지금 문장을 시간 비율만큼 왼쪽부터 채운다. 직접 넘기기 모드는 시간 정보가 없어 채우지 않는다.
+  function fillActive(index) {
+    const text = el.track.children[index]?.querySelector('.prompter-text');
+    if (!text) return;
+    const line = state.lines[index];
+    const ratio = isManual() ? 0 : Math.min(1, Math.max(0, (state.current - line.start) / Math.max(0.1, line.end - line.start)));
+    text.style.setProperty('--k', (ratio * 100).toFixed(1) + '%');
+  }
+
   function update() {
     const total = state.mode === 'practice' && target() ? target() : totalTime();
     const time = state.mode === 'practice' && isManual() ? state.current : state.current;
@@ -198,6 +207,7 @@
     el.clock.lastChild.textContent = '/ ' + fmt(total);
     el.clock.classList.toggle('is-over', state.mode === 'practice' && target() > 0 && time > target());
     const index = currentIndex();
+    fillActive(index);
     if (index === state.activeIndex) return;
     state.activeIndex = index;
     [...el.track.children].forEach((node, i) => { node.classList.toggle('is-active', i === index); node.classList.toggle('is-past', i < index); });
@@ -499,6 +509,7 @@
     el.panelPractice.hidden = !practice;
     el.panelResult.hidden = true; el.panelEmpty.hidden = !practice;
     el.countdownWrap.hidden = !practice;
+    el.karaokeWrap.hidden = isManual(); // 직접 넘기기에는 문장별 시간이 없다
     el.keyHint.textContent = practice
       ? (isManual() ? '스페이스: 시작 · 다음 문장으로 / Esc: 끝내기 · ←: 한 문장 되돌리기' : '스페이스: 시작/멈춤 · ← →: 문장 이동')
       : '스페이스: 재생/멈춤 · ← →: 구간 이동';
@@ -537,6 +548,7 @@
   window.addEventListener('resize', () => { state.activeIndex = -1; update(); });
 
   el.size.addEventListener('input', () => { el.screen.style.setProperty('--prompter-size', el.size.value + 'px'); state.activeIndex = -1; update(); save(); });
+  el.karaoke.addEventListener('change', () => { el.screen.classList.toggle('is-karaoke', el.karaoke.checked); save(); });
   el.mirror.addEventListener('change', () => { el.screen.classList.toggle('is-mirrored', el.mirror.checked); save(); });
   el.speed.addEventListener('change', () => yt.setRate(Number(el.speed.value)));
   el.ytMute.addEventListener('change', () => yt.mute(el.ytMute.checked));
@@ -588,6 +600,7 @@
   if (saved.pace) el.pace.value = saved.pace;
   if (saved.target) el.target.value = saved.target;
   if (saved.size) { el.size.value = saved.size; el.screen.style.setProperty('--prompter-size', saved.size + 'px'); }
+  if (saved.karaoke === false) { el.karaoke.checked = false; el.screen.classList.remove('is-karaoke'); }
   if (saved.mirror) { el.mirror.checked = true; el.screen.classList.add('is-mirrored'); }
   el.paceOut.textContent = Number(el.pace.value).toFixed(1);
   loadPlayer();

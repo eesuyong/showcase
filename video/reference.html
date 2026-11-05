@@ -28,7 +28,7 @@ input,textarea,select{padding:10px 12px;background:var(--sheet);border:1px solid
 .prompter-screen{--prompter-size:46px;position:relative;flex:1;min-height:180px;margin:8px 0;overflow:hidden;mask-image:linear-gradient(transparent,#000 12%,#000 78%,transparent);-webkit-mask-image:linear-gradient(transparent,#000 12%,#000 78%,transparent)}
 .prompter-screen{padding-left:28px}.prompter-screen::before{content:"";position:absolute;left:0;top:36%;translate:0 -50%;border-block:12px solid transparent;border-left:16px solid var(--p-cue);pointer-events:none;z-index:1}.prompter-screen.is-mirrored .prompter-track{scale:-1 1}
 .prompter-screen[data-countdown]:not([data-countdown=""])::after{content:attr(data-countdown);position:absolute;inset:0;display:grid;place-items:center;font:600 150px/1 Georgia,serif;color:var(--p-cue);background:rgba(0,0,0,.88)}
-.prompter-track{transition:transform .45s ease}.prompter-line{margin:0 0 .5em;font-size:var(--prompter-size);line-height:1.38;font-weight:600;letter-spacing:-.02em;word-break:keep-all;overflow-wrap:anywhere;color:var(--p-dim);opacity:.8;cursor:pointer;transition:color .25s,opacity .25s}.prompter-line.is-past{opacity:.35}.prompter-line.is-active{color:var(--p-ink);opacity:1}
+.prompter-track{transition:transform .45s ease}.prompter-line{margin:0 0 .5em;font-size:var(--prompter-size);line-height:1.38;font-weight:600;letter-spacing:-.02em;word-break:keep-all;overflow-wrap:anywhere;color:var(--p-dim);opacity:.8;cursor:pointer;transition:color .25s,opacity .25s}.prompter-line.is-past{opacity:.35}.prompter-line.is-active{color:var(--p-ink);opacity:1}.prompter-screen.is-karaoke .prompter-line.is-active .prompter-text{background:linear-gradient(90deg,var(--p-cue) var(--k,0%),var(--p-ink) var(--k,0%));-webkit-box-decoration-break:slice;box-decoration-break:slice;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .prompter-label{display:block;font-size:max(13px,calc(var(--prompter-size)*.32));font-weight:500;letter-spacing:.04em;color:var(--p-cue);margin-bottom:.15em}
 .desk-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.desk-bar button{min-height:46px}.desk-bar button.secondary{color:var(--p-ink);border-color:#444;min-width:46px;white-space:nowrap;padding-inline:12px}#play{min-width:140px;background:var(--p-cue);border-color:var(--p-cue);color:#000;font-weight:700}.desk-bar .spacer{flex:1}
 .desk-settings{margin-top:10px;font-size:13px;color:var(--p-dim)}.desk-settings summary{cursor:pointer;min-height:32px}.desk-settings>div{display:flex;flex-wrap:wrap;gap:10px 22px;padding-top:8px;align-items:center}.desk-settings label{display:flex;align-items:center;gap:8px}.desk-settings select{background:#1a1a1a;color:var(--p-ink);border-color:var(--p-line);padding:6px 8px}.desk-settings input[type=range]{accent-color:var(--p-cue);width:120px}.desk-settings input[type=checkbox]{width:18px;height:18px;accent-color:var(--p-cue)}
@@ -93,7 +93,7 @@ footer{max-width:1280px;margin:auto;padding:24px 32px 40px;font-size:12px;color:
    <div class="beat-now" id="beat-now"></div>
   </div>
   <div class="timebar" id="timebar" aria-hidden="true"></div>
-  <div class="prompter-screen" id="screen"><div class="prompter-track" id="track"></div></div>
+  <div class="prompter-screen is-karaoke" id="screen"><div class="prompter-track" id="track"></div></div>
   <div class="desk-bar">
    <button type="button" id="play" aria-pressed="false">▶ 시작</button>
    <button type="button" class="secondary" id="prev" aria-label="이전 문장">◀</button>
@@ -106,6 +106,7 @@ footer{max-width:1280px;margin:auto;padding:24px 32px 40px;font-size:12px;color:
    <label>글자 크기 <input id="size" type="range" min="24" max="96" step="2" value="46"></label>
    <label id="speed-wrap">재생 속도 <select id="speed"><option value="0.75">0.75배</option><option value="1" selected>1배</option><option value="1.25">1.25배</option></select></label>
    <label id="countdown-wrap"><input type="checkbox" id="countdown" checked> 3초 카운트다운</label>
+   <label id="karaoke-wrap"><input type="checkbox" id="karaoke" checked> 읽는 위치 채우기</label>
    <label><input type="checkbox" id="mirror"> 글자 좌우 반전</label>
   </div></details>
   <p class="status" id="status" role="status"></p>
