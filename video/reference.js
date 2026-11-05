@@ -33,7 +33,7 @@
     ytFallback: $('yt-fallback'), ytMute: $('yt-mute'), loopBeat: $('loop-beat'),
     loopWrap: $('loop-wrap'),
     panelWatch: $('panel-watch'), panelRef: $('panel-ref'), panelPractice: $('panel-practice'), panelResult: $('panel-result'), panelEmpty: $('panel-practice-empty'),
-    watchSource: $('watch-source'), vttBox: $('vtt-box'), vttFile: $('vtt-file'),
+    watchSource: $('watch-source'), vttBox: $('vtt-box'), vttFile: $('vtt-file'), pasteBox: $('paste-box'), refScript: $('ref-script'),
     script: $('script'), advance: $('advance'), pace: $('pace'), paceOut: $('pace-out'), paceRef: $('pace-ref'), target: $('target'), loadStory: $('load-story'),
     rTime: $('r-time'), rTarget: $('r-target'), rPace: $('r-pace'), rNote: $('r-note'),
     timeline: document.querySelector('#timeline tbody'), thMine: $('th-mine')
@@ -42,7 +42,7 @@
   const state = {
     mode: 'watch', lines: [], vttLines: [], current: 0, playing: false, lastTick: 0, countdownLeft: 0,
     manualIndex: 0, marks: [], activeIndex: -1, loopIndex: -1,
-    player: null, playerReady: false, ytFailed: false
+    ytFailed: false, ytReason: ''
   };
 
   // ── 유틸 ────────────────────────────────────────────────
@@ -61,14 +61,18 @@
   function save() {
     try {
       localStorage.setItem(STORE_KEY, JSON.stringify({
-        mode: state.mode, script: el.script.value, advance: el.advance.value, pace: el.pace.value, target: el.target.value, size: el.size.value, mirror: el.mirror.checked
+        mode: state.mode, script: el.script.value, refScript: el.refScript.value, watchSource: el.watchSource.value, advance: el.advance.value, pace: el.pace.value, target: el.target.value, size: el.size.value, mirror: el.mirror.checked
       }));
     } catch { /* 저장이 막힌 브라우저에서는 저장 없이 동작 */ }
   }
 
   // ── 대본 해석 ───────────────────────────────────────────
   function parseTime(raw) {
-    let m = raw.match(/^\s*\[?(\d{1,2}):(\d{2})(?:\.(\d+))?\]?\s*/);
+    const sec = (mm, ss, frac) => Number(mm) * 60 + Number(ss) + (frac ? Number('0.' + frac) : 0);
+    // [00:04 ~ 00:09] 처럼 시작과 끝을 함께 쓴 구간
+    let m = raw.match(/^\s*\[?\s*(\d{1,2}):(\d{2})(?:\.(\d+))?\s*[~–-]\s*(\d{1,2}):(\d{2})(?:\.(\d+))?\s*\]?\s*/);
+    if (m) return { start: sec(m[1], m[2], m[3]), end: sec(m[4], m[5], m[6]), rest: raw.slice(m[0].length) };
+    m = raw.match(/^\s*\[?(\d{1,2}):(\d{2})(?:\.(\d+))?\]?\s*/);
     if (m) return { start: Number(m[1]) * 60 + Number(m[2]) + (m[3] ? Number('0.' + m[3]) : 0), end: null, rest: raw.slice(m[0].length) };
     m = raw.match(/^\s*(\d{1,3})\s*[–~-]\s*(\d{1,3})\s*초\s*/);
     if (m) return { start: Number(m[1]), end: Number(m[2]), rest: raw.slice(m[0].length) };
@@ -193,32 +197,125 @@
     if (node) el.track.style.transform = `translateY(${el.screen.clientHeight * 0.36 - node.offsetTop - node.offsetHeight / 2}px)`;
   }
 
-  // ── 레퍼런스 영상 (YouTube IFrame API) ────────────────────
+  // ── 레퍼런스 영상 ───────────────────────────────────────
+  // 공식 IFrame API(api)를 먼저 쓰고, 그 스크립트가 막히면 iframe에 직접 명령을 보내는 방식(msg)으로 바꾼다.
+  const YT_ORIGIN = 'https://www.youtube.com';
+  const YT_ERRORS = {
+    2: '영상 주소가 잘못됐어요.',
+    5: '이 브라우저에서 유튜브 플레이어를 재생하지 못해요.',
+    100: '영상이 삭제됐거나 비공개로 바뀌었어요.',
+    101: '영상 주인이 다른 사이트에서의 재생을 막았어요.',
+    150: '영상 주인이 다른 사이트에서의 재생을 막았어요.',
+    153: '유튜브가 이 페이지 주소를 확인하지 못했어요.'
+  };
+  const yt = {
+    kind: null, ready: false, player: null, frame: null, unlinked: false, pendingPlay: false,
+    time: 0, stamp: 0, state: -1, rate: 1,
+    now() {
+      if (this.kind === 'api') return this.player.getCurrentTime() || 0;
+      return this.state === 1 ? this.time + ((performance.now() - this.stamp) / 1000) * this.rate : this.time;
+    },
+    call(func, ...args) {
+      if (!this.ready) return;
+      if (this.kind === 'api') this.player[func](...args);
+      else this.frame?.contentWindow?.postMessage(JSON.stringify({ event: 'command', func, args, id: 1, channel: 'widget' }), YT_ORIGIN);
+    },
+    play() { this.call('setPlaybackRate', Number(el.speed.value)); this.call('playVideo'); },
+    pause() { this.call('pauseVideo'); },
+    seek(t) { this.call('seekTo', t, true); if (this.kind === 'msg') { this.time = t; this.stamp = performance.now(); } },
+    mute(on) { this.call(on ? 'mute' : 'unMute'); },
+    setRate(r) { this.call('setPlaybackRate', r); }
+  };
+  const canFollowVideo = () => state.mode === 'watch' && yt.ready;
+
+  function onYtReady() {
+    if (yt.ready) return;
+    yt.ready = true; state.ytFailed = false; refreshStage();
+    if (yt.kind === 'msg') ['onStateChange', 'onError'].forEach(name => yt.call('addEventListener', name));
+    yt.mute(el.ytMute.checked);
+    if (yt.pendingPlay) { yt.pendingPlay = false; setStatus(''); yt.play(); }
+  }
+
+  function onYtState(code) {
+    if (code === yt.state) return;
+    yt.state = code;
+    if (state.mode !== 'watch') return;
+    if (code === 1) { if (!state.playing) startLoop(); }
+    else if (code === 2 || code === 0) { state.playing = false; syncFromPlayer(); setPlayButton(); }
+  }
+
+  function onYtError(code) {
+    yt.pendingPlay = false;
+    state.ytFailed = true;
+    state.ytReason = (YT_ERRORS[code] || '유튜브 플레이어에서 오류가 났어요.') + ` (오류 ${code})`;
+    refreshStage();
+  }
+
+  function messageEmbed() {
+    const holder = document.getElementById('yt-player');
+    if (yt.ready || yt.kind || !holder) return;
+    yt.kind = 'msg';
+    const frame = document.createElement('iframe');
+    frame.id = 'yt-player';
+    frame.title = '레퍼런스 쇼츠';
+    frame.src = `${YT_ORIGIN}/embed/${VIDEO_ID}?enablejsapi=1&playsinline=1&rel=0&origin=${encodeURIComponent(location.origin)}`;
+    frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    frame.referrerPolicy = 'strict-origin-when-cross-origin';
+    holder.replaceWith(frame);
+    yt.frame = frame;
+    // 플레이어가 대답할 때까지 '듣고 있다'는 신호를 보낸다(최대 15초).
+    let tries = 0;
+    const hello = setInterval(() => {
+      if (yt.ready) { clearInterval(hello); return; }
+      if (++tries > 60) {
+        clearInterval(hello);
+        yt.unlinked = true;
+        if (yt.pendingPlay) { yt.pendingPlay = false; startLoop(); }
+        setStatus('영상은 보이지만 프롬프터와 연결되지 않았어요. 영상 재생과 ▶ 시작을 함께 눌러 주세요.');
+        return;
+      }
+      frame.contentWindow?.postMessage(JSON.stringify({ event: 'listening', id: 1, channel: 'widget' }), YT_ORIGIN);
+    }, 250);
+  }
+
+  window.addEventListener('message', event => {
+    if (yt.kind !== 'msg' || event.origin !== YT_ORIGIN || event.source !== yt.frame?.contentWindow) return;
+    let data;
+    try { data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data; } catch { return; }
+    if (!data || typeof data !== 'object') return;
+    if (data.event === 'onReady') onYtReady();
+    else if ((data.event === 'infoDelivery' || data.event === 'initialDelivery') && data.info) {
+      onYtReady();
+      if (typeof data.info.currentTime === 'number') { yt.time = data.info.currentTime; yt.stamp = performance.now(); }
+      if (typeof data.info.playbackRate === 'number') yt.rate = data.info.playbackRate;
+      if (typeof data.info.playerState === 'number') onYtState(data.info.playerState);
+    } else if (data.event === 'onStateChange') onYtState(Number(data.info));
+    else if (data.event === 'onError') onYtError(Number(data.info));
+  });
+
   function loadPlayer() {
-    const fallback = setTimeout(() => { if (!state.playerReady) { state.ytFailed = true; refreshStage(); setStatus('영상 플레이어를 불러오지 못했어요. 링크로 유튜브에서 보면서 프롬프터는 ▶ 시작으로 따로 돌릴 수 있어요.'); } }, 9000);
+    const slow = setTimeout(messageEmbed, 12000);
     window.onYouTubeIframeAPIReady = () => {
-      state.player = new YT.Player('yt-player', {
+      if (yt.kind) return;
+      yt.kind = 'api';
+      yt.player = new YT.Player('yt-player', {
         videoId: VIDEO_ID,
         playerVars: { playsinline: 1, rel: 0, modestbranding: 1, controls: 1 },
         events: {
-          onReady: () => { state.playerReady = true; state.ytFailed = false; clearTimeout(fallback); refreshStage(); if (el.ytMute.checked) state.player.mute(); },
-          onStateChange: event => {
-            if (state.mode !== 'watch') return;
-            if (event.data === YT.PlayerState.PLAYING) startLoop();
-            else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) { state.playing = false; setPlayButton(); syncFromPlayer(); }
-          },
-          onError: () => { state.ytFailed = true; refreshStage(); }
+          onReady: () => { clearTimeout(slow); onYtReady(); },
+          onStateChange: event => onYtState(event.data),
+          onError: event => { clearTimeout(slow); onYtError(event.data); }
         }
       });
     };
     const script = document.createElement('script');
-    script.src = 'https://www.youtube.com/iframe_api';
-    script.onerror = () => { state.ytFailed = true; refreshStage(); };
+    script.src = YT_ORIGIN + '/iframe_api';
+    script.onerror = () => { clearTimeout(slow); messageEmbed(); };
     document.head.append(script);
   }
 
   function syncFromPlayer() {
-    if (state.playerReady && state.player.getCurrentTime) { state.current = state.player.getCurrentTime() || 0; update(); }
+    if (yt.ready) { state.current = yt.now(); update(); }
   }
 
   // ── 재생 루프 ───────────────────────────────────────────
@@ -232,10 +329,10 @@
     const delta = (now - state.lastTick) / 1000;
     state.lastTick = now;
     if (state.mode === 'watch') {
-      if (state.playerReady) {
-        state.current = state.player.getCurrentTime() || 0;
+      if (yt.ready) {
+        state.current = yt.now();
         const loop = state.lines[state.loopIndex];
-        if (el.loopBeat.checked && loop && state.current >= loop.end - 0.05) state.player.seekTo(loop.start, true);
+        if (el.loopBeat.checked && loop && state.current >= loop.end - 0.05) yt.seek(loop.start);
       } else {
         state.current += delta * Number(el.speed.value);
         if (state.current >= totalTime()) { state.current = totalTime(); state.playing = false; setPlayButton(); }
@@ -260,9 +357,11 @@
   }
 
   function play() {
-    if (!state.lines.length) { setStatus(state.mode === 'practice' ? '먼저 아래 칸에 대본을 써 주세요.' : '먼저 자막 파일을 골라 주세요.'); return; }
+    if (!state.lines.length) { setStatus(state.mode === 'practice' ? '먼저 아래 칸에 대본을 써 주세요.' : el.watchSource.value === 'vtt' ? '먼저 자막 파일을 골라 주세요.' : '먼저 아래 칸에 레퍼런스 대본을 붙여 넣어 주세요.'); return; }
     if (state.mode === 'watch') {
-      if (state.playerReady) { state.player.setPlaybackRate(Number(el.speed.value)); state.player.playVideo(); }
+      // 시작을 누르면 유튜브 영상도 같이 재생한다. 프롬프터는 영상 시간을 따라간다.
+      if (yt.ready) { if (state.current >= totalTime() - 0.05) yt.seek(0); yt.play(); }
+      else if (!state.ytFailed && !yt.unlinked) { yt.pendingPlay = true; setStatus('영상을 준비하는 중이에요. 준비되면 같이 시작합니다.'); }
       else startLoop();
       return;
     }
@@ -281,7 +380,7 @@
   }
 
   function pause() {
-    if (state.mode === 'watch') { if (state.playerReady) state.player.pauseVideo(); else { state.playing = false; setPlayButton(); } return; }
+    if (state.mode === 'watch') { yt.pendingPlay = false; if (yt.ready) yt.pause(); else { state.playing = false; setPlayButton(); } return; }
     if (isManual()) { finish(); return; }
     state.playing = false; state.countdownLeft = 0; el.screen.dataset.countdown = '';
     setPlayButton();
@@ -300,7 +399,7 @@
     }
     state.loopIndex = i;
     state.current = state.lines[i].start;
-    if (state.mode === 'watch' && state.playerReady) state.player.seekTo(state.current, true);
+    if (canFollowVideo()) yt.seek(state.current);
     update();
   }
 
@@ -313,7 +412,7 @@
   }
 
   function restart() {
-    if (state.mode === 'watch' && state.playerReady) { state.player.pauseVideo(); state.player.seekTo(0, true); }
+    if (canFollowVideo()) { yt.pause(); yt.seek(0); }
     state.playing = false; state.countdownLeft = 0; el.screen.dataset.countdown = '';
     state.current = 0; state.manualIndex = 0; state.marks = []; state.loopIndex = 0;
     setPlayButton(); render(); setStatus('');
@@ -354,17 +453,26 @@
 
   function refreshStage() {
     el.ytFallback.hidden = !state.ytFailed;
+    // 파일로 직접 열면(file://) 유튜브가 사이트 주소를 확인하지 못해 재생을 막는다(오류 153).
+    if (!state.ytFailed) return;
+    const box = el.ytFallback.firstElementChild;
+    if (location.protocol === 'file:') {
+      box.innerHTML = '파일로 직접 열어서 유튜브가 재생을 막았어요.<br>게시된 사이트 주소나 <b>http://localhost</b> 주소로 열어 주세요.<br><br>지금은 아래 「원본 풀 영상」 링크로 보면서<br>프롬프터는 ▶ 시작으로 따로 돌릴 수 있어요.';
+    } else {
+      box.replaceChildren('영상을 불러오지 못했어요.', document.createElement('br'), state.ytReason || '', document.createElement('br'), document.createElement('br'), '아래 「원본 풀 영상」 링크로 보면서', document.createElement('br'), '프롬프터는 ▶ 시작으로 따로 돌릴 수 있어요.');
+    }
   }
 
   // ── 모드 · 소스 ─────────────────────────────────────────
   function buildLines() {
-    if (state.mode === 'watch') state.lines = el.watchSource.value === 'vtt' ? state.vttLines : BEATS.map(b => ({ ...b }));
+    const source = el.watchSource.value;
+    if (state.mode === 'watch') state.lines = source === 'vtt' ? state.vttLines : source === 'paste' ? linesFromScript(el.refScript.value, REF_PACE) : BEATS.map(b => ({ ...b }));
     else state.lines = linesFromScript(el.script.value, Number(el.pace.value));
   }
 
   function setMode(mode) {
     if (state.playing) pause();
-    if (mode === 'practice' && state.playerReady) state.player.pauseVideo();
+    if (mode === 'practice') { yt.pendingPlay = false; yt.pause(); }
     state.mode = mode;
     document.querySelectorAll('.modes [role=radio]').forEach(b => b.setAttribute('aria-checked', String(b.dataset.mode === mode)));
     const practice = mode === 'practice';
@@ -387,6 +495,7 @@
     state.current = Math.min(state.current, totalTime());
     render();
     if (state.mode === 'watch' && el.watchSource.value === 'vtt' && !state.vttLines.length) setStatus('자막 파일(.vtt)을 고르면 문장이 나타나요.');
+    if (state.mode === 'watch' && el.watchSource.value === 'paste' && !state.lines.length) setStatus('아래 「레퍼런스 대본」 칸에 시간이 붙은 문장을 붙여 넣어 주세요.');
   }
 
   // ── 이벤트 ──────────────────────────────────────────────
@@ -400,7 +509,7 @@
     const rect = el.timebar.getBoundingClientRect();
     const t = ((event.clientX - rect.left) / rect.width) * scale();
     state.current = Math.max(0, Math.min(totalTime(), t));
-    if (state.mode === 'watch' && state.playerReady) state.player.seekTo(state.current, true);
+    if (canFollowVideo()) yt.seek(state.current);
     state.loopIndex = currentIndex(); update();
   });
   el.fullscreen.addEventListener('click', () => {
@@ -412,11 +521,13 @@
 
   el.size.addEventListener('input', () => { el.screen.style.setProperty('--prompter-size', el.size.value + 'px'); state.activeIndex = -1; update(); save(); });
   el.mirror.addEventListener('change', () => { el.screen.classList.toggle('is-mirrored', el.mirror.checked); save(); });
-  el.speed.addEventListener('change', () => { if (state.playerReady) state.player.setPlaybackRate(Number(el.speed.value)); });
-  el.ytMute.addEventListener('change', () => { if (state.playerReady) el.ytMute.checked ? state.player.mute() : state.player.unMute(); });
+  el.speed.addEventListener('change', () => yt.setRate(Number(el.speed.value)));
+  el.ytMute.addEventListener('change', () => yt.mute(el.ytMute.checked));
   el.loopBeat.addEventListener('change', () => { state.loopIndex = currentIndex(); });
 
-  el.watchSource.addEventListener('change', () => { el.vttBox.hidden = el.watchSource.value !== 'vtt'; setStatus(''); rebuild(); });
+  function showSourceBox() { el.vttBox.hidden = el.watchSource.value !== 'vtt'; el.pasteBox.hidden = el.watchSource.value !== 'paste'; }
+  el.watchSource.addEventListener('change', () => { showSourceBox(); setStatus(''); save(); rebuild(); });
+  el.refScript.addEventListener('input', () => { save(); setStatus(''); rebuild(); });
   el.vttFile.addEventListener('change', async () => {
     const file = el.vttFile.files[0];
     if (!file) return;
@@ -452,6 +563,9 @@
   // ── 시작 ────────────────────────────────────────────────
   const saved = load();
   el.script.value = typeof saved.script === 'string' ? saved.script : DEFAULT_SCRIPT;
+  if (typeof saved.refScript === 'string') el.refScript.value = saved.refScript;
+  if (['paste', 'beats'].includes(saved.watchSource)) el.watchSource.value = saved.watchSource;
+  showSourceBox();
   if (saved.advance) el.advance.value = saved.advance;
   if (saved.pace) el.pace.value = saved.pace;
   if (saved.target) el.target.value = saved.target;
