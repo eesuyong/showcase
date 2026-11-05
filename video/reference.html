@@ -12,11 +12,12 @@ button{padding:10px 16px;background:var(--accent);color:#fff;border:1px solid va
 input,textarea,select{padding:10px 12px;background:var(--sheet);border:1px solid var(--line);border-radius:0;font:inherit;color:var(--ink)}textarea{width:100%;resize:vertical}
 :is(a,button,input,textarea,select,summary):focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .studio-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin:8px 0 18px}.studio-head h1{font:400 clamp(30px,4vw,46px)/1.2 Georgia,"AppleMyungjo",serif;letter-spacing:-.04em;margin-bottom:6px}.studio-head p{margin:0;max-width:640px;font-size:14px}
-.sets-wrap{margin:0 0 18px}.sets-wrap h2{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.04em;margin:0 0 8px}.sets{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}.sets button{display:block;text-align:left;background:var(--sheet);color:var(--ink);border:1px solid var(--line);padding:12px 14px;min-height:44px;line-height:1.45}.sets button:hover{border-color:var(--accent)}.sets button[aria-checked="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:#fff}.sets b{display:block;font-size:15px;font-weight:600}.sets button[aria-checked="true"] b::before{content:"● ";color:var(--accent)}.sets small{display:block;font-size:12px;color:var(--muted)}
+.sets-wrap{margin:0 0 18px}.sets-wrap h2{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.04em;margin:0 0 8px}.sets{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}.sets button{display:block;text-align:left;background:var(--sheet);color:var(--ink);border:1px solid var(--line);padding:12px 14px;min-height:44px;line-height:1.45}.sets button:hover{border-color:var(--accent)}.sets button[aria-checked="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:#fff}.sets b{display:block;font-size:15px;font-weight:600}.sets button[aria-checked="true"] b::before{content:"● ";color:var(--accent)}.sets small{display:block;font-size:12px;color:var(--muted)}.sets .set-channel{display:block;font-size:13px;color:var(--accent);margin:1px 0 2px}
 .modes{display:flex;border:1px solid var(--accent)}.modes button{background:transparent;color:var(--accent);border:0;padding:12px 18px;min-height:44px}.modes button[aria-checked="true"]{background:var(--accent);color:#fff;font-weight:600}.modes small{display:block;font-size:11px;opacity:.8;font-weight:400}
 
 /* 좌: 영상·카메라 / 우: 초시계·프롬프터 */
 .studio{display:grid;grid-template-columns:minmax(280px,380px) minmax(0,1fr);gap:20px;background:var(--p-bg);color:var(--p-ink);padding:18px;border-radius:14px;height:min(calc(100vh - 150px),780px);min-height:560px}
+.studio.is-practice{grid-template-columns:minmax(0,1fr)}.studio.is-practice .stage{display:none}
 .stage{display:flex;flex-direction:column;gap:10px;min-height:0}
 .stage-frame{position:relative;flex:1;min-height:0;aspect-ratio:9/16;max-width:100%;margin:0 auto;width:auto;height:100%;background:#000;border-radius:10px;overflow:hidden}
 .stage-frame>*{position:absolute;inset:0;width:100%;height:100%}.stage-frame iframe{border:0}
@@ -44,7 +45,6 @@ input,textarea,select{padding:10px 12px;background:var(--sheet);border:1px solid
 .facts{display:grid;gap:12px;margin:0}.facts>div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;padding-bottom:12px;border-bottom:1px solid var(--line)}.facts>div:last-child{border:0;padding:0}.facts dt{font-size:12px;color:var(--accent)}.facts dd{margin:0;font-size:14px;min-width:0}.facts small{display:block;color:var(--muted);font-size:12px}
 .result{border-color:var(--accent)}.result-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}.result-grid div{background:var(--paper);padding:12px}.result-grid strong{display:block;font-size:24px;font-variant-numeric:tabular-nums}.result-grid span{font-size:12px;color:var(--muted)}.result p{font-size:14px;color:var(--ink);margin-bottom:0}
 .tips{font-size:13px;color:var(--muted);padding-left:18px;margin:8px 0 0}.tips li{margin-bottom:4px}
-.timeline-wrap{grid-column:1/-1}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:600px;font-size:14px;font-variant-numeric:tabular-nums}th,td{text-align:left;vertical-align:top;padding:12px 10px;border-bottom:1px solid var(--line)}th{font-weight:500;color:var(--accent);background:#ece6dc}td:first-child{white-space:nowrap;width:130px}td:nth-child(n+3){white-space:nowrap;width:90px}tbody tr{cursor:pointer}tbody tr:hover{background:var(--paper)}tbody tr.is-active{background:#ece6dc}td.slow{color:#2f6b8a}td.fast{color:#b04a3c}
 footer{max-width:1280px;margin:auto;padding:24px 32px 40px;font-size:12px;color:var(--muted)}footer p{margin:6px 0}
 [hidden]{display:none!important}
 
@@ -60,7 +60,6 @@ footer{max-width:1280px;margin:auto;padding:24px 32px 40px;font-size:12px;color:
  .below{grid-template-columns:minmax(0,1fr);gap:18px}.panel{padding:16px}
  .facts>div{grid-template-columns:minmax(0,1fr);gap:2px}.result-grid{grid-template-columns:minmax(0,1fr)}
  input:not([type=checkbox]):not([type=range]),select,textarea{font-size:16px}.row input[type=range]{flex:1}
- table{min-width:0}thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}tbody{display:grid;gap:10px}tbody tr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px 10px;border:1px solid var(--line);padding:12px;background:var(--sheet)}td{display:block;padding:0;border:0;width:auto!important;white-space:normal!important;font-size:13px}td:first-child{grid-column:1/-1;font-weight:600;color:var(--accent)}td:nth-child(2){grid-column:1/-1;font-size:15px}td[data-label]:nth-child(n+3)::before{content:attr(data-label);display:block;font-size:11px;color:var(--muted)}
 }
 </style>
 </head>
@@ -143,7 +142,7 @@ footer{max-width:1280px;margin:auto;padding:24px 32px 40px;font-size:12px;color:
   <div class="row"><label>넘기는 방식 <select id="advance"><option value="manual">직접 넘기기 · 내 속도 재기</option><option value="auto">자동 · 정한 속도로 넘어감</option></select></label><button type="button" class="secondary" id="load-story">05 영상 구성 초안 불러오기</button></div>
   <div class="row" id="pace-row"><label>말 빠르기 <output id="pace-out">6.6</output>음절/초 <input id="pace" type="range" min="3" max="9" step="0.1" value="6.6"></label><button type="button" class="secondary" id="pace-ref">레퍼런스 속도로</button></div>
   <div class="row"><label>목표 길이 <select id="target"><option value="0">대본 길이에 맞춤</option><option value="15">15초</option><option value="30" selected>30초</option><option value="45">45초</option><option value="60">60초</option></select></label></div>
-  <ol class="tips"><li><b>직접 넘기기</b>: 한 문장을 다 읽으면 스페이스(또는 다음 ▶)를 누르세요. 문장마다 걸린 시간을 재서 레퍼런스 속도와 비교해 줍니다.</li><li><b>자동</b>: 정한 속도로 문장이 넘어갑니다. 따라가기 버거운 문장이 고쳐야 할 문장이에요.</li><li>실제 촬영 때는 시선을 카메라 렌즈 쪽에 두세요. 프롬프터 창을 렌즈 바로 아래로 옮기면 눈이 덜 내려갑니다.</li><li>왼쪽 레퍼런스 영상은 연습 중에도 따로 틀어 볼 수 있어요.</li></ol>
+  <ol class="tips"><li><b>직접 넘기기</b>: 한 문장을 다 읽으면 스페이스(또는 다음 ▶)를 누르세요. 문장마다 걸린 시간을 재서 레퍼런스 속도와 비교해 줍니다.</li><li><b>자동</b>: 정한 속도로 문장이 넘어갑니다. 따라가기 버거운 문장이 고쳐야 할 문장이에요.</li><li>실제 촬영 때는 시선을 카메라 렌즈 쪽에 두세요. 프롬프터 창을 렌즈 바로 아래로 옮기면 눈이 덜 내려갑니다.</li></ol>
  </section>
  <section class="panel result" id="panel-result" hidden aria-live="polite">
   <h2>방금 연습 결과</h2>
@@ -155,10 +154,6 @@ footer{max-width:1280px;margin:auto;padding:24px 32px 40px;font-size:12px;color:
   <p>연습을 한 번 끝까지 하면 여기에 걸린 시간과 속도가 나옵니다.</p>
  </section>
 
- <section class="timeline-wrap">
-  <h2 style="font-size:19px;margin-bottom:4px">시간대별 문장</h2><p style="font-size:13px">행을 누르면 그 시각으로 이동합니다.</p>
-  <div class="table-wrap"><table id="timeline"><thead><tr><th>시간</th><th>문장</th><th>음절</th><th>속도</th><th id="th-mine" hidden>내 기록</th></tr></thead><tbody></tbody></table></div>
- </section>
 </div>
 </main>
 <footer><p>레퍼런스 영상은 유튜브 플레이어로 재생하며, 저작권은 각 채널에 있습니다. 이 페이지는 내부 촬영 연습용입니다.</p><p>붙여 넣은 대본은 이 브라우저 안에만 저장하고 전송하지 않습니다.</p></footer>

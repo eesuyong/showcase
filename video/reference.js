@@ -26,7 +26,7 @@
     sets: $('sets'), facts: $('facts'), fullLink: $('full-link'),
     script: $('script'), advance: $('advance'), pace: $('pace'), paceOut: $('pace-out'), paceRef: $('pace-ref'), target: $('target'), loadStory: $('load-story'),
     rTime: $('r-time'), rTarget: $('r-target'), rPace: $('r-pace'), rNote: $('r-note'),
-    timeline: document.querySelector('#timeline tbody'), thMine: $('th-mine')
+    studio: document.querySelector('.studio')
   };
 
   const state = {
@@ -99,10 +99,7 @@
 
   function render() {
     el.track.replaceChildren();
-    el.timeline.replaceChildren();
     el.timebar.replaceChildren();
-    const showMine = state.mode === 'practice' && isManual() && state.marks.length > 1;
-    el.thMine.hidden = !showMine;
     state.lines.forEach((line, index) => {
       const p = document.createElement('p');
       p.className = 'prompter-line';
@@ -111,24 +108,7 @@
       p.addEventListener('click', () => jump(index));
       el.track.append(p);
 
-      const syl = line.syl ?? syllables(line.text);
       const length = Math.max(0.1, line.end - line.start);
-      const tr = document.createElement('tr');
-      const cells = [[fmt(line.start) + ' – ' + fmt(line.end), '시간'], [(line.label ? line.label + ' · ' : '') + line.text, '문장'], [syl + '음절', '음절'], [(syl / length).toFixed(1) + '/초', '속도']];
-      if (showMine) {
-        const dur = state.marks[index + 1] - state.marks[index];
-        const pace = dur > 0 ? syl / dur : 0;
-        const mine = Number.isFinite(dur) ? dur.toFixed(1) + '초 · ' + pace.toFixed(1) + '/초' : '-';
-        cells.push([mine, '내 기록', pace > refPace() * 1.15 ? 'fast' : pace && pace < refPace() * 0.76 ? 'slow' : '']);
-      }
-      for (const [value, label, cls] of cells) {
-        const td = document.createElement('td');
-        td.textContent = value; td.dataset.label = label;
-        if (cls) td.className = cls;
-        tr.append(td);
-      }
-      tr.addEventListener('click', () => { jump(index); el.desk.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
-      el.timeline.append(tr);
 
       const seg = document.createElement('span');
       seg.style.setProperty('--w', String(length));
@@ -166,7 +146,6 @@
     if (index === state.activeIndex) return;
     state.activeIndex = index;
     [...el.track.children].forEach((node, i) => { node.classList.toggle('is-active', i === index); node.classList.toggle('is-past', i < index); });
-    [...el.timeline.children].forEach((node, i) => node.classList.toggle('is-active', i === index));
     [...el.timebar.querySelectorAll('span')].forEach((node, i) => { node.classList.toggle('is-active', i === index); node.classList.toggle('is-done', i < index); });
     const line = state.lines[index];
     el.beatNow.replaceChildren();
@@ -433,7 +412,12 @@
       if (pace < refPace() * 0.8) notes.push(`레퍼런스(초당 ${refPace().toFixed(1)}음절)보다 여유롭게 말했어요. 설명형 쇼츠라면 조금 더 붙여 읽어도 됩니다.`);
       else if (pace > refPace() * 1.15) notes.push('레퍼런스보다 빠릅니다. 숫자·병원 이름처럼 들려야 하는 말은 한 박자 늦춰 보세요.');
       else notes.push('레퍼런스와 비슷한 속도예요.');
-      notes.push('아래 표의 「내 기록」에서 파란색은 느린 문장, 빨간색은 빠른 문장입니다.');
+      // 문장별 기록 중 가장 빠르고 느렸던 문장을 짚어 준다.
+      const paces = state.lines.slice(0, doneCount).map((line, i) => ({ i, pace: syllables(line.text) / (state.marks[i + 1] - state.marks[i]) })).filter(row => Number.isFinite(row.pace) && row.pace > 0);
+      if (paces.length > 1) {
+        const fast = paces.reduce((a, b) => (b.pace > a.pace ? b : a)), slow = paces.reduce((a, b) => (b.pace < a.pace ? b : a));
+        notes.push(`가장 빨랐던 문장은 ${fast.i + 1}번째(초당 ${fast.pace.toFixed(1)}음절), 가장 느렸던 문장은 ${slow.i + 1}번째(초당 ${slow.pace.toFixed(1)}음절)예요.`);
+      }
     } else {
       notes.push('자동 모드라 대본에 맞춘 시간입니다. 따라가기 버거웠던 문장을 짧게 고쳐 보세요.');
     }
@@ -468,6 +452,7 @@
     state.mode = mode;
     document.querySelectorAll('.modes [role=radio]').forEach(b => b.setAttribute('aria-checked', String(b.dataset.mode === mode)));
     const practice = mode === 'practice';
+    el.studio.classList.toggle('is-practice', practice); // 대본 연습에서는 영상 없이 프롬프터만
     el.loopWrap.hidden = practice; // 구간 반복은 영상과 프롬프터가 연동되는 보기 단계에서만
     if (practice) el.loopBeat.checked = false;
     el.panelWatch.hidden = practice; el.panelRef.hidden = practice;
@@ -498,7 +483,8 @@
       const name = document.createElement('b'); name.textContent = set.title;
       const meta = document.createElement('small');
       meta.textContent = [set.kind, set.length, set.pace ? `초당 ${set.pace}음절` : ''].filter(Boolean).join(' · ');
-      button.append(name, meta);
+      const channel = document.createElement('span'); channel.className = 'set-channel'; channel.textContent = set.channel || '';
+      button.append(name, ...(set.channel ? [channel] : []), meta);
       button.addEventListener('click', () => selectSet(set.id));
       return button;
     }));
