@@ -78,7 +78,7 @@
   function save() {
     try {
       localStorage.setItem(STORE_KEY, JSON.stringify({
-        mode: state.mode, script: el.script.value, refScript: el.refScript.value, watchSource: el.watchSource.value, advance: el.advance.value, pace: el.pace.value, target: el.target.value, size: el.size.value, mirror: el.mirror.checked
+        referenceSourceVersion: 1, mode: state.mode, script: el.script.value, refScript: el.refScript.value, watchSource: el.watchSource.value, advance: el.advance.value, pace: el.pace.value, target: el.target.value, size: el.size.value, mirror: el.mirror.checked
       }));
     } catch { /* 저장이 막힌 브라우저에서는 저장 없이 동작 */ }
   }
@@ -483,7 +483,7 @@
   // ── 모드 · 소스 ─────────────────────────────────────────
   function buildLines() {
     const source = el.watchSource.value;
-    if (state.mode === 'watch') state.lines = source === 'vtt' ? state.vttLines : source === 'paste' ? linesFromScript(el.refScript.value, REF_PACE) : BEATS.map(b => ({ ...b }));
+    if (state.mode === 'watch') state.lines = source === 'default' ? linesFromScript(DEFAULT_REF_SCRIPT, REF_PACE) : source === 'vtt' ? state.vttLines : source === 'paste' ? linesFromScript(el.refScript.value, REF_PACE) : BEATS.map(b => ({ ...b }));
     else state.lines = linesFromScript(el.script.value, Number(el.pace.value));
   }
 
@@ -580,8 +580,9 @@
   // ── 시작 ────────────────────────────────────────────────
   const saved = load();
   el.script.value = typeof saved.script === 'string' ? saved.script : DEFAULT_SCRIPT;
-  el.refScript.value = typeof saved.refScript === 'string' && saved.refScript.trim() ? saved.refScript : DEFAULT_REF_SCRIPT;
-  if (['paste', 'beats'].includes(saved.watchSource)) el.watchSource.value = saved.watchSource;
+  el.refScript.value = typeof saved.refScript === 'string' ? saved.refScript : '';
+  // 기존의 편집형 기본 자막에서 처음 전환할 때는 고정 자막을 선택한다.
+  if (saved.referenceSourceVersion === 1 && ['default', 'paste', 'beats'].includes(saved.watchSource)) el.watchSource.value = saved.watchSource;
   showSourceBox();
   if (saved.advance) el.advance.value = saved.advance;
   if (saved.pace) el.pace.value = saved.pace;
