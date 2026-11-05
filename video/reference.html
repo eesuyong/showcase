@@ -119,7 +119,7 @@ footer{max-width:1280px;margin:auto;padding:24px 32px 40px;font-size:12px;color:
   <p>▶ 시작을 누르면 유튜브 영상이 같이 재생되고, 영상 시간에 맞춰 오른쪽 프롬프터가 넘어갑니다.</p>
   <label class="field" for="watch-source">프롬프터에 띄울 것</label>
   <select id="watch-source"><option value="paste">레퍼런스 대본 (붙여 넣은 문장)</option><option value="beats">구간별 역할 (무엇을 말하는 구간인지)</option><option value="vtt">레퍼런스 자막 파일 (.vtt)</option></select>
-  <div id="paste-box"><label class="field" for="ref-script">레퍼런스 대본<small>한 줄에 한 구간씩 <code>[00:04 ~ 00:09] 문장</code> 형식으로 붙여 넣으세요. 이 브라우저에만 저장되고, 페이지 코드나 공개 사이트에는 올라가지 않아요.</small></label><textarea id="ref-script" rows="8" spellcheck="false" placeholder="[00:00 ~ 00:04] 첫 문장&#10;[00:04 ~ 00:09] 다음 문장"></textarea></div>
+  <div id="paste-box"><label class="field" for="ref-script">레퍼런스 대본<small>한 줄에 한 구간씩 <code>[00:04 ~ 00:09] 문장</code> 형식으로 붙여 넣으세요. 기본 자막이 미리 들어 있습니다. 여기서 수정한 내용은 이 브라우저에만 저장돼요.</small></label><textarea id="ref-script" rows="8" spellcheck="false" placeholder="[00:00 ~ 00:04] 첫 문장&#10;[00:04 ~ 00:09] 다음 문장"></textarea></div>
   <div id="vtt-box" hidden><label class="field" for="vtt-file">자막 파일<small>쇼츠에서 받은 유튜브 자막(.vtt)을 고르면 실제 문장이 시간에 맞춰 뜹니다. 파일은 이 브라우저 안에서만 읽어요.</small></label><input id="vtt-file" type="file" accept=".vtt,text/vtt"></div>
   <ol class="tips"><li>처음엔 소리를 켜고 한 번 봅니다. 어디서 빨라지고 어디서 쉬는지 들어 보세요.</li><li>두 번째는 <b>소리 끄고 따라 읽기</b>를 켜고, 영상 입 모양에 맞춰 소리 내 읽어 봅니다.</li><li>어려운 구간은 <b>이 구간 반복</b>으로 몇 번 더 따라 합니다.</li></ol>
  </section>
