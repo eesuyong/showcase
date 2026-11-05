@@ -12,6 +12,7 @@ button{padding:10px 16px;background:var(--accent);color:#fff;border:1px solid va
 input,textarea,select{padding:10px 12px;background:var(--sheet);border:1px solid var(--line);border-radius:0;font:inherit;color:var(--ink)}textarea{width:100%;resize:vertical}
 :is(a,button,input,textarea,select,summary):focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .studio-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin:8px 0 18px}.studio-head h1{font:400 clamp(30px,4vw,46px)/1.2 Georgia,"AppleMyungjo",serif;letter-spacing:-.04em;margin-bottom:6px}.studio-head p{margin:0;max-width:640px;font-size:14px}
+.sets-wrap{margin:0 0 18px}.sets-wrap h2{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.04em;margin:0 0 8px}.sets{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}.sets button{display:block;text-align:left;background:var(--sheet);color:var(--ink);border:1px solid var(--line);padding:12px 14px;min-height:44px;line-height:1.45}.sets button:hover{border-color:var(--accent)}.sets button[aria-checked="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:#fff}.sets b{display:block;font-size:15px;font-weight:600}.sets button[aria-checked="true"] b::before{content:"● ";color:var(--accent)}.sets small{display:block;font-size:12px;color:var(--muted)}
 .modes{display:flex;border:1px solid var(--accent)}.modes button{background:transparent;color:var(--accent);border:0;padding:12px 18px;min-height:44px}.modes button[aria-checked="true"]{background:var(--accent);color:#fff;font-weight:600}.modes small{display:block;font-size:11px;opacity:.8;font-weight:400}
 
 /* 좌: 영상·카메라 / 우: 초시계·프롬프터 */
@@ -67,12 +68,17 @@ footer{max-width:1280px;margin:auto;padding:24px 32px 40px;font-size:12px;color:
 <header><a href="index.html#story">← 영상 기획으로</a><span>영상 / 06 레퍼런스 · 촬영 연습</span></header>
 <main>
 <div class="studio-head">
- <div><h1>쇼츠 촬영 연습</h1><p>설명형 피부과 쇼츠를 보며 말하는 박자를 익히고, 같은 화면 구성에서 내 대본을 소리 내 읽어 봅니다.</p></div>
+ <div><h1>쇼츠 촬영 연습</h1><p>레퍼런스 쇼츠를 보며 말하는 박자를 익히고, 같은 화면 구성에서 내 대본을 소리 내 읽어 봅니다.</p></div>
  <div class="modes" role="radiogroup" aria-label="연습 단계">
   <button type="button" role="radio" data-mode="watch" aria-checked="true">① 레퍼런스 보기<small>영상에 맞춰 박자 익히기</small></button>
   <button type="button" role="radio" data-mode="practice" aria-checked="false">② 내 대본 연습<small>프롬프터로 리허설</small></button>
  </div>
 </div>
+
+<section class="sets-wrap" aria-labelledby="sets-title">
+ <h2 id="sets-title">훈련 세트</h2>
+ <div class="sets" id="sets" role="radiogroup" aria-labelledby="sets-title"></div>
+</section>
 
 <div class="studio">
  <section class="stage" aria-label="영상">
@@ -83,7 +89,7 @@ footer{max-width:1280px;margin:auto;padding:24px 32px 40px;font-size:12px;color:
   <div class="stage-tools" id="tools-watch">
    <label><input type="checkbox" id="yt-mute"> 소리 끄고 따라 읽기</label>
    <label id="loop-wrap"><input type="checkbox" id="loop-beat"> 이 구간 반복</label>
-   <a href="https://www.youtube.com/watch?v=CMwjmxWSR5Y&amp;t=774s" target="_blank" rel="noopener noreferrer">원본 풀 영상 ↗</a>
+   <a id="full-link" href="#" target="_blank" rel="noopener noreferrer">원본 풀 영상 ↗</a>
   </div>
  </section>
 
@@ -119,18 +125,13 @@ footer{max-width:1280px;margin:auto;padding:24px 32px 40px;font-size:12px;color:
   <h2>읽을 문장</h2>
   <p>▶ 시작을 누르면 유튜브 영상이 같이 재생되고, 영상 시간에 맞춰 오른쪽 프롬프터가 넘어갑니다.</p>
   <label class="field" for="watch-source">프롬프터에 띄울 것</label>
-  <select id="watch-source"><option value="default">기본 레퍼런스 자막 (수정 불가)</option><option value="paste">레퍼런스 대본 (붙여 넣은 문장)</option><option value="beats">구간별 역할 (무엇을 말하는 구간인지)</option><option value="vtt">레퍼런스 자막 파일 (.vtt)</option></select>
-  <div id="paste-box" hidden><label class="field" for="ref-script">레퍼런스 대본<small>한 줄에 한 구간씩 <code>[00:04 ~ 00:09] 문장</code> 형식으로 붙여 넣으세요. 직접 입력한 내용은 이 브라우저에만 저장돼요. 기본 레퍼런스 자막에는 영향을 주지 않습니다.</small></label><textarea id="ref-script" rows="8" spellcheck="false" placeholder="[00:00 ~ 00:04] 첫 문장&#10;[00:04 ~ 00:09] 다음 문장"></textarea></div>
-  <div id="vtt-box" hidden><label class="field" for="vtt-file">자막 파일<small>쇼츠에서 받은 유튜브 자막(.vtt)을 고르면 실제 문장이 시간에 맞춰 뜹니다. 파일은 이 브라우저 안에서만 읽어요.</small></label><input id="vtt-file" type="file" accept=".vtt,text/vtt"></div>
+  <select id="watch-source"><option value="default">세트 기본 자막 (수정 불가)</option><option value="paste">직접 붙여 넣은 대본</option></select>
+  <div id="paste-box" hidden><label class="field" for="ref-script">레퍼런스 대본<small>한 줄에 한 구간씩 <code>[00:04 ~ 00:09] 문장</code> 형식으로 붙여 넣으세요. 세트마다 따로, 이 브라우저에만 저장돼요. 세트 기본 자막에는 영향을 주지 않습니다.</small></label><textarea id="ref-script" rows="8" spellcheck="false" placeholder="[00:00 ~ 00:04] 첫 문장&#10;[00:04 ~ 00:09] 다음 문장"></textarea></div>
   <ol class="tips"><li>처음엔 소리를 켜고 한 번 봅니다. 어디서 빨라지고 어디서 쉬는지 들어 보세요.</li><li>두 번째는 <b>소리 끄고 따라 읽기</b>를 켜고, 영상 입 모양에 맞춰 소리 내 읽어 봅니다.</li><li>어려운 구간은 <b>이 구간 반복</b>으로 몇 번 더 따라 합니다.</li></ol>
  </section>
  <section class="panel" id="panel-ref">
   <h2>기준 영상</h2>
-  <dl class="facts">
-   <div><dt>쇼츠</dt><dd><a href="https://www.youtube.com/shorts/rmSY18yNkr8" target="_blank" rel="noopener noreferrer">병원에서 절대 안 알려주는 울쎄라 리프팅 꼼수 ↗</a><small>닥터라이언TV 피부과전문의 · 2026-09-02 · 1분 11초</small></dd></div>
-   <div><dt>원본</dt><dd><a href="https://www.youtube.com/watch?v=CMwjmxWSR5Y&amp;t=774s" target="_blank" rel="noopener noreferrer">피부과에서 절대 알려주지 않는 울쎄라 받고 100% 돈 날리는 이유 ↗</a><small>2026-08-28 · 21분 2초 중 12:54–14:02 구간을 잘라 사용</small></dd></div>
-   <div><dt>말 빠르기</dt><dd><strong>초당 6.6음절 · 분당 약 390음절</strong><small>뉴스 아나운서(분당 300~350음절)보다 10~20% 빠름. 쇼츠 편집에서 잘라 낸 쉼은 0.5초 한 군데뿐이라 화자의 원래 속도에 가깝습니다.</small></dd></div>
-   <div><dt>흐름</dt><dd>반박·비판하는 대목에서 초당 7.5~7.9음절로 빨라지고, 마지막 결론 한 문장만 초당 4.2음절로 늦춥니다.<small>유튜브 자동 자막 기준 · 0.1~0.3초 오차 가능 · 확인일 2026.11.05</small></dd></div>
+  <dl class="facts" id="facts">
   </dl>
  </section>
 
@@ -160,7 +161,8 @@ footer{max-width:1280px;margin:auto;padding:24px 32px 40px;font-size:12px;color:
  </section>
 </div>
 </main>
-<footer><p>레퍼런스 영상은 유튜브 플레이어로 재생하며, 저작권은 각 채널에 있습니다. 이 페이지는 내부 촬영 연습용입니다.</p><p>자막 파일은 이 브라우저 안에서만 읽고 저장하거나 전송하지 않습니다.</p></footer>
+<footer><p>레퍼런스 영상은 유튜브 플레이어로 재생하며, 저작권은 각 채널에 있습니다. 이 페이지는 내부 촬영 연습용입니다.</p><p>붙여 넣은 대본은 이 브라우저 안에만 저장하고 전송하지 않습니다.</p></footer>
+<script src="reference-sets.js"></script>
 <script src="reference.js"></script>
 </body>
 </html>
